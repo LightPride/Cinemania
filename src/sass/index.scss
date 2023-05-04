@@ -1,3 +1,10 @@
-@import "./base/base";
-@import "./utils/vars";
-@import "./components/catalog";
+@import "./utils/_vars";
+@import "./base/_base";
+@import "./components/_catalog-search";
+@import "./components/_footer";
+@import "./components/_header";
+@import "./components/_hero";
+@import "./components/home-trends";
+@import "./components/home-upcoming";
+@import "./components/library-catalog";
+@import "./components/library-hero";
