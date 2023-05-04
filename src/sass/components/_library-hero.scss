@@ -1,0 +1,154 @@
+.library{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 0 144px 20px ;
+  text-align: left;
+
+  background-color:black;
+  width: 100%;
+  background-image:linear-gradient(
+    to right,
+    rgba(14, 14, 14, 0),
+    rgba(14, 14, 14, 0)), 
+  url('./../images/library-dek1x.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+
+  background-image: linear-gradient(
+    to right,
+    rgba(14, 14, 14, 0),
+    rgba(14, 14, 14, 0)), 
+    url('./../images/library-mob1x.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  @media ( min-device-pixel-ratio: 2),
+    (min-resolution:192dpi),
+    (min-resolution:2dppx){
+    background-image:linear-gradient(
+      to right,
+      rgba(14, 14, 14, 0),
+      rgba(14, 14, 14, 0)), 
+      url('./../images/library-mob2x.jpg') ;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
+
+  @media screen and (min-width:768px) and (max-width:1219px){
+    background-image:linear-gradient(
+      to right,
+      rgba(14, 14, 14, 0),
+      rgba(14, 14, 14, 0)), 
+      url('./../images/library-tab1x.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    padding: 62px 0 206px 32px ;
+  
+
+  @media ( min-device-pixel-ratio: 2),
+    (min-resolution:192dpi),
+    (min-resolution:2dppx){
+    background-image:linear-gradient(
+      to right,
+      rgba(14, 14, 14, 0),
+      rgba(14, 14, 14, 0)), 
+      url('./../images/library-tab2x.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    }
+  }
+  
+  @media screen and (min-width:1220px){
+    padding: 169px 0 249px 117px ;
+    max-width: 1600px;
+    background-image:linear-gradient(
+      to right,
+      rgba(14, 14, 14, 0),
+      rgba(14, 14, 14, 0)), 
+      url('./../images/library-dek1x.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+
+  @media ( min-device-pixel-ratio: 2),
+    (min-resolution:192dpi),
+    (min-resolution:2dppx){
+    background-image:linear-gradient(
+      to right,
+      rgba(14, 14, 14, 0),
+      rgba(14, 14, 14, 0)), 
+      url('./../images/library-dek2x.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    }
+  }
+&__title {
+  margin-bottom: 8px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: $white;
+  @media screen and (min-width:768px){
+    font-size: 44px;
+    line-height: 52px;
+  }
+  @media screen and (min-width:1220px){
+    font-size: 64px;
+    line-height: 75px;
+    margin-bottom: 16px;
+  }
+}
+&__text{
+  width: 90%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  @media screen and (min-width:768px){
+    width: 40%;
+  }
+  @media screen and (min-width:1220px){
+    width: 35%;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+}
+.anyMovis{
+  padding: 44px 0 42px 0 ;
+  @media screen and (min-width:768px){
+    padding: 80px 0 60px 0 ; 
+  }
+  @media screen and (min-width:1220px){
+    padding: 160px 0 108px 0 ; 
+  }
+&__title{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: $white;
+  text-align: center;
+  @media screen and (min-width:768px){
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @media screen and (min-width:1220px){
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+&__button{
+text-align: center;
+}
+}
