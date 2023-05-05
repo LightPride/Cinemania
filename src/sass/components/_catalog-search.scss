@@ -1,0 +1,125 @@
+.catalog__form {
+  display: flex;
+  margin: 0 auto;
+  width: 280px;
+  min-height: 40px;
+
+  @media screen and (min-width: $tablet) {
+    width: 264px;
+    min-height: 44px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 398px;
+    min-height: 48px;
+  }
+}
+
+.catalog__form-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: inherit;
+
+  margin-right: 16px;
+  padding: 10px 142px 10px 20px;
+  gap: 10px;
+  width: 224px;
+  height: 40px;
+
+  border: 1px solid $white;
+  border-radius: 8px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+
+  text-align: center;
+  color: $white;
+
+  cursor: pointer;
+  outline: none;
+  transition: 250ms;
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  &:hover,
+  &:focus,
+  &:not(:placeholder-shown) {
+    justify-content: center;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid $white;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 12px 138px 12px 20px;
+    width: 204px;
+    height: 44px;
+
+    &:hover,
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding: 12px 20px 12px 20px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 12px 260px 12px 24px;
+    width: 334px;
+    height: 48px;
+
+    font-size: 16px;
+    line-height: calc(19 / 16);
+
+    &:hover,
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding: 12px 24px 12px 24px;
+    }
+  }
+}
+
+.catalog__form-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+
+  cursor: pointer;
+
+  @media screen and (min-width: $tablet) {
+    width: 44px;
+    height: 44px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.catalog__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  
+  margin-top: 16px;
+
+  @media screen and (min-width: $tablet) {
+    row-gap: 28px;
+    column-gap: 16px;
+
+    margin-top: 36px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    row-gap: 32px;
+
+    margin-top: 48px;
+  }
+}
