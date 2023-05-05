@@ -4,14 +4,6 @@ body {
   color: $white;
   background-color: $background;
 
-  padding-left: 15px;
-  padding-right: 15px;
-
-  @media screen and (min-width: $tablet) {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
 } 
 
 p,
