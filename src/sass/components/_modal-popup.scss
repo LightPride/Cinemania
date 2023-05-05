@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  box-sizing: border-box;
+}
+
+.link {
+  text-decoration: none;
+}
+.list {
+  list-style: none;
+}
+
+body {  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+  background-color: #111111;  
+  color: #ffffff;  
+  line-height: 1.5;
+  padding: 30px;
+}
+
+#toggle {
+  padding: 2px 2px 0px;
+}
+
+/* body.open-modal {
+  overflow-y: hidden;
+} */
+
+.btn {  
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  padding: 12px 24px;
+  background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+  border-radius: 74px;  
+  cursor: pointer;
+  border-width: 0;  
+  margin-bottom: 20px;  
+}
+
+.btn:hover,
+.btn:focus {  
+  // border-width: 1px;
+  // border-style:  solid;
+  // border-radius: 74px;
+  // border-image: linear-gradient(45deg, #FFC226, #F84119) 1;  
+  color:#ffffff;  
+  background: transparent;
+  border-top: 1px solid #FFC226;
+  border-left: 1px solid #FFC226;
+  border-right: 1px solid #F84119;
+  border-bottom: 1px solid #F84119; 
+}
+// --PopUp modal--
+.pop-up__modal {  
+  box-sizing: border-box;
+  width: 280px;
+  height: 847px;  
+  text-align: left;
+  padding: 52px 16px;  
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);  
+  border-radius: 16px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    width: 704px;    
+    height: 488px;
+    padding: 44px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 846px;    
+    height: 598px;
+    padding: 60px;
+    border-radius: 20px;
+  }
+}
+
+.pop-up__modal-close {  
+  position: absolute;  
+  top: 20px;
+  right: 16px;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;  
+}
+
+.pop-up__close-icon {  
+  background-color: transparent;
+  fill: #ffffff;
+}  
+
+.pop-up__close-icon:hover,
+.pop-up__close-icon:focus {
+  fill: #F87719;
+}
+
+.pop-up__container {  
+  padding: 0;
+  box-sizing: border-box;  
+  width: 248px;
+
+  @media screen and (min-width: 768px) {
+    width: 616px;    
+    height: 400px;
+    display: flex;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 726px;    
+    height: 478px;
+    display: flex;
+  }
+}
+
+.pop-up__img {
+  width: 248px;
+  height: 315px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 294px;
+    height: 400px;
+    margin: 0 16px 0 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 375px;
+    height: 478px;
+    margin: 0 20px 0 0;
+  }
+ }
+
+.pop-up__container h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;  
+  margin-bottom: 29px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px; 
+    margin-bottom: 26px;
+  }
+
+  @media screen and (min-width: 768px) {    
+    margin-bottom: 28px;
+  }
+}
+
+.pop-up__blok {
+  display: flex;
+  color: #F8F8F8;
+  justify-content: space-between;
+
+}
+.pop-up__list {
+  width: 120px;;
+}
+
+.pop-up__link,
+.pop-up__link-item {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  // color: #F8F8F8;
+  // color: #111111;
+  margin-bottom: 12px;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 16px; 
+    margin-bottom: 14px;
+  }
+}
+
+.item-votes {
+  display: flex;
+}
+
+.vote, .votes {
+  background-color: #ffffff;
+  color:#111111;
+  border-radius: 15px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.pop-up__about-txt {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.66;
+  color: #F8F8F8;
+  // color: #111111;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: 768px) {        
+    margin-top: 4px;    
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 14px;
+    margin-top: 4px;    
+    margin-bottom: 24px;    
+  }
+}
+
+#mylibrary {
+  margin: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  display: none;  
+}
+
+.visual {
+  display: block;
+}
+
+.body.open-modal > .modal-window,
+.body.open-modal > .overlay {
+  display: block;
+}
+
+.light_color {
+  background-color: #ffffff;
+  color: #111111;
+}
+.light_color:hover,
+.light_color:focus {
+  color:#111111;
+}
+
+.light_fill {
+  fill: #111111;
+}
+.light_shadow {
+  box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
+}

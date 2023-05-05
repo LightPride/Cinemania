@@ -1,0 +1,18 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-close" viewBox="0 0 32 32">
+<path d="M26.667 7.303l-1.97-1.97-7.808 7.808-7.808-7.808-1.97 1.97 7.808 7.808-7.808 7.808 1.97 1.97 7.808-7.808 7.808 7.808 1.97-1.97-7.808-7.808 7.808-7.808z"></path>
+</symbol>
+<symbol id="icon-moon" viewBox="0 0 32 32">
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M2.704 16.563c0.496 6.865 6.512 12.45 13.712 12.757 5.080 0.213 9.623-2.079 12.349-5.692 1.129-1.48 0.523-2.466-1.363-2.133-0.922 0.16-1.872 0.227-2.864 0.187-6.732-0.267-12.239-5.719-12.267-12.157-0.014-1.733 0.358-3.372 1.033-4.865 0.743-1.653-0.151-2.439-1.872-1.733-5.452 2.226-9.183 7.545-8.728 13.636z"></path>
+</symbol>
+<symbol id="icon-search" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.3111" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667z"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.3111" d="M28.001 28l-5.8-5.8"></path>
+</symbol>
+<symbol id="icon-sun" viewBox="0 0 32 32">
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4615" d="M16 24.615c4.758 0 8.615-3.857 8.615-8.615s-3.857-8.615-8.615-8.615c-4.758 0-8.615 3.857-8.615 8.615s3.857 8.615 8.615 8.615z"></path>
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.6923" d="M25.49 6.51l0.176-0.176M6.334 25.666l0.176-0.176M16 2.57v-0.108M16 29.538v-0.108M2.57 16h-0.108M29.538 16h-0.108M6.51 6.51l-0.176-0.176M25.666 25.666l-0.176-0.176"></path>
+</symbol>
+</defs>
+</svg>

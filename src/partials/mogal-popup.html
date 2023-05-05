@@ -1,0 +1,43 @@
+<button class="btn" id="toggle">
+  <svg width="15" height="15" class="switch_dark">
+    <use href="./images/modal-popup/icons.svg#icon-moon"></use>
+  </svg>
+  <svg width="15" height="15" class="switch_light">
+    <use href="./images/modal-popup/icons.svg#icon-sun"></use>
+  </svg>
+</button>
+<!-- Підклвдкаа під модальне вікно -->    
+<div class ="overlay" id="overlayPopUp"></div>
+<!--PopUp modal-->
+<div class ="pop-up__modal" id="modalPopUp">
+  <button class="pop-up__modal-close" id="closeModalPopUp">
+    <svg width="18" height="18" class="pop-up__close-icon">
+      <use href="./images/modal-popup/icons.svg#icon-close"></use>
+    </svg>
+  </button>
+  <div class="pop-up__container"> 
+    <img src="./images/modal-popup/img-pop-up.png" alt="image.png" class="pop-up__img">
+    <div class="pop-card">
+      <h2>John Wick: Chapter 4</h2>
+      <div class="pop-up__blok">
+        <ul class="pop-up__list list">
+          <li class="pop-up__link link">Vote / Votes</li>
+          <li class="pop-up__link link">Popularity</li>
+          <li class="pop-up__link link">Popularity</li>
+          <li class="pop-up__link link">Genre</li>
+          <li class="pop-up__link link">ABOUT</li>
+        </ul>
+        <ul class="pop-up__list list">
+          <li class="pop-up__link-item link item-votes">
+          <div class="vote">7.3</div>&nbsp;/&nbsp;<div class="votes">1260</div></li>
+          <li class="pop-up__link-item link">100.2</li>
+          <li class="pop-up__link-item link">Popularity</li>
+          <li class="pop-up__link-item link">Action Thriller Crime</li>
+        </ul>            
+      </div>                      
+      <p class="pop-up__about-txt">John Wick (Keanu Reeves) takes on his most lethal adversaries yet in the upcoming fourth instalment of the series. With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.</p>          
+      <button class="btn" id="mylibrary">Add to my library</button>
+    </div>          
+  </div>
+</div>
+<button class="btn" id="openModalPopUp">Open modal</button>
