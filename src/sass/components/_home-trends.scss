@@ -1,0 +1,34 @@
+.wekly-trends__section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .wekly-trends__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wekly-trends__title {
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 767px) {
+    .wekly-trends__insert {
+      display: flex;
+      justify-content: center;
+    }
+    .wekly-trends__insert > div {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .wekly-trends__insert {
+      display: flex;
+      justify-content: space-between;
+    }
+    .wekly-trends__insert > div {
+      width: calc(33.33% - 20px);
+    }
+  }
