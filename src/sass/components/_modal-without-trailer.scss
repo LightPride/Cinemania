@@ -1,0 +1,131 @@
+.modal-without-trailer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 289px;
+  background-color: #111111;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+  border-radius: 16px;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media screen and (min-width: 768px) {
+  .modal-without-trailer {
+    display: flex;
+    width: 609px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-without-trailer {
+    display: flex;
+    width: 700px;
+    height: 400px;
+  }
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url(../images/trailer-modal_images/close-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__close-btn {
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/trailer-modal_images/close-icon-tablet.svg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal__close-btn {
+    top: 28px;
+    right: 28px;
+  }
+}
+
+.modal__text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  width: 214px;
+  height: 65px;
+  margin-top: 39px;
+  margin-bottom: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__text-container {
+    position: absolute;
+    z-index: 1;
+    width: 321px;
+    height: 92px;
+    margin-top: 132px;
+    margin-left: 44px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal__text-container {
+    height: 100px;
+    margin-top: 150px;
+    margin-left: 50px;
+  }
+}
+
+.modal__title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.modal__image {
+  margin-left: 61px;
+  margin-right: 60px;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__image {
+    margin-right: 10px;
+    margin-left: 303px;
+    margin-bottom: 16px;
+    margin-top: 124px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal__image {
+    margin-left: 337px;
+    margin-right: 0px;
+    margin-top: 77px;
+    margin-bottom: 5px;
+  }
+}
