@@ -5,7 +5,7 @@ const refs = {
 
 const { catalogForm, catalogGallery } = refs;
 
-catalogForm.addEventListener('submit', onCatalogFormSubmit);
+refs.catalogForm.addEventListener('submit', onCatalogFormSubmit);
 
 function onCatalogFormSubmit(e) {
   e.preventDefault();
