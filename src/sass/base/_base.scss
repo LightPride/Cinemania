@@ -1,7 +1,17 @@
 body {
   font-family: "Roboto";
+
   color: $white;
   background-color: $background;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
 } 
 
 p,
@@ -16,6 +26,7 @@ ul,
 ol {
   margin: 0px;
   padding-left: 0px;
+  list-style: none;
 }
 
 img {

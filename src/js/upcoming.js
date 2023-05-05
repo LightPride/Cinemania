@@ -1,10 +1,12 @@
+const insertionBlock = document.querySelector('.upcoming__insert');
+
 // TODO ФЕТЧ АБИ ОТРИМАТИ UPCOMING MOVIES
+
+const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
+const BASE_URL = `https://api.themoviedb.org/3/movie/upcoming`;
 
 function fetchUpcomingMovies() {
 // https://developers.themoviedb.org/3/movies/get-upcoming
-
-    const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
-    const BASE_URL = `https://api.themoviedb.org/3/movie/upcoming`;
 
     return fetch(`${BASE_URL}?api_key=${API_KEY}&language=en-US&page=1`)
     .then(movieData => {
@@ -12,37 +14,69 @@ function fetchUpcomingMovies() {
         if (!movieData.ok) {
             throw new Error(movieData.status)
           }
-        console.log(movieData);
-
         return movieData.json()
+       
       })
+}
 
+function getFetchedMovies() {
+  fetchUpcomingMovies()
+    .then(data => {
+      const returnedResult = data.results
+      // console.log(returnedResult);
+
+      if (returnedResult.length >= 1) {
+        const randomMovie = returnedResult[Math.floor(Math.random() * returnedResult.length)];
+        const createdMarkup = renderMarkup(randomMovie);
+        insertionBlock.insertAdjacentHTML('beforeend', createdMarkup);
+      }
+    })
+    .catch(error => console.log(error));
 }
 
 // TODO ВИКЛИК ФУНКЦІЇ ФЕТЧУ
-fetchUpcomingMovies()
+getFetchedMovies()
+
+function renderMarkup({ poster_path, title, overview, popularity, vote_average, vote_count, release_date, genre_ids}) {
 
 return `
-<h2 class="upcoming__title">UPCOMING THIS MONTH</h2>
-  <div class="upcoming__insert">
-    <img class="upcoming__poster" href="" alt="Movie poster"/>
-    <p class="upcoming__movie-name">TEMPORARY NAME</p>
+<img class="upcoming__poster" src=https://image.tmdb.org/t/p/w500/${poster_path} alt="Movie poster"/>
+<p class="upcoming__movie-name">${title}</p>
 
-    <div class="upcoming__infolist-text">
-      <p class="upcoming__about-item">Release date</p>
-      <p class="upcoming__about-item">Vote / Votes</p>
-      <p class="upcoming__about-item">Popularity</p>
-      <p class="upcoming__about-item">Genre</p>
-    </div>
+<div class="upcoming__infolist">
+  <div class="first-upcoming-div">
 
-    <div class="upcoming__infolist">
-      <p class="upcoming__release"></p>
-      <p class="upcoming__vote"></p>
-      <p class="upcoming__popularity"></p>
-      <p class="upcoming__genre"></p>
-    </div>
+    <ul class="rel-vote-list">
+      <li><p class="upcoming__about-item">Release date</p></li>
+      <li><p class="upcoming__about-item">Vote / Votes</p></li>
+    </ul>
+    <ul class="rel-vote-list-value" >
+      <li><p class="upcoming__release">${release_date}</p></li>
+      <li><p class="upcoming__vote"></p>
+      <span class="vote__styling">${vote_average}</span>
+       / 
+      <span class="vote__styling">${vote_count}</span>
+       </li>
+    </ul>
 
-    <p class="upcoming__about-title">ABOUT</p>
-    <p class="upcoming__about">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, est! Dolore ex mollitia ut sunt! Blanditiis quae quod id debitis maxime nulla, voluptas nostrum magni natus, eius, consectetur corporis aut.</p>
   </div>
+
+  <div class="second-upcoming-div">
+
+    <ul class="pop-gen-list">
+      <li><p class="upcoming__about-item">Popularity</p></li>
+      <li><p class="upcoming__about-item">Genre</p></li>
+    </ul>
+
+    <ul class="pop-gen-list-value">
+      <li><p class="upcoming__popularity">${popularity}</p></li>
+      <li><p class="upcoming__genre"></p>${genre_ids}</li>
+    </ul>
+
+  </div>
+</div>
+
+<p class="upcoming__about-title">ABOUT</p>
+<p class="upcoming__about">${overview}</p>
 `
+}

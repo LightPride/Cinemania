@@ -1,3 +1,8 @@
+.upcoming__section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 .upcoming__title {
     font-family: Roboto;
     font-size: 16px;
@@ -21,6 +26,7 @@
 
 .upcoming__poster {
     margin-bottom: 24px;
+    width: 100%;
 }
 
 .upcoming__movie-name{
@@ -44,24 +50,39 @@
     }
 }
 
-.upcoming__about-item, .upcoming__about-title {
+.upcoming__about-item, .upcoming__about-title,  .upcoming__popularity,
+.upcoming__genre, .upcoming__vote {
     font-family: Roboto;
     font-size: 16px;
     font-weight: 500;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
-    color: $grey;
 
 }
-.upcoming__about-item {
-    &:not(:last-child) {
-        margin-bottom: 12px;
-    }
+.upcoming__about-item, .upcoming__about-title {
+    color: $grey;
+}
+
+
+.rel-vote-list-value {
+    width: 95px;
+}
+
+.pop-gen-list-value {
+    width: 93px;
+}
+
+.upcoming__about-item, .upcoming__popularity,
+.upcoming__genre, .upcoming__vote, .upcoming__release {
+    // &:not(:last-child) {
+    //     margin-bottom: 12px;
+    // }
+    margin-bottom: 12px;
 }
 
 .upcoming__about-title {
-    margin-top: 20px;
+    margin-top: 8px;
     margin-bottom: 16px;
 }
 
@@ -79,8 +100,19 @@
     margin-bottom: 20px;
 }
 
-.upcoming__infolist-text {
-    @media screen and (min-width: $tablet) {
-        
-    }
+.first-upcoming-div, .second-upcoming-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upcoming__infolist {
+    display: block;
+}
+
+.vote__styling {
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: white;
+    color: black;
+    border-radius: 4;
 }
