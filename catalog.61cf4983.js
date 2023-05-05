@@ -1,0 +1,2 @@
+!function(){var a={catalogForm:document.querySelector("#search-form"),catalogGallery:document.querySelector(".catalog__gallery"),navigation:document.querySelectorAll(".navigation__link")},e=(a.catalogForm,a.catalogGallery,a.navigation);e[0].classList.remove("current"),e[2].classList.remove("current"),e[1].classList.add("current"),a.catalogForm.addEventListener("submit",(function(a){a.preventDefault();a.currentTarget.catalogSearch}))}();
+//# sourceMappingURL=catalog.61cf4983.js.map
