@@ -1,3 +1,70 @@
-<article class="example" id="header">
-  <!-- todo: пишіть ваш код тут :) -->
-</article>
+<header class="header">
+      <div class="container flex">
+        <!-- ------ LOGO -------- -->
+
+        <a href="" class="logo"><svg class="logo__icon" width="48" height="48">
+            <use href="./images/logo-mobile.svg#icon-cinemania"></use></svg><span class="logo-text">Cinemania</span></a>
+
+        <!-- --------- NAVIGATION ------------ -->
+
+        <nav class="navigation">
+          <ul class="navigation__list list">
+            <li class="item-1">
+              <a href="./index.html" class="navigation__link link current">HOME</a>
+            </li>
+            <li class="item-2">
+              <a href="./catalog.html" class="navigation__link link">CATALOG</a>
+            </li>
+            <li class="item-3">
+              <a href="./library.html" class="navigation__link link">MY LIBRARY</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- ------------ MENU MOBILE ------------ -->
+
+        <button
+          type="button"
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="menu-text">MENU</span>
+        </button>
+
+        <!-- --------------- COLOR MODE BUTTON --------------- -->
+
+        <button class="button toggleButton">
+          <svg class="mode__icon dark-mode__icon" width="60" height="24">
+            <use href="./images/mode-switcher.svg#icon-dark-mode"></use>
+          </svg>
+          <svg class="mode__icon light-mode__icon" width="60" height="24">
+            <use href="./images/mode-switcher.svg#icon-light-mode"></use>
+          </svg>
+        </button>
+      </div>
+
+      <!-- ----------- MOBILE MENU MODAL ------------  -->
+
+      <div class="menu-container js-menu-container" id="mobile-menu">
+        <a href="./index.html" class="logo--mobile"
+          ><svg class="logo__icon" width="48" height="48">
+            <use href="./images/logo-mobile.svg#icon-cinemania"></use></svg
+        ></a>
+        <ul class="mobile-header__list list-none">
+          <li class="mobile-header__item">
+            <a
+              href="./index.html"
+              class="mobile-header__link mobile-header__link--current"
+              >HOME</a
+            >
+          </li>
+          <li class="mobile-header__item">
+            <a href="./catalog.html" class="mobile-header__link">CATALOG</a>
+          </li>
+          <li class="mobile-header__item">
+            <a href="./library.html" class="mobile-header__link">MY LIBRARY</a>
+          </li>
+        </ul>
+      </div>
+    </header>

@@ -1,0 +1,14 @@
+
+<symbol id="icon-light-mode" viewBox="0 0 80 32">
+<path fill="#000" style="fill: var(--color12, #000)" d="M16 0h48c8.837 0 16 7.163 16 16s-7.163 16-16 16h-48c-8.837 0-16-7.163-16-16s7.163-16 16-16z"></path>
+<path fill="#fff" style="fill: var(--color15, #fff)" d="M24.469 7.531c-4.695-4.695-12.293-4.71-16.971-0.032s-4.663 12.275 0.032 16.971c4.695 4.695 12.293 4.71 16.971 0.032s4.663-12.275-0.032-16.971z"></path>
+<path fill="none" stroke="#000" style="stroke: var(--color12, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6" d="M9.098 8.766c-3.839 4.102-3.824 10.769 0.032 14.89"></path>
+<path fill="none" stroke="#fff" style="stroke: var(--color15, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M65.333 22.667c3.682 0 6.667-2.985 6.667-6.667s-2.985-6.667-6.667-6.667c-3.682 0-6.667 2.985-6.667 6.667s2.985 6.667 6.667 6.667z"></path>
+<path fill="none" stroke="#fff" style="stroke: var(--color15, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M71.876 9.457l0.121-0.121M58.669 22.664l0.121-0.121M65.333 6.741v-0.075M65.333 25.333v-0.075M56.075 16h-0.075M74.667 16h-0.075M58.791 9.457l-0.121-0.121M71.997 22.664l-0.121-0.121"></path>
+</symbol>
+<symbol id="icon-dark-mode" viewBox="0 0 80 32">
+<path fill="#000" style="fill: var(--color12, #000)" d="M16 0h48c8.837 0 16 7.163 16 16s-7.163 16-16 16h-48c-8.837 0-16-7.163-16-16s7.163-16 16-16z"></path>
+<path fill="none" stroke="#fff" style="stroke: var(--color15, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M5.368 15.699c0.322 4.462 4.233 8.093 8.913 8.292 3.302 0.139 6.255-1.352 8.027-3.7 0.734-0.962 0.34-1.603-0.886-1.386-0.6 0.104-1.217 0.147-1.861 0.121-4.376-0.173-7.955-3.717-7.973-7.902-0.009-1.126 0.233-2.192 0.671-3.163 0.483-1.074-0.098-1.586-1.217-1.126-3.544 1.447-5.969 4.904-5.673 8.864z"></path>
+<path fill="#fff" style="fill: var(--color15, #fff)" d="M55.531 7.531c4.695-4.695 12.293-4.71 16.971-0.032s4.663 12.275-0.032 16.971c-4.695 4.695-12.293 4.71-16.971 0.032s-4.663-12.275 0.032-16.971z"></path>
+<path fill="none" stroke="#000" style="stroke: var(--color12, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6" d="M70.902 8.766c3.839 4.102 3.824 10.769-0.032 14.89"></path>
+</symbol>
