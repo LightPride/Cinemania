@@ -43,6 +43,7 @@
   cursor: pointer;
   outline: none;
   transition: 250ms;
+  transition-delay: 50ms;
 
   &::placeholder {
     color: $grey;
@@ -110,16 +111,25 @@
   
   margin-top: 16px;
 
+  max-width: 280px;
+  min-height: 4204px;
+
   @media screen and (min-width: $tablet) {
     row-gap: 28px;
     column-gap: 16px;
 
     margin-top: 36px;
+
+    width: 704px;
+    min-height: 1384px;
   }
 
   @media screen and (min-width: $desktop) {
     row-gap: 32px;
 
     margin-top: 48px;
+
+    width: 1216px;
+    min-height: 2392px;
   }
 }
