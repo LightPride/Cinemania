@@ -1,12 +1,7 @@
 .header {
   background-color: #000000;
   border-bottom: 1px solid #ececec;
-  padding-left: 32px;
-  padding-right: 32px;
-  @media screen and (max-width: 480px) {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
+  
 }
 
 
@@ -57,6 +52,7 @@ span.logo-text {
   }
   @media screen and (min-width: 1200px) {
     display: flex;
+    
     & .item-1 {
       margin-right: 40px;
     }

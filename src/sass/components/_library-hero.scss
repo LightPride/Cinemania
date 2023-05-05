@@ -106,13 +106,16 @@
   }
 }
 &__text{
-  width: 249px;
+  
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
   color: $white;
+  @media screen and (max-width:767px){
+    max-width: 249px;
+  }
   @media screen and (min-width:768px){
     width: 357px;
   }

@@ -50,6 +50,7 @@ img {
 
   @media screen and (min-width: $desktop) {
     width: 1220px;
+    padding: 0 32px;
   }
 }
 
@@ -62,12 +63,10 @@ img {
 }
 
 
-.container-flex {
+.flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media screen and (max-width: 767px) {
-    justify-content: space-around;
-    
-  }
+  
+
 }
