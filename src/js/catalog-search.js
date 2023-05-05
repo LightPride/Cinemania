@@ -1,9 +1,12 @@
 const refs = {
   catalogForm: document.querySelector('#search-form'),
   catalogGallery: document.querySelector('.catalog__gallery'),
+  navigation: document.querySelectorAll('.navigation__link'),
 };
 
-const { catalogForm, catalogGallery } = refs;
+const { catalogForm, catalogGallery, navigation } = refs;
+
+changeCurrentNavigation();
 
 refs.catalogForm.addEventListener('submit', onCatalogFormSubmit);
 
@@ -26,4 +29,10 @@ function fetchCatalogSearchMovies(name) {
       return movieData.json();
     }
   );
+}
+
+function changeCurrentNavigation() {
+  navigation[0].classList.remove('current');
+  navigation[2].classList.remove('current');
+  navigation[1].classList.add('current');
 }
