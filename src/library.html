@@ -15,28 +15,15 @@
     />
     <link rel="stylesheet" href="./sass/index.scss" />
     <title>Cinemania</title>
-    <script type="module" src="./index.js"></script>
+    
   </head>
   <body>
-    <main>
-      <section>
-        <div class="container">
-          <div class="library">
-            <h1 class="library__title">Create Your <br/> Dream Cinema</h1>
-            <p class="library__text">Is a guide to designing a personalized movie theater experience with the right equipment, customized decor, and favorite films. This guide helps you bring the cinema experience into your own home with cozy seating, dim lighting, and movie theater snacks.</p>
-          </div>
-          <div class="anyMovis">
-            <h2 class="anyMovis__title">OOPS... <br>
-              We are very sorry! <br>
-              You don’t have any movies <br> at your library.</h2>
-            <div class="anyMovis__button"><button></button> </div>
-          </div>
-        </div>
-      </section>
-    </main>
     <include src="./partials/header.html"></include>
-    <include src="./partials/library-hero.html"></include>
-    <include src="./partials/library-catalog.html"></include>
+    <main>
+      <include src="./partials/library-hero.html"></include>
+      <include src="./partials/library-catalog.html"></include>
+    </main>
     <include src="./partials/footer.html"></include>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
