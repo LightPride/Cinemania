@@ -1,6 +1,8 @@
 .header {
   background-color: #000000;
   border-bottom: 1px solid #ececec;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 
@@ -8,6 +10,13 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+
+}
+
+
+
+.logo__icon {
+  display: block;
 }
 
 span.logo-text {
