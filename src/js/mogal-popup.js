@@ -1,12 +1,3 @@
-const toogle = document.getElementById('toggle');
-toogle.addEventListener('click', toogleLight);
-
-document.addEventListener('keydown', (event) => {  
-  console.log('key', event.key);
-  console.log('code', event.code);
-  console.log('event', event);
-})
-
 const refs = {  
   overlayPopUp: document.getElementById('overlayPopUp'),  
   closeModalPopUp: document.getElementById('closeModalPopUp'),
@@ -16,16 +7,19 @@ const refs = {
   closeIconPopUp: document.querySelector('.pop-up__close-icon'),
   blokPopUp: document.querySelector('.pop-up__blok'), 
   aboutTxtPopUp: document.querySelector('.pop-up__about-txt'),
-};
 
-console.log(refs.aboutTxtPopUp);
+  image: document.querySelector('.pop-up__img'),
+  titles: document.querySelector('.pop-up__title'),
+  vote: document.querySelector('.vote'),
+  votes: document.querySelector('.votes'),
+  popular: document.querySelector('.popularity'),
+  genre: document.querySelector('.genres'),
+};
 
 const classes = {
   openModal: 'open-modal',
   visual: 'visual',
 };
-
-console.log(refs.modalPopUp);
 
 refs.openModalPopUp.addEventListener('click', handlePopUpModal);
 refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
@@ -34,8 +28,7 @@ refs.overlayPopUp.addEventListener('click', handlePopUpModal);
 document.addEventListener('keydown', handlePopUpModalClose)
 
 function handlePopUpModalClose({code}) {  
-  if (code === 'Escape' && modalPopUp.classList.contains(classes.visual)) {
-    console.log('+');
+  if (code === 'Escape' && modalPopUp.classList.contains(classes.visual)) {    
     handlePopUpModal();
   }
 }
@@ -47,11 +40,14 @@ function handlePopUpModal() {
   console.log(modalPopUp);
 };
 
+// ===== Перемикач теми =====
+const toogle = document.getElementById('toggle');
+toogle.addEventListener('click', toogleLight);
 
 function toogleLight() {   
   if (!refs.modalPopUp.classList.contains('light_shadow')) {
   console.log(refs.modalPopUp.classList.contains('light_shadow'));  
-  refs.modalPopUp.classList.add('light_shadow');  
+  refs.modalPopUp.classList.add('light_shadow', 'light_color');  
   refs.btnPopUp.classList.add('light_color');  
   refs.blokPopUp.classList.add('light_color');  
   refs.closeIconPopUp.classList.add('light_fill');   
@@ -59,7 +55,7 @@ function toogleLight() {
   document.body.classList.add('light_color');
  } else {
   console.log(refs.modalPopUp.classList.contains('light_shadow'));  
-  refs.modalPopUp.classList.remove('light_shadow');  
+  refs.modalPopUp.classList.remove('light_shadow', 'light_color');  
   refs.btnPopUp.classList.remove('light_color');  
   refs.blokPopUp.classList.remove('light_color');  
   refs.closeIconPopUp.classList.remove('light_fill');   
@@ -68,6 +64,32 @@ function toogleLight() {
  }
 };
 
-// fetchUpcomingMovies();
+// POPUP MOVIES
+const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
+const POPUP_URL = `https://api.themoviedb.org/3/movie/`;
+const POPUP_ID = 1008005;
+// 502356 1760 840326 1008005
 
-// console.dir(fetchUpcomingMovies());
+function fetchPopUpMovies() {
+  return fetch(`${POPUP_URL}${POPUP_ID}?api_key=${API_KEY}`)
+  .then(data => {    
+    return data.json();      
+  })
+}
+
+function getPopUpMovies() {
+  fetchPopUpMovies()
+    .then(({ poster_path, title, overview, popularity, vote_average, vote_count, tagline, genres }) => {
+      console.log(genres)           
+      refs.image.src = `https://image.tmdb.org/t/p/w500/${poster_path}`;      
+      refs.titles.textContent = title;            
+      refs.vote.textContent = vote_average;         
+      refs.votes.textContent = vote_count;      
+      refs.popular.textContent = popularity;      
+      refs.genre.textContent = tagline;
+      refs.aboutTxtPopUp.textContent = overview;      
+    })
+    .catch(error => console.log(error));
+}
+
+getPopUpMovies();

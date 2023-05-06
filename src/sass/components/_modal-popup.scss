@@ -12,6 +12,18 @@
   list-style: none;
 }
 
+body {  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+  background-color: $background;  
+  color: $white;  
+  line-height: 1.5;
+  padding: 30px;
+}
+
 #toggle {
   padding: 2px 2px 0px;
 }
@@ -38,35 +50,36 @@
   // border-style:  solid;
   // border-radius: 74px;
   // border-image: linear-gradient(45deg, #FFC226, #F84119) 1;  
-  color:#ffffff;  
+  color:$white;  
   background: transparent;
   border-top: 1px solid #FFC226;
   border-left: 1px solid #FFC226;
-  border-right: 1px solid #F84119;
-  border-bottom: 1px solid #F84119; 
+  border-right: 1px solid $orange;
+  border-bottom: 1px solid $orange; 
 }
 // --PopUp modal--
-.pop-up__modal {  
+.pop-up__modal { 
   box-sizing: border-box;
   width: 280px;
-  height: 847px;  
+  height: auto;  
   text-align: left;
   padding: 52px 16px;  
   box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);  
   border-radius: 16px;
-  position: relative;
+  background: $background;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     width: 704px;    
     height: 488px;
     padding: 44px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desktop) {
     width: 846px;    
     height: 598px;
     padding: 60px;
@@ -89,12 +102,12 @@
 
 .pop-up__close-icon {  
   background-color: transparent;
-  fill: #ffffff;
+  fill: $white;
 }  
 
 .pop-up__close-icon:hover,
 .pop-up__close-icon:focus {
-  fill: #F87719;
+  fill: $orange;
 }
 
 .pop-up__container {  
@@ -102,13 +115,13 @@
   box-sizing: border-box;  
   width: 248px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     width: 616px;    
     height: 400px;
     display: flex;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desktop) {
     width: 726px;    
     height: 478px;
     display: flex;
@@ -120,13 +133,13 @@
   height: 315px;
   margin-bottom: 20px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     width: 294px;
     height: 400px;
     margin: 0 16px 0 0;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desktop) {
     width: 375px;
     height: 478px;
     margin: 0 20px 0 0;
@@ -140,19 +153,19 @@
   line-height: 1.15;  
   margin-bottom: 29px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     font-size: 24px; 
     margin-bottom: 26px;
   }
 
-  @media screen and (min-width: 768px) {    
+  @media screen and (min-width: $desktop) {    
     margin-bottom: 28px;
   }
 }
 
 .pop-up__blok {
   display: flex;
-  color: #F8F8F8;
+  color: $secondary-text;
   justify-content: space-between;
 
 }
@@ -167,11 +180,11 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
-  // color: #F8F8F8;
-  // color: #111111;
+  // color: $secondary-text;
+  // color: $background;
   margin-bottom: 12px;
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desktop) {
     font-size: 16px; 
     margin-bottom: 14px;
   }
@@ -182,8 +195,8 @@
 }
 
 .vote, .votes {
-  background-color: #ffffff;
-  color:#111111;
+  background-color: $white;
+  color:$background;
   border-radius: 15px;
   padding-left: 6px;
   padding-right: 6px;
@@ -193,16 +206,16 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.66;
-  color: #F8F8F8;
-  // color: #111111;
+  color: $secondary-text;
+  // color: $background;
   margin-bottom: 16px;
 
-  @media screen and (min-width: 768px) {        
+  @media screen and (min-width: $tablet) {        
     margin-top: 4px;    
     margin-bottom: 24px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desktop) {
     font-size: 14px;
     margin-top: 4px;    
     margin-bottom: 24px;    
@@ -233,16 +246,16 @@
 }
 
 .light_color {
-  background-color: #ffffff;
-  color: #111111;
+  background-color: $white;
+  color: $background;
 }
 .light_color:hover,
 .light_color:focus {
-  color:#111111;
+  color:$background;
 }
 
 .light_fill {
-  fill: #111111;
+  fill: $background;
 }
 .light_shadow {
   box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
