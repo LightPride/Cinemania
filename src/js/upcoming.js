@@ -40,7 +40,7 @@ async function getFetchedMovies() {
   try {
     const data = await fetchUpcomingMovies();
     const returnedResult = data.results;
-    console.log(returnedResult);
+    // console.log(returnedResult);
 
     if (returnedResult.length >= 1) {
       const randomMovie = returnedResult[Math.floor(Math.random() * returnedResult.length)];
@@ -115,13 +115,14 @@ async function renderMarkup({ poster_path, backdrop_path, title, overview, popul
   return `
     <div class="desktop-positioning">
       <div class="desktop-left">
-      <img class="upcoming__poster"
-      src="https://image.tmdb.org/t/p/original/${poster_path}"
-      srcset="https://image.tmdb.org/t/p/original/${backdrop_path} 768w,
-              https://image.tmdb.org/t/p/original/${poster_path} 480w"
+      
+      <picture class='.upcoming__poster'>
+      <source srcset="https://image.tmdb.org/t/p/original/${backdrop_path}" media="(min-width: 1220px)" class='upcoming__poster-desktop' />
+      <source srcset="https://image.tmdb.org/t/p/original/${backdrop_path}" media="(min-width: 768px)" class='upcoming__poster-tablet' />
+      <source srcset="https://image.tmdb.org/t/p/original/${poster_path}" media="(min-width: 320px)" />
+      <img src="https://image.tmdb.org/t/p/original/${poster_path}" alt="Movie Poster" style='width: 805px'/>
+    </picture>
 
-      alt="Movie Poster">
- 
       </div>
       <div class="desktop-right"> 
         <p class="upcoming__movie-name">${title}</p>
