@@ -72,19 +72,19 @@
 
 .pop-up__modal-close {  
   position: absolute;  
-  top: 20px;
-  right: 16px;
+  top: 40px;
+  right: 40px;
   margin: 0;
   width: 24px;
   height: 24px;
-  padding: 3px;
+  border: none;
   outline: none;
   cursor: pointer;
   background-color: transparent;  
 }
 
 .pop-up__close-icon {  
-  background-color: transparent;
+  
   fill: $white;
 }  
 
