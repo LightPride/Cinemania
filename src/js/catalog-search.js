@@ -111,7 +111,6 @@ function changeCurrentNavigation() {
 //   console.log(data.results);
 //   const movie = data.results[0];
 //   const movieId = movie.id;
-
 // getMoviesById(movieId).then(movie => {
 //   const title = movie.title;
 //   const posterPath = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
