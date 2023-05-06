@@ -63,9 +63,52 @@ img {
   }
 }
 
-
 .flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+// ==== BUTTON ====
+.linear_btn {  
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  padding: 12px 24px;
+  background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+  border-radius: 74px;  
+  cursor: pointer;
+  border-width: 0;  
+  margin-bottom: 20px;  
+}
+
+.linear_btn:hover,
+.linear_.btn:focus {  
+  // border-width: 1px;
+  // border-style:  solid;
+  // border-radius: 74px;
+  // border-image: linear-gradient(45deg, #FFC226, #F84119) 1;  
+  color:$white;  
+  background: transparent;
+  border-top: 1px solid #FFC226;
+  border-left: 1px solid #FFC226;
+  border-right: 1px solid $orange;
+  border-bottom: 1px solid $orange; 
+}
+
+// ==== Теиа DARK/LIGHT ====
+.light_color {
+  background-color: $white;
+  color: $background;
+}
+.light_color:hover,
+.light_color:focus {
+  color:$background;
+}
+
+.light_fill {
+  fill: $background;
+}
+.light_shadow {
+  box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22)
 }
