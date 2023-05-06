@@ -1,3 +1,16 @@
+.footer {
+  padding-bottom: 28px;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 40px;
+    padding-top: 33px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 80px;
+    padding-top: 60px;
+  }
+}
+
+
 .footer__link {
   color: white;
 }
@@ -5,4 +18,13 @@
 .footer-flex {
   display: flex;
   justify-content: center;
+  
+}
+
+.footer-info{
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 }
