@@ -6,19 +6,21 @@
 
   background-color:black;
   width: 100%;
-  background-image:linear-gradient(
-    to right,
-    rgba(14, 14, 14, 0),
-    rgba(14, 14, 14, 0)), 
+  background-image:llinear-gradient(
+    87.8deg,
+    #0e0e0e 15.61%,
+    rgba(14, 14, 14, 0) 60.39%
+  ),
   url('./../images/library-dek1x.jpg');
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
 
   background-image: linear-gradient(
-    to right,
-    rgba(14, 14, 14, 0),
-    rgba(14, 14, 14, 0)), 
+    87.8deg,
+    #0e0e0e 15.61%,
+    rgba(14, 14, 14, 0) 60.39%
+  ), 
     url('./../images/library-mob1x.jpg');
   background-repeat: no-repeat;
   background-position: right;
@@ -27,20 +29,22 @@
     (min-resolution:192dpi),
     (min-resolution:2dppx){
     background-image:linear-gradient(
-      to right,
-      rgba(14, 14, 14, 0),
-      rgba(14, 14, 14, 0)), 
+      87.8deg,
+      #0e0e0e 15.61%,
+      rgba(14, 14, 14, 0) 60.39%
+    ),
       url('./../images/library-mob2x.jpg') ;
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
   }
 
-  @media screen and (min-width:768px) and (max-width:1219px){
+  @media screen and (min-width:$tablet) and (max-width:$pre-desktop){
     background-image:linear-gradient(
-      to right,
-      rgba(14, 14, 14, 0),
-      rgba(14, 14, 14, 0)), 
+      87.8deg,
+      #0e0e0e 15.61%,
+      rgba(14, 14, 14, 0) 60.39%
+    ),
       url('./../images/library-tab1x.jpg');
     background-repeat: no-repeat;
     background-position: right;
@@ -52,9 +56,10 @@
     (min-resolution:192dpi),
     (min-resolution:2dppx){
     background-image:linear-gradient(
-      to right,
-      rgba(14, 14, 14, 0),
-      rgba(14, 14, 14, 0)), 
+      87.8deg,
+      #0e0e0e 15.61%,
+      rgba(14, 14, 14, 0) 60.39%
+    ),
       url('./../images/library-tab2x.jpg');
     background-repeat: no-repeat;
     background-position: right;
@@ -62,13 +67,14 @@
     }
   }
   
-  @media screen and (min-width:1220px){
+  @media screen and (min-width:$desktop){
     padding: 169px 0 249px 117px ;
     max-width: 1600px;
     background-image:linear-gradient(
-      to right,
-      rgba(14, 14, 14, 0),
-      rgba(14, 14, 14, 0)), 
+      87.8deg,
+      #0e0e0e 15.61%,
+      rgba(14, 14, 14, 0) 60.39%
+    ),
       url('./../images/library-dek1x.jpg');
     background-repeat: no-repeat;
     background-position: right;
@@ -78,9 +84,10 @@
     (min-resolution:192dpi),
     (min-resolution:2dppx){
     background-image:linear-gradient(
-      to right,
-      rgba(14, 14, 14, 0),
-      rgba(14, 14, 14, 0)), 
+      87.8deg,
+      #0e0e0e 15.61%,
+      rgba(14, 14, 14, 0) 60.39%
+    ),
       url('./../images/library-dek2x.jpg');
     background-repeat: no-repeat;
     background-position: right;
@@ -95,11 +102,11 @@
   font-size: 32px;
   line-height: 1.18;
   color: $white;
-  @media screen and (min-width:768px){
+  @media screen and (min-width:$tablet){
     font-size: 44px;
     line-height: 1.18;
   }
-  @media screen and (min-width:1220px){
+  @media screen and (min-width:$desktop){
     font-size: 64px;
     line-height: 1.17;
     margin-bottom: 16px;
@@ -113,45 +120,20 @@
   font-size: 14px;
   line-height: 1.14;
   color: $white;
-  @media screen and (max-width:767px){
+  @media screen and (max-width:$pre-tablet){
     max-width: 249px;
   }
-  @media screen and (min-width:768px){
+  @media screen and (min-width:$tablet){
     width: 357px;
   }
-  @media screen and (min-width:1220px){
+  @media screen and (min-width:$desktop){
     width: 464px;
     font-size: 16px;
     line-height: 1.18;
   }
 }
-}
-.anyMovis{
-  padding: 44px 0 42px 0 ;
-  @media screen and (min-width:768px){
-    padding: 80px 0 60px 0 ; 
-  }
-  @media screen and (min-width:1220px){
-    padding: 160px 0 108px 0 ; 
-  }
-&__title{
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.4;
-  color: $white;
-  text-align: center;
-  @media screen and (min-width:768px){
-    font-size: 24px;
-    line-height: 1.33;
-  }
-  @media screen and (min-width:1220px){
-    font-size: 32px;
-    line-height: 1.12;
-  }
-}
-&__button{
-text-align: center;
+&__bg{
+  background-color: $background;
+  background-size: cover ;
 }
 }
