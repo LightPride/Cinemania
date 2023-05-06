@@ -1,2 +1,0 @@
-const a={catalogForm:document.querySelector("#search-form"),catalogGallery:document.querySelector(".catalog__gallery"),navigation:document.querySelectorAll(".navigation__link")},{catalogForm:e,catalogGallery:t,navigation:r}=a;r[0].classList.remove("current"),r[2].classList.remove("current"),r[1].classList.add("current"),a.catalogForm.addEventListener("submit",(function(a){a.preventDefault();const{catalogSearch:e}=a.currentTarget}));
-//# sourceMappingURL=catalog.97d24fa1.js.map
