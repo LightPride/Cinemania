@@ -19,23 +19,6 @@ function fetchUpcomingMovies() {
       })
 }
 
-// function getFetchedMovies() {
-//   fetchUpcomingMovies()
-//     .then(data => {
-//       const returnedResult = data.results
-//       console.log(returnedResult);
-
-//       if (returnedResult.length >= 1) {
-//         const randomMovie = returnedResult[Math.floor(Math.random() * returnedResult.length)];
-//         const createdMarkup = renderMarkup(randomMovie);
-//         insertionBlock.insertAdjacentHTML('beforeend', createdMarkup);
-//       }
-//     })
-//     .catch(error => console.log(error));
-// }
-
-// TODO ВИКЛИК ФУНКЦІЇ ФЕТЧУ
-
 async function getFetchedMovies() {
   try {
     const data = await fetchUpcomingMovies();
@@ -54,60 +37,6 @@ async function getFetchedMovies() {
 }
 
 getFetchedMovies()
-
-// function renderMarkup({ poster_path, title, overview, popularity, vote_average, vote_count, release_date, genre_ids}) {
-
-// return `
-// <div class="desktop-positioning">
-// <div class="desktop-left">
-//   <img class="upcoming__poster"
-//      src="https://image.tmdb.org/t/p/w500/${poster_path}"
-//      alt="Movie Poster">
-// </div>
-// <div class="desktop-right"> 
-//   <p class="upcoming__movie-name">${title}</p>
-
-// <div class="upcoming__infolist">
-//   <div class="first-upcoming-div">
-
-//     <ul class="rel-vote-list">
-//       <li><p class="upcoming__about-item">Release date</p></li>
-//       <li><p class="upcoming__about-item">Vote / Votes</p></li>
-//     </ul>
-//     <ul class="rel-vote-list-value" >
-//       <li><p class="upcoming__release">${release_date}</p></li>
-//       <li><p class="upcoming__vote"></p>
-//       <span class="vote__styling">${vote_average}</span>
-//        / 
-//       <span class="vote__styling">${vote_count}</span>
-//        </li>
-//     </ul>
-
-//   </div>
-
-//   <div class="second-upcoming-div">
-
-//     <ul class="pop-gen-list">
-//       <li><p class="upcoming__about-item">Popularity</p></li>
-//       <li><p class="upcoming__about-item">Genre</p></li>
-//     </ul>
-
-//     <ul class="pop-gen-list-value">
-//       <li><p class="upcoming__popularity">${popularity}</p></li>
-//       <li><p class="upcoming__genre"></p>${getGenresById(genre_ids)}</li>
-//     </ul>
-
-//   </div>
-// </div>
-
-// <p class="upcoming__about-title">ABOUT</p>
-// <p class="upcoming__about">${overview}</p>
-
-// <button type="button" class="upcoming__btn">Remind me</button>
-// </div>
-// </div>
-// `
-// }
 
 async function renderMarkup({ poster_path, backdrop_path, title, overview, popularity, vote_average, vote_count, release_date, genre_ids}) {
   const genreNames = await getGenresById(genre_ids);
