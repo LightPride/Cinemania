@@ -1,6 +1,6 @@
 .header {
   background-color: #000000;
-  border-bottom: 1px solid #ececec;
+  
   
 }
 
@@ -195,4 +195,19 @@ span.logo-text {
   z-index: 1;
   width: 60px;
   height: 24px;
+}
+
+.expansion-div {
+ 
+ @media screen and (max-width: $pre-tablet) {
+    
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 90px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-left: 110px;
+  }
 }
