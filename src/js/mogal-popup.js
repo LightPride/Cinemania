@@ -1,11 +1,11 @@
-const refs = {  
-  overlayPopUp: document.getElementById('overlayPopUp'),  
+const refs = {
+  overlayPopUp: document.getElementById('overlayPopUp'),
   closeModalPopUp: document.getElementById('closeModalPopUp'),
   openModalPopUp: document.getElementById('openModalPopUp'),
   modalPopUp: document.getElementById('modalPopUp'),
   btnPopUp: document.getElementById('mylibrary'),
   closeIconPopUp: document.querySelector('.pop-up__close-icon'),
-  blokPopUp: document.querySelector('.pop-up__blok'), 
+  blokPopUp: document.querySelector('.pop-up__blok'),
   aboutTxtPopUp: document.querySelector('.pop-up__about-txt'),
 
   image: document.querySelector('.pop-up__img'),
@@ -14,7 +14,12 @@ const refs = {
   votes: document.querySelector('.votes'),
   popular: document.querySelector('.popularity'),
   genre: document.querySelector('.genres'),
+  currentNavigation: document.querySelectorAll('.navigation__link'),
 };
+
+console.log(refs.currentNavigation)
+
+changeCurrentNavigation();
 
 const classes = {
   openModal: 'open-modal',
@@ -81,6 +86,7 @@ function fetchPopUpMovies() {
   })
 }
 
+
 async function getPopUpMovies() {
   try {
     const { poster_path, title, overview, popularity, vote_average, vote_count, tagline, genres } = await fetchPopUpMovies();    
@@ -95,4 +101,28 @@ async function getPopUpMovies() {
   } catch (error) {
     console.log(error);
   }
+
+function getPopUpMovies() {
+  fetchPopUpMovies()
+    .then(({ poster_path, title, overview, popularity, vote_average, vote_count, tagline, genres }) => {
+      console.log(genres)           
+      refs.image.src = `https://image.tmdb.org/t/p/w500/${poster_path}`;      
+      refs.titles.textContent = title;            
+      refs.vote.textContent = vote_average;         
+      refs.votes.textContent = vote_count;      
+      refs.popular.textContent = popularity;      
+      refs.genre.textContent = tagline;
+      refs.aboutTxtPopUp.textContent = overview;      
+    })
+    .catch(error => console.log(error));
+}
+
+getPopUpMovies();
+
+
+function changeCurrentNavigation() {
+  refs.currentNavigation[0].classList.remove('current');
+  refs.currentNavigation[1].classList.remove('current');
+  refs.currentNavigation[2].classList.add('current');
+
 }

@@ -1,18 +1,23 @@
-const container = document.querySelector('.wekly-trends__insert');
+const container = document.querySelector('.weekly-trends__insert');
+
+
+const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
+const BASE_URL = 'https://api.themoviedb.org/3/trending/movie/week';
 
 function fetchTrendsMovies() {
-    const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
-    const BASE_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&language=en-US&page=1`;
+    //developers.themoviedb.org/3/trending/get-trending
+    return fetch(`${BASE_URL}?api_key=${API_KEY}`)
+        .then(movieData => {
 
-    return fetch(BASE_URL)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(response.status);
+            if (!movieData.ok) {
+                throw new Error(movieData.status)
             }
+            return movieData.json()
 
-            return response.json();
-        });
+        })
 }
+fetchTrendsMovies()
+
 
 function renderMovies(movies, count) {
     container.innerHTML = '';
@@ -37,6 +42,7 @@ function renderMovies(movies, count) {
 function getFetchedMovies() {
     fetchTrendsMovies().then(data => {
         const movies = data.results;
+        console.log(movies);
         let count;
 
         if (window.matchMedia('(max-width: 767px)').matches) {
@@ -58,3 +64,4 @@ getFetchedMovies();
 
 // Listen to resize events and update the rendered movies
 window.addEventListener('resize', getFetchedMovies);
+

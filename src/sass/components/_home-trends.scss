@@ -1,34 +1,81 @@
 .wekly-trends__section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+  padding-top: 40px;
+  padding-bottom: 40px;
 
-  .wekly-trends__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  position: relative;
+}
 
-  .wekly-trends__title {
-    margin-right: auto;
-  }
+.wekly-trends__title {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 24px;
 
-  @media screen and (max-width: 767px) {
-    .wekly-trends__insert {
-      display: flex;
-      justify-content: center;
-    }
-    .wekly-trends__insert > div {
-      width: 100%;
-    }
-  }
 
-  @media screen and (min-width: 768px) {
-    .wekly-trends__insert {
-      display: flex;
-      justify-content: space-between;
-    }
-    .wekly-trends__insert > div {
-      width: calc(33.33% - 20px);
-    }
-  }
+@media screen and (min-width: $tablet) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    
+@media screen and (min-width: $desktop) {
+        font-size: 28px;
+        line-height: 33px;
+        margin-bottom: 28px;
+      }
+}
+
+
+.weekly-trends__insert {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.weekly-trends__insert li {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.weekly-trends__insert h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.weekly-trends__insert img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.weekly-trends__insert span {
+  // font-size: 14px;
+  // color: #999;
+}
+
+
+.trends__btn {
+  font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $orange;
+    background-color: $background;
+    position: absolute;
+    top: 40;
+    right: 0;
+
+
+    @media screen and (min-width: $tablet) {
+          font-size: 24px;
+          line-height: 28px;
+      }
+    
+    @media screen and (min-width: $desktop) {
+        font-size: 28px;
+          line-height: 33px;
+      }
+}

@@ -26,7 +26,35 @@
 
 .upcoming__poster {
     margin-bottom: 24px;
-    width: 100%;
+    width: 280px;
+    height: 402px;
+    background-size: contain;
+    display: block;
+
+    @media screen and (min-width: $tablet) {
+        width: 704px;
+        height: 400px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 805px;
+        height: 458px;
+    }
+
+}
+
+.upcoming__poster-tablet {
+    @media screen and (min-width: $tablet) {
+        width: 704px;
+        height: 400px;
+    }
+}
+
+.upcoming__poster-desktop {
+    @media screen and (min-width: $desktop) {
+        width: 805px;
+        height: 458px;
+    }
 }
 
 .upcoming__movie-name{
@@ -115,4 +143,18 @@
     background-color: white;
     color: black;
     border-radius: 4;
+}
+
+.desktop-positioning {
+    width: 100%;
+    @media screen and (min-width: $desktop) {
+        display: flex;
+      }
+}
+.desktop-right {
+    width: 100%;
+    @media screen and (min-width: $desktop) {
+        margin-left: 16px;
+        width: 390px;
+      }
 }
