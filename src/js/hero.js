@@ -44,10 +44,11 @@ function fetchMovieOfTheDay() {
   }
   
   function makeMarkup(film) {
-    heroContainer.innerHTML = `<h2 class="hero-film_title">${film.title}</h2>
+    heroContainer.innerHTML = `<div class="hero-film_box"><h2 class="hero-film_title">${film.title}</h2>
     <p class="hero-film_rating">${film.vote_average}</p>
     <p class="hero-film_descr">${film.overview}</p>
-    <button class="hero-film_btn btn">Watch trailer</button>`
+    <button class="hero-film_btn btn">Watch trailer</button></div>
+    <div class="hero-film_background"></div>`;
 
     // Викликаємо функцію при завантаженні сторінки та при зміні ширини вікна браузера
     window.addEventListener('load', setHeroBackground(film));
@@ -62,8 +63,9 @@ function fetchMovieOfTheDay() {
     if (windowWidth <= 767) {
       heroFilm.style.backgroundImage = `linear-gradient(87.8deg, #0e0e0e 15.61%, rgba(14, 14, 14, 0) 60.39%), url('${IMG_URL}${film.backdrop_path}')`;
     } else if(windowWidth <= 1279) {
-      heroFilm.style.backgroundImage = `url('../images/hero/black-bg_md.png'), url('${IMG_URL}${film.backdrop_path}')`;
+      heroFilm.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
     } else if(windowWidth >= 1280) {
-      heroFilm.style.backgroundImage = `url('../images/hero/black-bg_lg.png'), url('${IMG_URL}${film.backdrop_path}')`;
+      heroFilm.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
+      
     }
   }

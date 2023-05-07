@@ -1,10 +1,10 @@
 // TODO: general styles
 .hero {
   margin-top: -1px;
-
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: right;
   min-height: 380px;
 
   // * tablet screen
@@ -73,8 +73,10 @@
 
   // * desktop screen
   @media screen and (min-width: $desktop) {
-    background-image: url('../images/hero/black-bg_lg.png'),
+    background-image: 
       url('../images/hero/bg_lg@1x.png');
+      
+      
     // background-image: url('../images/hero/bg_lg@1x.png');
 
     // * desktop retina screen
@@ -204,4 +206,27 @@
     font-size: 16px;
     line-height: calc(19 / 16);
   }
-} 
+}
+
+
+
+
+.hero-film_background {
+  background-image: url('../images/hero/black-bg_lg.png');
+  z-index: 1;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50;
+  background-repeat: no-repeat;
+  
+  
+}
+
+.hero-film_box {
+  position: relative;
+  z-index: 2;
+  padding-left: 32px;
+}
