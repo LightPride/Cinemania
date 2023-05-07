@@ -65,16 +65,19 @@
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 20px;
+    margin-top: 24px;
 
     @media screen and (min-width: $tablet) {
         font-size: 28px;
         line-height: 33px;
         margin-bottom: 24px;
+        margin-top: 32px;
     }
 
     @media screen and (min-width: $desktop) {
         font-size: 32px;
         line-height: 38px;
+        margin-top: 0px;
     }
 }
 
@@ -123,12 +126,17 @@
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 20px;
+
+    @media screen and (min-width: $desktop) {
+        width: 390px;
+        // зменшую розмір тексту, адже через те що повертається великий опис, він вилазить 
+        // за кордон картинки
+        font-size: 13px;
+    }
 }
 
 .first-upcoming-div, .second-upcoming-div {
     display: flex;
-
-    // justify-content: space-between;
 }
 .first-upcoming-div {
     @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
