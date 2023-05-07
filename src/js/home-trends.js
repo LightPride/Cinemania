@@ -15,15 +15,17 @@ async function fetchTrendsMovies() {
     }
 }
 
-
 function getFetchedMovies() {
-    fetchTrendsMovies().then(movies => {
+    fetchTrendsMovies().then((movies) => {
         let count;
 
         if (window.matchMedia('(max-width: 767px)').matches) {
             // mobile
             count = 1;
         } else if (window.matchMedia('(max-width: 1023px)').matches) {
+            // tablet
+            count = 3;
+        } else {
             // desktop
             count = 3;
         }
@@ -32,15 +34,21 @@ function getFetchedMovies() {
     }).catch(error => console.log(error));
 }
 
-
 getFetchedMovies();
 
 async function renderMovies(movies, count) {
     const container = document.getElementById('movies-container');
     container.innerHTML = '';
+    const row = document.createElement('div');
+    row.classList.add('row');
+    container.appendChild(row);
+
+    const colWidthClass = `col-md-${Math.floor(12 / count)}`;
 
     movies.slice(0, count).forEach(async movie => {
         const genres = await getGenresById(movie.genre_ids);
+        const col = document.createElement('div');
+        col.classList.add('col-12', colWidthClass);
         const li = document.createElement('li');
         const movieInfo = document.createElement('div');
         const title = document.createElement('h3');
@@ -63,10 +71,10 @@ async function renderMovies(movies, count) {
         li.appendChild(img);
         li.appendChild(movieInfo);
         li.appendChild(rating);
-        container.appendChild(li);
+        col.appendChild(li);
+        row.appendChild(col);
     });
 }
-
 
 async function getGenresById(genreIds) {
     const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
@@ -86,8 +94,3 @@ async function getGenresById(genreIds) {
 window.addEventListener('resize', () => {
     getFetchedMovies();
 });
-
-
-
-
-
