@@ -95,7 +95,5 @@ function createGallery(movies) {
 }
 
 function changeCurrentNavigation() {
-  navigation[0].classList.remove('current');
-  navigation[2].classList.remove('current');
   navigation[1].classList.add('current');
 }
