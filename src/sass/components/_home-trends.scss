@@ -33,6 +33,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px;
+  list-style: none;
 }
 
 .weekly-trends__insert li {
@@ -63,7 +64,6 @@
     line-height: 19px;
     color: $orange;
     background-color: $background;
-     
     position: absolute;
     top: 40;
     right: 0;
