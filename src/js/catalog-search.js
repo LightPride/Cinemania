@@ -13,6 +13,7 @@ refs.catalogForm.addEventListener('submit', onCatalogFormSubmit);
 function onCatalogFormSubmit(e) {
   e.preventDefault();
   inputValue = '';
+  page = 1;
 
   const { catalogSearch } = e.currentTarget;
 
@@ -23,21 +24,24 @@ function onCatalogFormSubmit(e) {
   }
 
   fetchMovieGenres().then(genres => {
-    fetchCatalogSearchMovies(inputValue).then(data => {
+    fetchCatalogSearchMovies(inputValue, page).then(data => {
       const movies = data.results.slice(0, 10);
-      movies.map(movie => {
+
+      const cardsData = movies.map(movie => {
         const title = movie.title;
         const posterPath = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
         const releaseYear = movie.release_date.substring(0, 4);
         const movieId = movie.id;
         const rating = movie.vote_average;
-        const movieGenres = genres.genres.filter(genre => {
-          if (movie.genre_ids.includes(genre.id)) {
-            return genre.name;
-          }
-        });
+        const movieGenres = genres.genres
+          .filter(genre => {
+            if (movie.genre_ids.includes(genre.id)) {
+              return genre;
+            }
+          })
+          .map(genre => genre.name);
 
-        const cardsData = {
+        return {
           title,
           posterPath,
           movieGenres,
@@ -45,19 +49,19 @@ function onCatalogFormSubmit(e) {
           rating,
           movieId,
         };
-
-        console.log(cardsData);
       });
+
+      catalogGallery.innerHTML = createGallery(cardsData);
     });
   });
 }
 
-function fetchCatalogSearchMovies(name) {
+function fetchCatalogSearchMovies(name, page) {
   const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
   const BASE_URL = 'https://api.themoviedb.org/3/search/movie';
 
   return fetch(
-    `${BASE_URL}?api_key=${API_KEY}&language=en-US&per_page=10&page=1&query=${name}`
+    `${BASE_URL}?api_key=${API_KEY}&language=en-US&page=${page}&query=${name}`
   ).then(movieData => {
     if (!movieData.ok) {
       throw new Error(movieData.status);
@@ -83,8 +87,20 @@ function fetchMovieGenres() {
 function createGallery(movies) {
   const generatedHtml = movies
     .map(({ title, posterPath, movieGenres, releaseYear, rating, movieId }) => {
+      const genres = movieGenres[0];
+
       const htmlPart = `
-        // 
+        <div class="movie__card" id="${movieId}">
+        <div class="movie__card-poster" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0), rgba(0,0,0,1)),
+  url(${posterPath});"></div>
+
+        <div class="movie__card-info">
+          <h3>${title}</h3>
+          <p><span>${genres}</span> | <span>${releaseYear}</span></p>
+        </div>
+
+        <div class="movie__card-rating">${rating}</div>
+      </div> 
         `;
 
       return htmlPart;
