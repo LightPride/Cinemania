@@ -30,7 +30,7 @@
 .footer__modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 999;
   left: 0;
   top: 0;
   width: 100%;
@@ -40,17 +40,19 @@
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: $grey;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  border: 1px solid $orange;
+  width: 60%;
+  border-radius: 4px;
 }
 
 .modal-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .modal-list li {
