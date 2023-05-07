@@ -43,6 +43,20 @@
 
 }
 
+.upcoming__poster-tablet {
+    @media screen and (min-width: $tablet) {
+        width: 704px;
+        height: 400px;
+    }
+}
+
+.upcoming__poster-desktop {
+    @media screen and (min-width: $desktop) {
+        width: 805px;
+        height: 458px;
+    }
+}
+
 .upcoming__movie-name{
     font-family: Roboto;
     font-size: 20px;

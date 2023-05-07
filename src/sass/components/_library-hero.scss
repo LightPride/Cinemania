@@ -2,7 +2,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 40px 0 144px 20px ;
-  text-align: left;
+  
 
   background-color:black;
   width: 100%;
@@ -68,7 +68,7 @@
   }
   
   @media screen and (min-width:$desktop){
-    padding: 169px 0 249px 117px ;
+    padding: 169px 0px 249px 157px ;
     max-width: 1600px;
     background-image:linear-gradient(
       87.8deg,
@@ -113,7 +113,7 @@
   }
 }
 &__text{
-  
+
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;

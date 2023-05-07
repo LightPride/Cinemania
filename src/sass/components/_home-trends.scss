@@ -28,13 +28,45 @@
         margin-bottom: 28px;
       }
 }
+
+
+
+.weekly-trends__insert {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.weekly-trends__insert li {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.weekly-trends__insert h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.weekly-trends__insert img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.weekly-trends__insert span {
+  // font-size: 14px;
+  // color: #999;
+}
+
+
 .trends__btn {
   font-weight: 500;
     font-size: 16px;
     line-height: 19px;
     color: $orange;
     background-color: $background;
-     
     position: absolute;
     top: 40;
     right: 0;
