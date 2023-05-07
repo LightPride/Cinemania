@@ -93,20 +93,17 @@
 }
 
 
-.rel-vote-list-value {
+.rel-vote-list-value, .pop-gen-list-value {
     width: 95px;
-}
-
-.pop-gen-list-value {
-    width: 93px;
 }
 
 .upcoming__about-item, .upcoming__popularity,
 .upcoming__genre, .upcoming__vote, .upcoming__release {
-    // &:not(:last-child) {
-    //     margin-bottom: 12px;
-    // }
     margin-bottom: 12px;
+
+    // @media screen and (min-width: $desktop) {
+    //     width: 140px;
+    // }
 }
 
 .upcoming__about-title {
@@ -130,11 +127,21 @@
 
 .first-upcoming-div, .second-upcoming-div {
     display: flex;
-    justify-content: space-between;
+
+    // justify-content: space-between;
+}
+.first-upcoming-div {
+    @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+        margin-right: 118px;
+    }
 }
 
 .upcoming__infolist {
     display: block;
+
+    @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+        display: flex;
+    }
 }
 
 .vote__styling {
@@ -157,4 +164,31 @@
         margin-left: 16px;
         width: 390px;
       }
+}
+
+.rel-vote-list, .pop-gen-list {
+    margin-right: 57px;
+    width: 93px;
+}
+
+.rel-vote-list {
+    @media screen and (min-width: $tablet)and (max-width: $pre-desktop) {
+        margin-right: 58px;
+    }
+}
+
+.pop-gen-list {
+    @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+        margin-right: 78px;
+    }
+}
+
+.rel-vote-list-value, .pop-gen-list-value {
+
+    @media screen and (min-width: $tablet) {
+        width: 120px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 140px;
+    }
 }
