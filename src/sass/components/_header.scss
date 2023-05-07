@@ -1,19 +1,12 @@
 .header {
   background-color: #000000;
-  
-  
 }
-
 
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-  
-
 }
-
-
 
 .logo__icon {
   display: block;
@@ -31,7 +24,6 @@ span.logo-text {
     margin-left: 8px;
   }
 }
-
 
 // ------ NAVIGATION ------
 
@@ -52,7 +44,7 @@ span.logo-text {
   }
   @media screen and (min-width: 1200px) {
     display: flex;
-    
+
     & .item-1 {
       margin-right: 40px;
     }
@@ -95,12 +87,12 @@ span.logo-text {
   }
   &:hover,
   &:focus {
-    color: #f87719;
+    color: $orange;
   }
 }
 
 .menu-text {
-  color: #b7b7b7;
+  color: $grey;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -108,11 +100,11 @@ span.logo-text {
 }
 
 .menu-container {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     display: none;
   }
-  background-color: #111111;
-  @media screen and (max-width: 767px) {
+  background-color: $background;
+  @media screen and (max-width: $pre-tablet) {
     position: fixed;
     border-radius: 0px 8px 8px 0px;
     top: 0;
@@ -133,7 +125,7 @@ span.logo-text {
 }
 
 .mobile-header__list {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     display: none;
   }
 }
@@ -143,7 +135,7 @@ span.logo-text {
 }
 
 .mobile-header__link {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -180,7 +172,7 @@ span.logo-text {
 
 .mode__icon {
   display: block;
-  fill: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  fill: $linear;
 }
 
 .light-mode__icon {
@@ -198,9 +190,7 @@ span.logo-text {
 }
 
 .expansion-div {
- 
- @media screen and (max-width: $pre-tablet) {
-    
+  @media screen and (max-width: $pre-tablet) {
   }
 
   @media screen and (min-width: $tablet) {

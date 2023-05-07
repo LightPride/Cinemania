@@ -1,139 +1,135 @@
-.library{
+.library {
   margin-left: auto;
   margin-right: auto;
-  padding: 40px 0 144px 20px ;
-  
-
-  background-color:black;
-  width: 100%;
-  background-image:llinear-gradient(
-    87.8deg,
-    #0e0e0e 15.61%,
-    rgba(14, 14, 14, 0) 60.39%
-  ),
-  url('./../images/library-dek1x.jpg');
+  padding: 40px 0 144px 20px;
+  background-color: black;
+  width: 1280px;
+  background-image: llinear-gradient(
+      87.8deg,
+      #0e0e0e 15.61%,
+      rgba(14, 14, 14, 0) 60.39%
+    ),
+    url('./../images/library-dek1x.jpg');
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
 
   background-image: linear-gradient(
-    87.8deg,
-    #0e0e0e 15.61%,
-    rgba(14, 14, 14, 0) 60.39%
-  ), 
+      87.8deg,
+      #0e0e0e 15.61%,
+      rgba(14, 14, 14, 0) 60.39%
+    ),
     url('./../images/library-mob1x.jpg');
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
-  @media ( min-device-pixel-ratio: 2),
-    (min-resolution:192dpi),
-    (min-resolution:2dppx){
-    background-image:linear-gradient(
-      87.8deg,
-      #0e0e0e 15.61%,
-      rgba(14, 14, 14, 0) 60.39%
-    ),
-      url('./../images/library-mob2x.jpg') ;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        87.8deg,
+        #0e0e0e 15.61%,
+        rgba(14, 14, 14, 0) 60.39%
+      ),
+      url('./../images/library-mob2x.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
   }
 
-  @media screen and (min-width:$tablet) and (max-width:$pre-desktop){
-    background-image:linear-gradient(
-      87.8deg,
-      #0e0e0e 15.61%,
-      rgba(14, 14, 14, 0) 60.39%
-    ),
+  @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+    background-image: linear-gradient(
+        87.8deg,
+        #0e0e0e 15.61%,
+        rgba(14, 14, 14, 0) 60.39%
+      ),
       url('./../images/library-tab1x.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
-    padding: 62px 0 206px 32px ;
-  
+    padding: 62px 0 206px 32px;
 
-  @media ( min-device-pixel-ratio: 2),
-    (min-resolution:192dpi),
-    (min-resolution:2dppx){
-    background-image:linear-gradient(
-      87.8deg,
-      #0e0e0e 15.61%,
-      rgba(14, 14, 14, 0) 60.39%
-    ),
-      url('./../images/library-tab2x.jpg');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          87.8deg,
+          #0e0e0e 15.61%,
+          rgba(14, 14, 14, 0) 60.39%
+        ),
+        url('./../images/library-tab2x.jpg');
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
     }
   }
-  
-  @media screen and (min-width:$desktop){
-    padding: 169px 0px 249px 157px ;
-    max-width: 1600px;
-    background-image:linear-gradient(
-      87.8deg,
-      #0e0e0e 15.61%,
-      rgba(14, 14, 14, 0) 60.39%
-    ),
+
+  @media screen and (min-width: $desktop) {
+    padding: 169px 0px 249px 157px;
+    width: 1280px;
+    background-image: linear-gradient(
+        87.8deg,
+        #0e0e0e 15.61%,
+        rgba(14, 14, 14, 0) 60.39%
+      ),
       url('./../images/library-dek1x.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
 
-  @media ( min-device-pixel-ratio: 2),
-    (min-resolution:192dpi),
-    (min-resolution:2dppx){
-    background-image:linear-gradient(
-      87.8deg,
-      #0e0e0e 15.61%,
-      rgba(14, 14, 14, 0) 60.39%
-    ),
-      url('./../images/library-dek2x.jpg');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          87.8deg,
+          #0e0e0e 15.61%,
+          rgba(14, 14, 14, 0) 60.39%
+        ),
+        url('./../images/library-dek2x.jpg');
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
     }
   }
-&__title {
-  margin-bottom: 8px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.18;
-  color: $white;
-  @media screen and (min-width:$tablet){
-    font-size: 44px;
+  &__title {
+    margin-bottom: 8px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
     line-height: 1.18;
+    color: $white;
+    @media screen and (min-width: $tablet) {
+      font-size: 44px;
+      line-height: 1.18;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 64px;
+      line-height: 1.17;
+      margin-bottom: 16px;
+    }
   }
-  @media screen and (min-width:$desktop){
-    font-size: 64px;
-    line-height: 1.17;
-    margin-bottom: 16px;
+  &__text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    color: $white;
+    @media screen and (max-width: $pre-tablet) {
+      max-width: 249px;
+    }
+    @media screen and (min-width: $tablet) {
+      width: 357px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 464px;
+      font-size: 16px;
+      line-height: 1.18;
+    }
   }
-}
-&__text{
-
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.14;
-  color: $white;
-  @media screen and (max-width:$pre-tablet){
-    max-width: 249px;
+  &__bg {
+    background-color: $background;
+    background-size: cover;
   }
-  @media screen and (min-width:$tablet){
-    width: 357px;
-  }
-  @media screen and (min-width:$desktop){
-    width: 464px;
-    font-size: 16px;
-    line-height: 1.18;
-  }
-}
-&__bg{
-  background-color: $background;
-  background-size: cover ;
-}
 }
