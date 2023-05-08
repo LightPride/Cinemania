@@ -66,6 +66,5 @@ function fetchMovieOfTheDay() {
       heroFilm.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
     } else if(windowWidth >= 1280) {
       heroFilm.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
-      
     }
   }
