@@ -1,14 +1,12 @@
 const refs = {
   catalogForm: document.querySelector('#search-form'),
   catalogGallery: document.querySelector('.catalog__gallery'),
-  navigation: document.querySelectorAll('.navigation__link'),
 };
 
-const { catalogForm, catalogGallery, navigation } = refs;
+const { catalogForm, catalogGallery } = refs;
 
-changeCurrentNavigation();
-
-refs.catalogForm.addEventListener('submit', onCatalogFormSubmit);
+catalogForm.addEventListener('submit', onCatalogFormSubmit);
+catalogGallery.addEventListener('click', onCatalogGalleryClick);
 
 function onCatalogFormSubmit(e) {
   e.preventDefault();
@@ -24,7 +22,7 @@ function onCatalogFormSubmit(e) {
   }
 
   fetchMovieGenres().then(genres => {
-    fetchCatalogSearchMovies(inputValue, page).then(data => {
+    fetchCatalogSearchMovies(inputValue, page).then(async data => {
       const movies = data.results.slice(0, 10);
 
       const cardsData = movies.map(movie => {
@@ -51,7 +49,7 @@ function onCatalogFormSubmit(e) {
         };
       });
 
-      catalogGallery.innerHTML = createGallery(cardsData);
+      catalogGallery.innerHTML = await createGallery(cardsData);
     });
   });
 }
@@ -90,17 +88,17 @@ function createGallery(movies) {
       const genres = movieGenres[0];
 
       const htmlPart = `
-        <div class="movie__card" id="${movieId}">
+        <li class="movie__card" data-id="${movieId}">
         <div class="movie__card-poster" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0), rgba(0,0,0,1)),
-  url(${posterPath});"></div>
+  url(${posterPath});" data-id="${movieId}"></div>
 
-        <div class="movie__card-info">
-          <h3>${title}</h3>
-          <p><span>${genres}</span> | <span>${releaseYear}</span></p>
+        <div class="movie__card-info" data-id="${movieId}">
+          <h3 data-id="${movieId}">${title}</h3>
+          <p data-id="${movieId}"><span data-id="${movieId}">${genres}</span> | <span data-id="${movieId}">${releaseYear}</span></p>
         </div>
 
-        <div class="movie__card-rating">${rating}</div>
-      </div> 
+        <div class="movie__card-rating" data-id="${movieId}">${rating}</div>
+      </li> 
         `;
 
       return htmlPart;
@@ -110,6 +108,12 @@ function createGallery(movies) {
   return generatedHtml;
 }
 
-function changeCurrentNavigation() {
-  navigation[1].classList.add('current');
+function onCatalogGalleryClick(e) {
+  if (e.target.nodeName === 'UL') {
+    return;
+  }
+
+  const targetCard = e.target;
+
+  localStorage.setItem('film-id', `${targetCard.dataset.id}`);
 }

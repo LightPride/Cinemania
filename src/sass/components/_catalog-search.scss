@@ -130,23 +130,39 @@
   }
 }
 
+//? КАРТКИ
+
 .movie__card {
   position: relative;
-  width: 395px;
-  height: 574px;
+  width: 280px;
+  height: 406px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms;
+
+  @media screen and (min-width: $tablet) {
+    width: 224px;
+    height: 325px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 395px;
+    height: 574px;
+  }
+}
+
+.movie__card:hover {
+  box-shadow: 0 2px 5px 5px $grey;
 }
 
 .movie__card-poster {
-  // background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0), rgba(0,0,0,1)),
-  // url(https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 
   position: absolute;
   z-index: 0;
-  width: 395px;
-  height: 574px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
 }
 
@@ -159,10 +175,23 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: calc(23 / 20);
+  font-size: 12px;
+  line-height: calc(20 / 12);
 
   color: $white;
+
+  @media screen and (min-width: $tablet) {
+    line-height: calc(18 / 12);
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+    line-height: calc(23 / 20);
+  }
+}
+
+.movie__card-info h3 {
+  text-transform: uppercase;
 }
 
 .movie__card-info p {
@@ -170,12 +199,22 @@
 }
 
 .movie__card-rating {
-  width: 106px;
-  height: 18px;
+  width: 86px;
+  height: 14px;
   position: absolute;
   bottom: 20;
   right: 20;
   background-color: #fff;
   z-index: 1;
   color: #000;
+
+  @media screen and (min-width: $tablet) {
+    width: 66px;
+    height: 10px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 106px;
+    height: 18px;
+  }
 }
