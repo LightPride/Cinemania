@@ -16,6 +16,7 @@ function fetchMovieOfTheDay() {
 const heroContainer = document.body.querySelector('.hero-container');
 const heroEl = document.body.querySelector('.hero');
 const heroFilm = document.body.querySelector('.hero_with-film');
+const heroZalupaRock = document.body.querySelector('.hero-film_background');
 
 function makeMovieOfTheDay(data) {
   try {
@@ -61,10 +62,10 @@ function setHeroBackground(film) {
 
   // змінюємо вигляд бекграунда в залежності від ширини екрана
   if (windowWidth <= 767) {
-    heroFilm.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
+    heroZalupaRock.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
   } else if (windowWidth <= 1279) {
-    heroFilm.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
+    heroZalupaRock.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
   } else if (windowWidth >= 1280) {
-    heroFilm.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
+    heroZalupaRock.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
   }
 }
