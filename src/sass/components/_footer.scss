@@ -40,12 +40,12 @@
 }
 
 .modal-content {
-  background-color: $grey;
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+  border-radius: 16px;
+  background: $background;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid $orange;
   width: 60%;
-  border-radius: 4px;
 }
 
 .modal-list {
@@ -60,7 +60,7 @@
 }
 
 .modal-list a {
-  color: #333;
+  color: $white;
   text-decoration: none;
   font-size: 16px;
 }
