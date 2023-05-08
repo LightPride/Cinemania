@@ -1,5 +1,5 @@
 .header {
-  background-color: #000000;
+  background-color: $background;
 }
 
 .light-theme {
@@ -177,19 +177,13 @@ span.logo-text {
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1;
-  margin-left: 24px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: none;
   cursor: pointer;
   border-radius: 74px;
 }
 
 .mode__icon {
   display: block;
-  fill: $linear;
+  fill: $orange;
 }
 
 .light-mode__icon {
@@ -201,9 +195,6 @@ span.logo-text {
   position: relative;
   background-color: transparent;
   cursor: pointer;
-  z-index: 1;
-  width: 60px;
-  height: 24px;
 }
 
 .expansion-div {
