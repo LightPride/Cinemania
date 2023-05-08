@@ -2,6 +2,11 @@
   background-color: #000000;
 }
 
+.light-theme {
+  background-color: $white;
+  color: $secondary-black;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -179,6 +184,7 @@ span.logo-text {
   border: none;
   background: none;
   cursor: pointer;
+  border-radius: 74px;
 }
 
 .mode__icon {

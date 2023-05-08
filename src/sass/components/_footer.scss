@@ -37,6 +37,8 @@
   }
 }
 
+// --------------- FOOTER MODAL -------------
+
 .footer__modal {
   display: none;
   position: fixed;
@@ -51,6 +53,10 @@
 
 .footer-modal__icon {
   fill: $orange;
+}
+
+.footer-modal__icon:hover {
+  fill: $grey;
 }
 
 .modal-content {

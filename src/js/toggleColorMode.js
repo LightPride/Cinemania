@@ -9,5 +9,6 @@ toggleButton.addEventListener('click', () => {
   } else {
     darkModeIcon.style.display = 'none';
     lightModeIcon.style.display = 'block';
+    document.body.classList.toggle('light-theme');
   }
 });
