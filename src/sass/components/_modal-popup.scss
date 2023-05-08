@@ -1,11 +1,9 @@
-
 .link {
   text-decoration: none;
 }
 .list {
   list-style: none;
 }
-
 
 #toggle {
   padding: 2px 2px 0px;
@@ -40,8 +38,9 @@
   border-right: 1px solid $orange;
   border-bottom: 1px solid $orange; 
 }
+
 // --PopUp modal--
-.pop-up__modal { 
+.pop-up-modal { 
   box-sizing: border-box;
   width: 280px;
   height: auto;  
@@ -55,6 +54,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+  z-index: 999;
 
   @media screen and (min-width: $tablet) {
     width: 704px;    
@@ -68,108 +68,138 @@
     padding: 60px;
     border-radius: 20px;
   }
-}
 
-.pop-up__modal-close {  
-  position: absolute;  
-  top: 40px;
-  right: 40px;
-  margin: 0;
-  width: 24px;
-  height: 24px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;  
-}
-
-.pop-up__close-icon {  
+  &__close {  
+    position: absolute;  
+    top: 20px;
+    right: 16px;
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    
+    @media screen and (min-width: $tablet) {
+      top: 24px;
+      right: 24px;
+    }
   
-  fill: $white;
-}  
+    @media screen and (min-width: $desktop) {
+      top: 40px;
+      right: 40px;
+    }
+  }
 
-.pop-up__close-icon:hover,
-.pop-up__close-icon:focus {
-  fill: $orange;
-}
+  &__close-icon {  
+  
+    fill: $white;
+  }
 
-.pop-up__container {  
-  padding: 0;
-  box-sizing: border-box;  
-  width: 248px;
+  &__close-icon:hover,
+  &__close-icon:focus {
+    fill: $orange;
+  }
 
-  @media screen and (min-width: $tablet) {
-    width: 616px;    
-    height: 400px;
+  &__container {  
+    padding: 0;
+    box-sizing: border-box;  
+    width: 248px;
+  
+    @media screen and (min-width: $tablet) {
+      width: 616px;    
+      height: 400px;
+      display: flex;
+    }
+  
+    @media screen and (min-width: $desktop) {
+      width: 726px;    
+      height: 478px;
+      display: flex;
+    }
+  }
+
+  &__img {
+    width: 248px;
+    height: 315px;
+    margin-bottom: 20px;
+  
+    @media screen and (min-width: $tablet) {
+      width: 294px;
+      height: 400px;
+      margin: 0 16px 0 0;
+    }
+  
+    @media screen and (min-width: $desktop) {
+      width: 375px;
+      height: 478px;
+      margin: 0 20px 0 0;
+    }
+   }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.15;  
+    margin-bottom: 29px;
+  
+    @media screen and (min-width: $tablet) {
+      font-size: 24px; 
+      margin-bottom: 26px;
+    }
+  
+    @media screen and (min-width: $desktop) {    
+      margin-bottom: 28px;
+    }
+  }
+
+  &__blok {
     display: flex;
+    color: $secondary-text;
+    justify-content: space-between;  
   }
 
-  @media screen and (min-width: $desktop) {
-    width: 726px;    
-    height: 478px;
-    display: flex;
-  }
-}
-
-.pop-up__img {
-  width: 248px;
-  height: 315px;
-  margin-bottom: 20px;
-
-  @media screen and (min-width: $tablet) {
-    width: 294px;
-    height: 400px;
-    margin: 0 16px 0 0;
+  &__list {
+    width: 120px;;
   }
 
-  @media screen and (min-width: $desktop) {
-    width: 375px;
-    height: 478px;
-    margin: 0 20px 0 0;
-  }
- }
+  &__link,
+  &__link-item {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    // color: $secondary-text;
+    // color: $background;
+    margin-bottom: 12px;
 
-.pop-up__container h2 {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.15;  
-  margin-bottom: 29px;
-
-  @media screen and (min-width: $tablet) {
-    font-size: 24px; 
-    margin-bottom: 26px;
+    @media screen and (min-width: $desktop) {
+      font-size: 16px; 
+      margin-bottom: 14px;
+    }
   }
 
-  @media screen and (min-width: $desktop) {    
-    margin-bottom: 28px;
-  }
-}
-
-.pop-up__blok {
-  display: flex;
-  color: $secondary-text;
-  justify-content: space-between;
-
-}
-.pop-up__list {
-  width: 120px;;
-}
-
-.pop-up__link,
-.pop-up__link-item {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  // color: $secondary-text;
-  // color: $background;
-  margin-bottom: 12px;
-
-  @media screen and (min-width: $desktop) {
-    font-size: 16px; 
-    margin-bottom: 14px;
+  &__about-txt {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.66;
+    color: $secondary-text;
+    // color: $background;
+    margin-bottom: 16px;
+  
+    @media screen and (min-width: $tablet) {        
+      margin-top: 4px;    
+      margin-bottom: 24px;
+    }
+  
+    @media screen and (min-width: $desktop) {
+      font-size: 14px;
+      margin-top: 4px;    
+      margin-bottom: 24px;    
+    }
   }
 }
 
@@ -185,25 +215,7 @@
   padding-right: 6px;
 }
 
-.pop-up__about-txt {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.66;
-  color: $secondary-text;
-  // color: $background;
-  margin-bottom: 16px;
 
-  @media screen and (min-width: $tablet) {        
-    margin-top: 4px;    
-    margin-bottom: 24px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    font-size: 14px;
-    margin-top: 4px;    
-    margin-bottom: 24px;    
-  }
-}
 
 #mylibrary {
   margin: 0;
