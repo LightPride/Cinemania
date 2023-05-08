@@ -48,7 +48,7 @@
     background-position: right;
     background-size: contain;
     padding: 62px 0 206px 32px;
-
+    width: 768px;
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
@@ -65,7 +65,7 @@
   }
 
   @media screen and (min-width: $desktop) {
-    padding: 169px 0px 249px 157px;
+    padding: 169px 0px 249px 117px;
     width: 1280px;
     background-image: linear-gradient(
         87.8deg,
