@@ -10,6 +10,13 @@
 
 .logo__icon {
   display: block;
+  width: 32px;
+  height: 32px;
+
+  @media screen and (min-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 span.logo-text {
@@ -122,6 +129,10 @@ span.logo-text {
       transform: translateX(0);
     }
   }
+}
+
+.mobile-logo__icon {
+  margin-bottom: 40px;
 }
 
 .mobile-header__list {
