@@ -1,5 +1,6 @@
 // wekly-trends__section
 
+
 .wekly-trends__section {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -29,165 +30,68 @@
       }
 }
 
-
-
-.weekly-trends__insert {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 20px;
-  list-style: none;
-}
-
-.weekly-trends__insert li {
-  width: 30%;
-  margin-bottom: 20px;
-}
-
-.weekly-trends__insert h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.weekly-trends__insert img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.weekly-trends__insert span {
-  // font-size: 14px;
-  // color: #999;
-}
-
-
 .trends__btn {
   font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: $orange;
-    background-color: $background;
-    position: absolute;
-    top: 40;
-    right: 0;
+  font-size: 16px;
+  line-height: 19px;
+  color: $orange;
+  background-color: $background;
+  position: absolute;
+  top: 40;
+  right: 0;
 
 
-    @media screen and (min-width: $tablet) {
-          font-size: 24px;
-          line-height: 28px;
-      }
-    
-    @media screen and (min-width: $desktop) {
-        font-size: 28px;
-          line-height: 33px;
-      }
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 28px;
+    line-height: 33px;
+  }
 }
 
-// movies-container
+// *=================================
 
-.movies-container {
+#movies-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  gap: 16px;
 }
 
-.movies-container li {
-  position: relative;
-  // width: calc(33.33% - 10px);
-  margin-bottom: 20px;
-}
-
-.movies-container li img {
-  display: block;
+.weekly-item {
   width: 100%;
+  margin-bottom: 2rem;
+}
+
+.weekly-img {
+  min-width: 280px;
   height: auto;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, 0.9) 92.16%);
+  border-radius: 5px;
 }
 
-.movies-container li::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+@media (min-width: 768px) {
+  #movies-container {
+    justify-content: space-around;
+  }
+
+  .weekly-item {
+    width: calc(33.33% - 16px);
+    margin-bottom: 0;
+  }
+
+  .weekly-img {
+    width: 395px;
+    height: 574px;
+  }
 }
 
-.movies-container li:hover::before {
-  opacity: 1;
-}
-
-.movies-container li .movie-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.movies-container li .movie-info h3 {
-  margin: 0;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  text-transform: uppercase;
-}
-
-.movies-container li .movie-info span {
-  display: inline-block;
-  margin-right: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
-  text-transform: uppercase;
-}
-
-.movies-container li .movie-info span:first-child {
-  margin-left: 0;
-}
-
-.movies-container li .movie-info span:not(:last-child)::after {
-  content: "|";
-  margin-left: 10px;
-}
-
-.movies-container li .movie-info .genre {
-  font-weight: normal;
-}
-
-.movies-container li .movie-info .title {
-  font-size: 24px;
-  line-height: 30px;
-  margin-bottom: 10px;
-}
-
-.movies-container li .movie-info .title::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 2px;
-  background-color: #fff;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.movies-container li .movie-info .date {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
-  text-transform: uppercase;
+@media (max-width: 767px) {
+  .weekly-img {
+    width: 224px;
+    height: 325px;
+  }
 }
