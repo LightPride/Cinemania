@@ -66,6 +66,13 @@
   margin-bottom: 2rem;
 }
 
+.weekly-img {
+  min-width: 280px;
+  height: auto;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, 0.9) 92.16%);
+  border-radius: 5px;
+}
+
 @media (min-width: 768px) {
   #movies-container {
     justify-content: space-around;
@@ -74,5 +81,17 @@
   .weekly-item {
     width: calc(33.33% - 16px);
     margin-bottom: 0;
+  }
+
+  .weekly-img {
+    width: 395px;
+    height: 574px;
+  }
+}
+
+@media (max-width: 767px) {
+  .weekly-img {
+    width: 224px;
+    height: 325px;
   }
 }

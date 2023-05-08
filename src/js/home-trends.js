@@ -4,6 +4,8 @@ const BASE_URL = 'https://api.themoviedb.org/3/trending/movie/week';
 const TABLET_WIDTH_THRESHOLD = 768;
 const colWidthClass = 'col-md-4';
 
+
+
 async function fetchTrendsMovies() {
     try {
         const response = await fetch(`${BASE_URL}?api_key=${API_KEY}&language=en-US&page=1`);
@@ -32,9 +34,10 @@ async function renderMovies(movies, count) {
         const movieDetails = document.createElement('div');
         movieDetails.classList.add('weekly-wrapper');
 
+        const shortenedTitle = movie.title.slice(0, movie.title.indexOf(':'));
         const title = document.createElement('h3');
         title.classList.add('weekly-info__title');
-        title.innerText = `${movie.title}`;
+        title.innerText = `${shortenedTitle}`;
 
         const releaseDateAndGenre = document.createElement('span');
         releaseDateAndGenre.classList.add('weekly-info__genres__data');
@@ -65,6 +68,7 @@ async function renderMovies(movies, count) {
         moviesContainer.style.gap = '0';
     }
 }
+
 
 
 
