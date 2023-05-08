@@ -1,0 +1,2 @@
+!function(){var e=document.querySelector(".dark-mode__icon"),t=document.querySelector(".light-mode__icon");document.querySelector(".toggleButton").addEventListener("click",(function(){"none"===e.style.display?(e.style.display="block",t.style.display="none"):(e.style.display="none",t.style.display="block"),document.body.classList.toggle("light-theme")}))}();
+//# sourceMappingURL=library.789232da.js.map
