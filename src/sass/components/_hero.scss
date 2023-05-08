@@ -210,6 +210,21 @@
 }
 
 .hero-film_background {
+  @media screen and (max-width: $pre-tablet) {
+    background-image: linear-gradient(
+      87.8deg,
+      #0e0e0e 15.61%,
+      rgba(14, 14, 14, 0) 60.39%
+    );
+    z-index: 1;
+    background-size: 100% 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+  }
   @media screen and (min-width: $tablet) {
     background-image: url('../images/hero/black-bg_md.png');
     z-index: 1;
