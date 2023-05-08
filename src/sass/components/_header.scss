@@ -1,10 +1,16 @@
 .header {
-  background-color: $background;
+  background-color: inherit;
 }
 
-.light-theme {
-  background-color: $white;
+.light-theme span.logo-text {
   color: $secondary-black;
+}
+
+.light-theme a.navigation__link {
+  color: $grey-white-theme;
+}
+.light-theme a.navigation__link.current {
+  color: #f87719;
 }
 
 .logo {

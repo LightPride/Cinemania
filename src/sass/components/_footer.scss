@@ -10,6 +10,14 @@
   }
 }
 
+.light-theme a.footer__link {
+  color: $grey-white-theme;
+}
+
+.light-theme .footer-text {
+  color: $grey-white-theme;
+}
+
 .footer__link {
   color: $grey;
 }
