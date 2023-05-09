@@ -8,6 +8,9 @@ function fetchMovieOfTheDay() {
   return fetch(BASE_URL)
     .then(response => response.json())
     .then(data => {
+      if (data.ok) {
+        heroContainer.innerHTML = '';
+      }
       makeMovieOfTheDay(data);
     })
     .catch(error => console.log(error));
@@ -17,27 +20,26 @@ const heroContainer = document.body.querySelector('.hero-container');
 const heroEl = document.body.querySelector('.hero');
 const heroFilm = document.body.querySelector('.hero_with-film');
 const heroBckgr = document.body.querySelector('.hero-film_background');
+const heroBtn = document.body.querySelector('.hero-film_btn');
+const openModalBtn = document.querySelector('.hero-film_btn');
+const closeModalBtn = document.querySelector('.modal__close-btn');
+const modal = document.querySelector('[data-modal]');
+const getStartedBtn = document.body.querySelector('.hero-btn');
 
 function makeMovieOfTheDay(data) {
   try {
-    if (data) {
-      console.log(data);
-      const valueOfElements = data.results.length - 1;
-      console.log(valueOfElements);
+    const valueOfElements = data.results.length - 1;
 
-      const movieNumber = Math.round(getRandomNumber(0, valueOfElements));
-      console.log(movieNumber);
+    const movieNumber = Math.round(getRandomNumber(0, valueOfElements));
 
-      const film = data.results[movieNumber];
-      console.log(film);
+    const film = data.results[movieNumber];
 
-      heroContainer.innerHTML = '';
-      makeMarkup(film);
-    }
+    makeMarkup(film);
   } catch (error) {
     console.log(error);
     heroBckgr.classList.remove('hero-film_background');
     heroEl.classList.add('hero-default');
+    heroBtn.classList.add('hidden');
   }
 }
 
@@ -45,16 +47,25 @@ function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+let videoCheck = true;
+
 function makeMarkup(film) {
+  videoCheck = film.video;
   heroContainer.innerHTML = `<div class="hero-film_box"><h2 class="hero-film_title">${film.title}</h2>
     <p class="hero-film_rating">${film.vote_average}</p>
     <p class="hero-film_descr">${film.overview}</p>
-    <button class="hero-film_btn btn">Watch trailer</button></div>
-    <div class="hero-film_background"></div>`;
+    </div>`;
 
   // Викликаємо функцію при завантаженні сторінки та при зміні ширини вікна браузера
   window.addEventListener('load', setHeroBackground(film));
   window.addEventListener('resize', setHeroBackground(film));
+  openModalBtn.addEventListener('click', toggleModal);
+  closeModalBtn.addEventListener('click', toggleModal);
+  heroBtn.addEventListener('click', videoCheck => {
+    if (!videoCheck) {
+      toggleModal();
+    }
+  });
 }
 
 function setHeroBackground(film) {
@@ -68,4 +79,9 @@ function setHeroBackground(film) {
   } else if (windowWidth >= 1280) {
     heroBckgr.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
   }
+}
+
+function toggleModal() {
+  document.body.classList.toggle('modal-open');
+  modal.classList.toggle('is-hidden');
 }

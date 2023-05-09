@@ -124,7 +124,7 @@ span.logo-text {
   background-color: $background;
   @media screen and (max-width: $pre-tablet) {
     position: fixed;
-    z-index: 99999;
+    z-index: 15;
     border-radius: 0px 8px 8px 0px;
     top: 0;
     left: 0;

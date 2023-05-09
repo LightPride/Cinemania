@@ -4,8 +4,9 @@
   left: 50%;
   width: 280px;
   height: 289px;
+  z-index: 10;
+
   background-color: #111111;
-  box-sizing: border-box;
   box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
   border-radius: 16px;
   transform: translate(-50%, -50%) scale(1);
@@ -13,17 +14,27 @@
 
 @media screen and (min-width: 768px) {
   .modal-without-trailer {
-    display: flex;
     width: 609px;
     height: 400px;
+    z-index: 10;
+    background-color: #111111;
+    box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+    border-radius: 16px;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .modal-without-trailer {
-    display: flex;
     width: 700px;
     height: 400px;
+    top: 50%;
+    left: 50%;
+    background-color: #111111;
+    box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+    border-radius: 16px;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 10;
   }
 }
 
