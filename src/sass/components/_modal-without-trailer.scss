@@ -10,10 +10,7 @@
   box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
   border-radius: 16px;
   transform: translate(-50%, -50%) scale(1);
-}
-
-@media screen and (min-width: 768px) {
-  .modal-without-trailer {
+  @media screen and (min-width: $tablet) {
     width: 609px;
     height: 400px;
     z-index: 11;
@@ -22,10 +19,7 @@
     border-radius: 16px;
     transform: translate(-50%, -50%) scale(1);
   }
-}
-
-@media screen and (min-width: 1200px) {
-  .modal-without-trailer {
+  @media screen and (min-width: $desktop) {
     width: 700px;
     height: 400px;
     top: 50%;
@@ -38,6 +32,10 @@
   }
 }
 
+.light-theme .modal-without-trailer {
+  background-color: #f5f5f5;
+}
+
 .modal__close-btn {
   position: absolute;
   top: 20px;
@@ -46,27 +44,27 @@
   height: 16px;
   border-style: none;
   background-color: transparent;
-  cursor: pointer;
-  background-image: url(../images/trailer-modal_images/close-icon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
-@media screen and (min-width: 768px) {
-  .modal__close-btn {
+  cursor: pointer;
+
+  @media screen and (min-width: $tablet) {
     top: 24px;
     right: 24px;
     width: 24px;
     height: 24px;
-    background-image: url(../images/trailer-modal_images/close-icon-tablet.svg);
   }
-}
-
-@media screen and (min-width: 768px) {
-  .modal__close-btn {
+  @media screen and (min-width: $desktop) {
     top: 28px;
     right: 28px;
   }
+}
+
+.modal__close-svg {
+  fill: $secondary-text;
+}
+
+.light-theme .modal__close-svg {
+  fill: $secondary-black;
 }
 
 .modal__text-container {

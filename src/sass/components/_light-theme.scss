@@ -1,0 +1,66 @@
+.light-theme span.menu-text {
+  color: $grey-white-theme;
+}
+
+.light-theme div#mobile-menu {
+  background-color: $white;
+}
+.light-theme a.mobile-header__link {
+  color: $background;
+}
+
+.light-theme h2.hero-film_title {
+  @media screen and (min-width: $tablet) {
+    color: $background;
+  }
+}
+
+.light-theme p.hero-film_descr {
+  @media screen and (min-width: $tablet) {
+    color: $secondary-black;
+  }
+}
+
+.light-theme h2.weekly-title {
+  color: $background;
+}
+
+.light-theme div.weekly-wrapper {
+  box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
+}
+
+.light-theme a.mobile-header__link.current {
+  color: #f87719;
+}
+
+.light-theme h2.upcoming__title {
+  color: $background;
+}
+.light-theme p.upcoming__movie-name {
+  color: $background;
+}
+.light-theme p.upcoming__about-item {
+  color: $background;
+}
+.light-theme p.upcoming__about-title {
+  color: $background;
+}
+
+.light-theme span.vote__styling {
+  color: $secondary-black;
+}
+
+.light-theme p.upcoming__about {
+  color: $secondary-black;
+}
+
+.light-theme p.hero-film_rating {
+  color: $orange;
+}
+
+.light-theme div.movie__card-rating {
+  color: $orange;
+}
+.light-theme h2.anyMovis__title {
+  color: $background;
+}
