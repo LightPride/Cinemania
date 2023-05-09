@@ -8,26 +8,24 @@
   padding-top: 40px;
   padding-bottom: 40px;
   @media screen and (min-width: 768px) {
-      margin-top: 52px;
-    }
-  
-    @media screen and (min-width: 1280px) {
-      margin-top: 80px;
-      margin-bottom: 28px;
-    }
+    margin-top: 52px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 80px;
+    margin-bottom: 28px;
+  }
   @media screen and (min-width: 768px) {
-      margin-top: 52px;
-    }
-  
-    @media screen and (min-width: 1280px) {
-      margin-top: 80px;
-      margin-bottom: 28px;
-    }
-  
+    margin-top: 52px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 80px;
+    margin-bottom: 28px;
+  }
 }
 
 .weekly-title {
-  
   font-family: Roboto;
   font-size: 16px;
   font-weight: 500;
@@ -35,7 +33,6 @@
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 24px;
-
 
   @media screen and (min-width: $tablet) {
     font-size: 24px;
@@ -49,30 +46,26 @@
   }
 }
 
-.weekly-link-all{
+.weekly-link-all {
   font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+
+  color: #f87719;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 28px;
     line-height: 1.18;
-  
-    color: #F87719;
-  
-    @media screen and (min-width: 768px) {
-      font-size: 24px;
-      line-height: 1.17;
-    }
-  
-    @media screen and (min-width: 1280px) {
-      font-size: 28px;
-      line-height: 1.18;
-    }
-  
+  }
 }
 
-#movies-container{
-
-}
 .weekly-item:not(:last-child) {
   margin-bottom: 10px;
 
@@ -89,68 +82,67 @@
 
 .weekly-item {
   position: relative;
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
-.weekly-wrapper{
+.weekly-wrapper {
   position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 12px;
-    border-radius: 4px;
-    background: linear-gradient(rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, .9) 92.16%);
-    transition: background-color .3s ease-in-out;
-    color: var(--white-txt-color);
-  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+  border-radius: 4px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 92.16%
+  );
+  transition: background-color 0.3s ease-in-out;
+  color: var(--white-txt-color);
 }
 
-.weekly-img{
+.weekly-img {
   display: block;
-    object-fit: cover;
-    // z-index: -1;
-    // width: 100%;
-    border-radius: 5px;
-  
-    width: 280px;
-    height: 406px;
-  
-    @media screen and (min-width: 768px) {
-      width: 224px;
-      height: 325px;
-    }
-  
-    @media screen and (min-width: 1280px) {
-      width: 395px;
-      height: 574px;
-    }
+  object-fit: cover;
+  // z-index: -1;
+  // width: 100%;
+  border-radius: 5px;
+
+  width: 280px;
+  height: 406px;
+
+  @media screen and (min-width: 768px) {
+    width: 224px;
+    height: 325px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+    height: 574px;
+  }
 }
 
 .weekly-info {
-    padding: 12px;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    color: var(--white-txt-color);
+  padding: 12px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--white-txt-color);
 
-    position: absolute;
-    
-    top: 0;
-    left: 0;
-  
-  
-    @media screen and (min-width: 768px) {
-      padding: 20px;
-    }
-  
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+  }
 }
-
 
 .weekly-info__title {
   font-family: 'Roboto';
@@ -174,10 +166,9 @@
   }
 }
 
-
 .weekly-info__genres__data {
-  color: #B7B7B7;
-  
+  color: #b7b7b7;
+
   font-family: Roboto;
   font-style: normal;
   font-size: 14px;
@@ -199,18 +190,21 @@
   }
 }
 
-.catalog-list__additional-info{
+.catalog-list__additional-info {
   display: flex;
-    justify-content: space-between;
-    color: var(--grey-txt-color);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.7;
+  justify-content: space-between;
+  color: var(--grey-txt-color);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.7;
 }
 
-.weekly-info__genres__data,
-.weekly-rating{
-font-family: 'Roboto';
+.weekly-info__genres__data {
+  color: #b7b7b7;
+  font-weight: 400;
+}
+.weekly-rating {
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
