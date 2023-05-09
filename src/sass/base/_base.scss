@@ -83,7 +83,7 @@ body.modal-open {
   background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
   border-radius: 74px;
   cursor: pointer;
-  border: 1px transparent;
+  border: 1px solid transparent;
   transition: border 750ms linear(0.4, 0, 0.2, 1);
   margin-bottom: 20px;
 }
@@ -121,10 +121,6 @@ body.modal-open {
 
 .light-theme {
   background-color: $white;
-}
-
-.light-theme p {
-  color: $secondary-black;
 }
 
 .backdrop {

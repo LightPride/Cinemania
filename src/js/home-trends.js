@@ -46,7 +46,7 @@ async function renderMovies(movies, count) {
     releaseDateAndGenre.classList.add('weekly-info__genres__data');
     releaseDateAndGenre.innerText = `${genres
       .split(',')
-      .slice(0, 2)
+      .slice(0, 1)
       .join(', ')} | ${movie.release_date.slice(0, 4)}`;
 
     const movieRating = document.createElement('div');
