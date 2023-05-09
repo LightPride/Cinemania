@@ -262,10 +262,11 @@
   }
 }
 
-.hero-film_background-2--light {
+.light-theme .hero-film_background-2 {
   @media screen and (min-width: $tablet) {
-    background-image: url('../images/hero/black-bg_md.png');
+    background-image: url('../images/hero/Subtract.png');
     z-index: 1;
+
     background-size: 100% 100%;
     position: absolute;
     width: 100%;
@@ -289,6 +290,11 @@
 .hero-background {
   width: auto;
   background-color: #0e0e0e;
+}
+
+.light-theme .hero-background {
+  width: auto;
+  background-color: #f8f8f8;
 }
 
 .hero-film_btn {

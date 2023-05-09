@@ -1,4 +1,4 @@
-const currentNavigation = document.querySelectorAll('.navigation__link');
+const currentNavigation = document.querySelectorAll('.mobile-header__link');
 changeCurrentNavigation();
 
 function changeCurrentNavigation() {
