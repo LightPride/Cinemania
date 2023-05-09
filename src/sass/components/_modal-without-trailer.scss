@@ -34,14 +34,15 @@
 
 .light-theme .modal-without-trailer {
   background-color: #f5f5f5;
+  box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
 }
 
 .modal__close-btn {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   border-style: none;
   background-color: transparent;
 
@@ -50,8 +51,6 @@
   @media screen and (min-width: $tablet) {
     top: 24px;
     right: 24px;
-    width: 24px;
-    height: 24px;
   }
   @media screen and (min-width: $desktop) {
     top: 28px;
@@ -105,7 +104,11 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #fff;
+  color: $white;
+}
+
+.light-theme .modal__title {
+  color: $background;
 }
 
 @media screen and (min-width: 768px) {

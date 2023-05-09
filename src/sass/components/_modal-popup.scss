@@ -13,34 +13,35 @@
   overflow-y: hidden;
 } */
 
-.btn {  
+.btn {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
   padding: 12px 24px;
-  background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
-  border-radius: 74px;  
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border-radius: 74px;
   cursor: pointer;
-  border-width: 0;  
-  margin-bottom: 20px;  
+  border-width: 0;
+  margin-bottom: 20px;
+  transition: border 750ms linear(0.4, 0, 0.2, 1);
 }
 
 .btn:hover,
-.btn:focus {  
+.btn:focus {
   // border-width: 1px;
   // border-style:  solid;
   // border-radius: 74px;
-  // border-image: linear-gradient(45deg, #FFC226, #F84119) 1;  
-  color:$white;  
+  // border-image: linear-gradient(45deg, #FFC226, #F84119) 1;
+  color: $white;
   background: transparent;
-  border-top: 1px solid #FFC226;
-  border-left: 1px solid #FFC226;
+  border-top: 1px solid #ffc226;
+  border-left: 1px solid #ffc226;
   border-right: 1px solid $orange;
-  border-bottom: 1px solid $orange; 
+  border-bottom: 1px solid $orange;
 }
 
 // --PopUp modal--
-.pop-up-modal { 
+.pop-up-modal {
   transition: 250ms;
   transition-delay: 250ms;
   visibility: hidden;
@@ -49,10 +50,10 @@
 
   box-sizing: border-box;
   width: 280px;
-  height: auto;  
+  height: auto;
   text-align: left;
-  padding: 52px 16px;  
-  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);  
+  padding: 52px 16px;
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
   border-radius: 16px;
   background: $background;
   position: fixed;
@@ -64,20 +65,20 @@
   z-index: 999;
 
   @media screen and (min-width: $tablet) {
-    width: 704px;    
+    width: 704px;
     min-height: 488px;
     padding: 44px;
   }
 
   @media screen and (min-width: $desktop) {
-    width: 846px;    
+    width: 846px;
     min-height: 598px;
     padding: 60px;
     border-radius: 20px;
   }
 
-  &__close {  
-    position: absolute;  
+  &__close {
+    position: absolute;
     top: 20px;
     right: 16px;
     margin: 0;
@@ -87,20 +88,19 @@
     outline: none;
     cursor: pointer;
     background-color: transparent;
-    
+
     @media screen and (min-width: $tablet) {
       top: 24px;
       right: 24px;
     }
-  
+
     @media screen and (min-width: $desktop) {
       top: 40px;
       right: 40px;
     }
   }
 
-  &__close-icon {  
-  
+  &__close-icon {
     fill: $white;
   }
 
@@ -109,19 +109,19 @@
     fill: $orange;
   }
 
-  &__container {  
+  &__container {
     padding: 0;
-    box-sizing: border-box;  
+    box-sizing: border-box;
     width: 248px;
-  
+
     @media screen and (min-width: $tablet) {
-      width: 616px;    
+      width: 616px;
       height: 400px;
       display: flex;
     }
-  
+
     @media screen and (min-width: $desktop) {
-      width: 726px;    
+      width: 726px;
       height: 478px;
       display: flex;
     }
@@ -131,33 +131,33 @@
     width: 248px;
     height: 315px;
     margin-bottom: 20px;
-  
+
     @media screen and (min-width: $tablet) {
       width: 294px;
       height: 400px;
       margin: 0 16px 0 0;
     }
-  
+
     @media screen and (min-width: $desktop) {
       width: 375px;
       height: 478px;
       margin: 0 20px 0 0;
     }
-   }
+  }
 
   &__title {
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    line-height: 1.15;  
+    line-height: 1.15;
     margin-bottom: 29px;
-  
+
     @media screen and (min-width: $tablet) {
-      font-size: 24px; 
+      font-size: 24px;
       margin-bottom: 26px;
     }
-  
-    @media screen and (min-width: $desktop) {    
+
+    @media screen and (min-width: $desktop) {
       margin-bottom: 28px;
     }
   }
@@ -165,11 +165,11 @@
   &__blok {
     display: flex;
     color: $secondary-text;
-    justify-content: space-between;  
+    justify-content: space-between;
   }
 
   &__list {
-    width: 120px;;
+    width: 120px;
   }
 
   &__link,
@@ -184,7 +184,7 @@
     margin-bottom: 12px;
 
     @media screen and (min-width: $desktop) {
-      font-size: 16px; 
+      font-size: 16px;
       margin-bottom: 14px;
     }
   }
@@ -196,37 +196,38 @@
 
     @media screen and (min-width: $tablet) {
       // min-height: 170px;
-      margin-top: 4px;    
+      margin-top: 4px;
       margin-bottom: 24px;
     }
 
     @media screen and (min-width: $desktop) {
       // min-height: 220px;
       margin-top: 4px;
-      scroll-snap-type: auto;         
+      scroll-snap-type: auto;
     }
   }
 
-  &__about-txt {    
+  &__about-txt {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.66;
     color: $secondary-text;
     // color: $background;
-      
-    @media screen and (min-width: $desktop) {      
-      font-size: 14px;          
+
+    @media screen and (min-width: $desktop) {
+      font-size: 14px;
     }
-  }  
+  }
 }
 
 .item-votes {
   display: flex;
 }
 
-.vote, .votes {
+.vote,
+.votes {
   background-color: $white;
-  color:$background;
+  color: $background;
   border-radius: 15px;
   padding-left: 6px;
   padding-right: 6px;
@@ -244,7 +245,7 @@
   right: 0;
   // background-color: transparent;
   background-color: rgba(0, 0, 0, 0.5);
-  // display: none; 
+  // display: none;
   display: block;
   visibility: hidden;
   opacity: 0;
@@ -270,7 +271,7 @@
 }
 .light_color:hover,
 .light_color:focus {
-  color:$background;
+  color: $background;
 }
 
 .light_fill {
@@ -280,9 +281,9 @@
   box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
 }
 
-// .add_mylibrary {  
+// .add_mylibrary {
 //   border-top: 1px solid #FFC226;
 //   border-left: 1px solid #FFC226;
 //   border-right: 1px solid $orange;
-//   border-bottom: 1px solid $orange; 
+//   border-bottom: 1px solid $orange;
 // }
