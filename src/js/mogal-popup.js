@@ -54,7 +54,6 @@ const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
 const POPUP_URL = `https://api.themoviedb.org/3/movie/`;
 // const POPUP_ID = localStorage.getItem('film-id');
 let MYLIBRARY_ID;
-console.log(POPUP_ID);
 // 502356 840326 1008005
 
 function fetchPopUpMovies() {
