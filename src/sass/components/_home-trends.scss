@@ -45,12 +45,12 @@
 
     color: #f87719;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       font-size: 24px;
       line-height: 1.17;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desktop) {
       font-size: 28px;
       line-height: 1.18;
     }
@@ -59,7 +59,7 @@
   .weekly-item:not(:last-child) {
     margin-bottom: 10px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       margin-bottom: 0px;
     }
   }
@@ -87,10 +87,8 @@
     justify-content: flex-end;
     padding: 12px;
     border-radius: 4px;
-    background: linear-gradient(
-      rgba(0, 0, 0, 0) 63.48%,
-      rgba(0, 0, 0, 0.9) 92.16%
-    );
+    background: linear-gradient(rgba(0, 0, 0, 0) 63.48%,
+        rgba(0, 0, 0, 0.9) 92.16%);
     transition: background-color 0.3s ease-in-out;
     color: $white;
   }
@@ -103,12 +101,12 @@
     width: 280px;
     height: 406px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       width: 224px;
       height: 325px;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desktop) {
       width: 395px;
       height: 574px;
     }
@@ -120,14 +118,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    color: var(--white-txt-color);
+    color: $white;
 
     position: absolute;
 
     bottom: 0;
     left: 0;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       padding: 20px;
     }
   }
@@ -140,13 +138,13 @@
     line-height: 1.67;
     text-transform: uppercase;
 
-    color: var(--white-txt-color);
+    color: $white;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       line-height: 1.5;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desktop) {
       margin-bottom: 10px;
 
       font-size: 20px;
@@ -155,7 +153,7 @@
   }
 
   .weekly-info__genres__data {
-    color: #b7b7b7;
+    color: $grey;
 
     font-family: Roboto;
     font-style: normal;
@@ -181,16 +179,17 @@
   .catalog-list__additional-info {
     display: flex;
     justify-content: space-between;
-    color: var(--grey-txt-color);
+    color: $white;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.7;
   }
 
   .weekly-info__genres__data {
-    color: #b7b7b7;
+    color: $grey;
     font-weight: 400;
   }
+
   .weekly-rating {
     font-family: 'Roboto';
     font-style: normal;
@@ -198,13 +197,13 @@
     font-size: 12px;
     line-height: 1.67;
 
-    color: var(--grey-txt-color);
+    color: $grey;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       line-height: 1.5;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desktop) {
       font-size: 20px;
       line-height: 1.15;
     }
@@ -216,12 +215,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    color: var(--white-txt-color);
+    color: $white;
     position: absolute;
     bottom: 0;
     left: 0;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       padding: 20px;
     }
   }
@@ -233,13 +232,13 @@
     font-size: 12px;
     line-height: 1.67;
     text-transform: uppercase;
-    color: var(--white-txt-color);
+    color: $white;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       line-height: 1.5;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desktop) {
       margin-bottom: 10px;
       font-size: 20px;
       line-height: 1.15;
@@ -247,11 +246,11 @@
   }
 
   .weekly-info__genres__data {
-    color: #b7b7b7;
+    color: $grey;
     font-family: Roboto;
     font-style: normal;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
 
     @media screen and (min-width: $tablet) {
@@ -268,7 +267,7 @@
   .catalog-list__additional-info {
     display: flex;
     justify-content: space-between;
-    color: var(--grey-txt-color);
+    color: $grey;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.7;
@@ -280,13 +279,13 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.67;
-    color: var(--grey-txt-color);
+    color: $grey;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       line-height: 1.5;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desktop) {
       font-size: 20px;
       line-height: 1.15;
     }
