@@ -1,217 +1,229 @@
 // wekly-trends__section
-
-
-.wekly-trends__section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-
+.weekly-trends__section {
   position: relative;
-}
-
-.wekly-trends__title {
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin-bottom: 24px;
-
-
-  @media screen and (min-width: $tablet) {
-    font-size: 24px;
-    line-height: 28px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    font-size: 28px;
-    line-height: 33px;
-    margin-bottom: 28px;
-  }
-}
-
-.trends__btn {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: $orange;
-  background-color: $background;
-  position: absolute;
-  top: 40;
-  right: 0;
-
-
-  @media screen and (min-width: $tablet) {
-    font-size: 24px;
-    line-height: 28px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    font-size: 28px;
-    line-height: 33px;
-  }
-}
-
-// *=================================
-
-// wekly-trends__section
-
-
-.wekly-trends__section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-
-  position: relative;
-}
-
-.wekly-trends__title {
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin-bottom: 24px;
-
-
-  @media screen and (min-width: $tablet) {
-    font-size: 24px;
-    line-height: 28px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    font-size: 28px;
-    line-height: 33px;
-    margin-bottom: 28px;
-  }
-}
-
-.trends__btn {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: $orange;
-  background-color: $background;
-  position: absolute;
-  top: 40;
-  right: 0;
-
-
-  @media screen and (min-width: $tablet) {
-    font-size: 24px;
-    line-height: 28px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    font-size: 28px;
-    line-height: 33px;
-  }
-}
-
-// *=================================
-#movies-container {
-  display: flex;
-  position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, .9) 92.16%);
-  border-radius: 4px;
-  transition: background-color .3s ease-in-out;
-
-}
-
-/* Для елемента .weekly-wrapper */
-.weekly-wrapper {
-  width: 100%;
-  color: var(--white-txt-color);
-  flex-direction: column;
-  padding: 20px;
-  display: flex;
-  position: absolute;
-  bottom: 0;
-
-}
-
-/* Для елемента .weekly-info__title */
-.weekly-info__title {
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 10px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  font-size: 14px;
-}
-
-@media screen and (min-width: $tablet) {
-  .weekly-info__title {
-    font-size: 12px;
-    line-height: 18px;
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .weekly-info__title {
-    font-size: 20px;
-    line-height: 23px;
-  }
-}
-
-/* Для елемента .weekly-info__genres__data */
-.weekly-info__genres__data {
-  text-transform: uppercase;
-  color: #B7B7B7;
-  margin-bottom: 10px;
-  font-family: Roboto;
-  font-style: normal;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-@media screen and (min-width: $tablet) {
-  .weekly-info__genres__data {
-    font-size: 12px;
-    line-height: 18px;
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .weekly-info__genres__data {
-    font-size: 20px;
-    line-height: 23px;
-  }
-}
-
-/* Стилі для зображення */
-.weekly-img {
-  display: block;
-  object-fit: cover;
-  z-index: -1;
-  border-radius: 5px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, 0.9) 92.16%);
-
-}
-
-/* Для елементів з класом .movies-container змінюємо відступи */
-.movies-container {
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  position: relative;
+  align-items: baseline;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @media screen and (min-width: 768px) {
+      margin-top: 52px;
+    }
+  
+    @media screen and (min-width: 1280px) {
+      margin-top: 80px;
+      margin-bottom: 28px;
+    }
+  @media screen and (min-width: 768px) {
+      margin-top: 52px;
+    }
+  
+    @media screen and (min-width: 1280px) {
+      margin-top: 80px;
+      margin-bottom: 28px;
+    }
+  
 }
 
-/* Для елементів з класом .weekly-item змінюємо ширину */
+.weekly-title {
+  
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 24px;
+
+
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 28px;
+    line-height: 33px;
+    margin-bottom: 28px;
+  }
+}
+
+.weekly-link-all{
+  font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.18;
+  
+    color: #F87719;
+  
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+      line-height: 1.17;
+    }
+  
+    @media screen and (min-width: 1280px) {
+      font-size: 28px;
+      line-height: 1.18;
+    }
+  
+}
+
+#movies-container{
+
+}
+.weekly-item:not(:last-child) {
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+}
+
+.weekly-list {
+  display: flex;
+  gap: 16px;
+  display: flex;
+}
+
 .weekly-item {
-  width: calc(33.33% - 15px);
-
+  position: relative;
+    margin-bottom: 0px;
 }
 
-/* Для елементів з класом .weekly-item в рядку, що відображається на екрані менше 768px, міняємо ширину */
-@media (max-width: $tablet) {
-  .weekly-item {
+.weekly-wrapper{
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+    border-radius: 4px;
+    background: linear-gradient(rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, .9) 92.16%);
+    transition: background-color .3s ease-in-out;
+    color: var(--white-txt-color);
+  
+}
+
+.weekly-img{
+  display: block;
+    object-fit: cover;
+    // z-index: -1;
+    // width: 100%;
+    border-radius: 5px;
+  
+    width: 280px;
+    height: 406px;
+  
+    @media screen and (min-width: 768px) {
+      width: 224px;
+      height: 325px;
+    }
+  
+    @media screen and (min-width: 1280px) {
+      width: 395px;
+      height: 574px;
+    }
+}
+
+.weekly-info {
+    padding: 12px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    color: var(--white-txt-color);
+
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+  
+  
+    @media screen and (min-width: 768px) {
+      padding: 20px;
+    }
+  
+}
+
+
+.weekly-info__title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  text-transform: uppercase;
+
+  color: var(--white-txt-color);
+
+  @media screen and (min-width: 768px) {
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    line-height: 1.15;
+  }
+}
+
+
+.weekly-info__genres__data {
+  color: #B7B7B7;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@media screen and (min-width: $tablet) {
+  .weekly-info__genres__data {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .weekly-info__genres__data {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+.catalog-list__additional-info{
+  display: flex;
+    justify-content: space-between;
+    color: var(--grey-txt-color);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.weekly-info__genres__data,
+.weekly-rating{
+font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+
+  color: var(--grey-txt-color);
+
+  @media screen and (min-width: 768px) {
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: 1.15;
   }
 }
