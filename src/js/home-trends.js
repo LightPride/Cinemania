@@ -20,16 +20,17 @@ async function fetchTrendsMovies() {
 }
 
 async function renderMovies(movies, count) {
-    const container = document.querySelector('#movies-container');
-    container.innerHTML = '';
-    const moviesContainer = document.createElement('ul');
-    moviesContainer.classList.add('weekly-list');
+    const container = document.querySelector('#movies-container'); 
+    container.innerHTML = ''; 
+    const moviesContainer = document.createElement('ul'); 
+    moviesContainer.classList.add('weekly-list'); 
     container.appendChild(moviesContainer);
 
     movies.slice(0, count).forEach(async (movie) => {
         const genres = await getGenresById(movie.genre_ids);
         const li = document.createElement('li');
         li.classList.add('weekly-item');
+
 
         const wrapper = document.createElement('div');
         wrapper.classList.add('weekly-wrapper');
@@ -71,10 +72,6 @@ async function renderMovies(movies, count) {
 
         moviesContainer.appendChild(li);
     });
-}
-
-
-
 
 
 

@@ -29,7 +29,7 @@ async function getFetchedMovies() {
         returnedResult[Math.floor(Math.random() * returnedResult.length)];
       const genreNames = await getGenresById(randomMovie.genre_ids);
       const createdMarkup = await renderMarkup({ ...randomMovie, genreNames });
-      insertionBlock.insertAdjacentHTML('beforebegin', createdMarkup);
+      insertionBlock.insertAdjacentHTML('afterbegin', createdMarkup);
     }
   } catch (error) {
     console.log(error);

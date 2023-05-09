@@ -1,202 +1,216 @@
 .upcoming__section {
-    padding-top: 40px;
-    padding-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .upcoming__title {
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-bottom: 24px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 24px;
 
-    @media screen and (min-width: $tablet) {
-        font-size: 24px;
-        line-height: 28px;
-    }
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+    line-height: 28px;
+  }
 
-    @media screen and (min-width: $desktop) {
-        font-size: 28px;
-        line-height: 33px;
-        margin-bottom: 28px;
-    }
+  @media screen and (min-width: $desktop) {
+    font-size: 28px;
+    line-height: 33px;
+    margin-bottom: 28px;
+  }
 }
 
 .upcoming__poster {
-    margin-bottom: 24px;
-    width: 280px;
-    height: 402px;
-    background-size: contain;
-    display: block;
+  margin-bottom: 24px;
+  width: 280px;
+  height: 402px;
+  background-size: contain;
+  display: block;
 
-    @media screen and (min-width: $tablet) {
-        width: 704px;
-        height: 400px;
-    }
+  @media screen and (min-width: $tablet) {
+    width: 704px;
+    height: 400px;
+  }
 
-    @media screen and (min-width: $desktop) {
-        width: 805px;
-        height: 458px;
-    }
-
+  @media screen and (min-width: $desktop) {
+    width: 805px;
+    height: 458px;
+  }
 }
 
 .upcoming__poster-tablet {
-    @media screen and (min-width: $tablet) {
-        width: 704px;
-        height: 400px;
-    }
+  @media screen and (min-width: $tablet) {
+    width: 704px;
+    height: 400px;
+  }
 }
 
 .upcoming__poster-desktop {
-    @media screen and (min-width: $desktop) {
-        width: 805px;
-        height: 458px;
-    }
+  @media screen and (min-width: $desktop) {
+    width: 805px;
+    height: 458px;
+  }
 }
 
-.upcoming__movie-name{
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-bottom: 20px;
-    margin-top: 24px;
+.upcoming__movie-name {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 24px;
 
-    @media screen and (min-width: $tablet) {
-        font-size: 28px;
-        line-height: 33px;
-        margin-bottom: 24px;
-        margin-top: 32px;
-    }
+  @media screen and (min-width: $tablet) {
+    font-size: 28px;
+    line-height: 33px;
+    margin-bottom: 24px;
+    margin-top: 32px;
+  }
 
-    @media screen and (min-width: $desktop) {
-        font-size: 32px;
-        line-height: 38px;
-        margin-top: 0px;
-    }
+  @media screen and (min-width: $desktop) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 0px;
+  }
 }
 
-.upcoming__about-item, .upcoming__about-title,  .upcoming__popularity,
-.upcoming__genre, .upcoming__vote {
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: left;
-
+.upcoming__about-item,
+.upcoming__about-title,
+.upcoming__popularity,
+.upcoming__genre,
+.upcoming__vote {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
 }
-.upcoming__about-item, .upcoming__about-title {
-    color: $grey;
-}
-
-
-.rel-vote-list-value, .pop-gen-list-value {
-    width: 95px;
+.upcoming__about-item,
+.upcoming__about-title {
+  color: $grey;
 }
 
-.upcoming__about-item, .upcoming__popularity,
-.upcoming__genre, .upcoming__vote, .upcoming__release {
-    margin-bottom: 12px;
+.rel-vote-list-value,
+.pop-gen-list-value {
+  width: 95px;
+}
 
-    // @media screen and (min-width: $desktop) {
-    //     width: 140px;
-    // }
+.upcoming__about-item,
+.upcoming__popularity,
+.upcoming__genre,
+.upcoming__vote,
+.upcoming__release {
+  margin-bottom: 12px;
+
+  // @media screen and (min-width: $desktop) {
+  //     width: 140px;
+  // }
 }
 
 .upcoming__about-title {
-    margin-top: 8px;
-    margin-bottom: 16px;
+  margin-top: 8px;
+  margin-bottom: 16px;
 }
 
-
 .upcoming__release {
-    color: $orange;
+  color: $orange;
 }
 
 .upcoming__about {
-    font-family: Roboto;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-bottom: 20px;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 20px;
 
-    @media screen and (min-width: $desktop) {
-        width: 390px;
-        // зменшую розмір тексту, адже через те що повертається великий опис, він вилазить 
-        // за кордон картинки
-        font-size: 13px;
-    }
+  @media screen and (min-width: $desktop) {
+    width: 390px;
+    // зменшую розмір тексту, адже через те що повертається великий опис, він вилазить
+    // за кордон картинки
+    font-size: 13px;
+  }
 }
 
-.first-upcoming-div, .second-upcoming-div {
-    display: flex;
+.first-upcoming-div,
+.second-upcoming-div {
+  display: flex;
 }
 .first-upcoming-div {
-    @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
-        margin-right: 118px;
-    }
+  @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+    margin-right: 118px;
+  }
 }
 
 .upcoming__infolist {
-    display: block;
+  display: block;
 
-    @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
-        display: flex;
-    }
+  @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+    display: flex;
+  }
 }
 
 .vote__styling {
-    padding-left: 4px;
-    padding-right: 4px;
-    background-color: white;
-    color: black;
-    border-radius: 4;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: white;
+  color: black;
+  border-radius: 4;
 }
 
 .desktop-positioning {
-    width: 100%;
-    @media screen and (min-width: $desktop) {
-        display: flex;
-      }
+  width: 100%;
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
 }
 .desktop-right {
-    width: 100%;
-    @media screen and (min-width: $desktop) {
-        margin-left: 16px;
-        width: 390px;
-      }
+  width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 16px;
+    width: 390px;
+    position: relative;
+  }
 }
 
-.rel-vote-list, .pop-gen-list {
-    margin-right: 57px;
-    width: 93px;
+.rel-vote-list,
+.pop-gen-list {
+  margin-right: 57px;
+  width: 93px;
 }
 
 .rel-vote-list {
-    @media screen and (min-width: $tablet)and (max-width: $pre-desktop) {
-        margin-right: 58px;
-    }
+  @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+    margin-right: 58px;
+  }
 }
 
 .pop-gen-list {
-    @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
-        margin-right: 78px;
-    }
+  @media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+    margin-right: 78px;
+  }
 }
 
-.rel-vote-list-value, .pop-gen-list-value {
+.rel-vote-list-value,
+.pop-gen-list-value {
+  @media screen and (min-width: $tablet) {
+    width: 120px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 140px;
+  }
+}
 
-    @media screen and (min-width: $tablet) {
-        width: 120px;
-    }
-    @media screen and (min-width: $desktop) {
-        width: 140px;
-    }
+.upcoming__btn {
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+  }
 }
