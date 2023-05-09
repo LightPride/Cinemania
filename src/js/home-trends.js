@@ -1,8 +1,9 @@
-const container = document.getElementById('movies-container');
 const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
 const BASE_URL = 'https://api.themoviedb.org/3/trending/movie/week';
 const TABLET_WIDTH_THRESHOLD = 768;
 const colWidthClass = 'col-md-4';
+
+const container = document.querySelector('#movies-container');
 
 async function fetchTrendsMovies() {
   try {
@@ -12,94 +13,87 @@ async function fetchTrendsMovies() {
     if (!response.ok) {
       throw new Error(response.status);
     }
-    const movieData = await response.json();
-    return movieData.results;
+    const { results: movieData } = await response.json();
+    return movieData;
   } catch (error) {
     console.log(error);
   }
 }
 
+async function getGenresById(genreIds) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`
+  );
+  const { genres } = await response.json();
+  return genreIds.map(genreId => genres.find(genre => genre.id === genreId)?.name).join(', ');
+}
+
 async function renderMovies(movies, count) {
-  const container = document.querySelector('#movies-container');
   container.innerHTML = '';
   const moviesContainer = document.createElement('ul');
   moviesContainer.classList.add('weekly-list');
   container.appendChild(moviesContainer);
 
-  movies.slice(0, count).forEach(async movie => {
-    const genres = await getGenresById(movie.genre_ids);
-    const li = document.createElement('li');
-    li.classList.add('weekly-item');
+  const movieList = movies.slice(0, count);
 
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('weekly-wrapper');
+  const movieElements = await Promise.all(
+    movieList.map(async movie => {
+      const genres = await getGenresById(movie.genre_ids);
+      const shortenedTitle = movie.title.slice(0, movie.title.indexOf(':'));
+      const releaseYear = movie.release_date.slice(0, 4);
+      const ratingValue = movie.vote_average.toFixed(1);
 
-    const movieDetails = document.createElement('div');
-    movieDetails.classList.add('weekly-info');
+      const li = document.createElement('li');
+      li.classList.add('weekly-item');
 
-    const shortenedTitle = movie.title.slice(0, movie.title.indexOf(':'));
-    const title = document.createElement('h3');
-    title.classList.add('weekly-info__title');
-    title.innerText = `${shortenedTitle}`;
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('weekly-wrapper');
 
-    const releaseDateAndGenre = document.createElement('span');
-    releaseDateAndGenre.classList.add('weekly-info__genres__data');
-    releaseDateAndGenre.innerText = `${genres
-      .split(',')
-      .slice(0, 1)
-      .join(', ')} | ${movie.release_date.slice(0, 4)}`;
+      const movieDetails = document.createElement('div');
+      movieDetails.classList.add('weekly-info');
 
-    const movieRating = document.createElement('div');
-    movieRating.classList.add('weekly-rating');
-    const ratingValue = document.createElement('span');
-    ratingValue.innerText = `${movie.vote_average.toFixed(1)}`;
-    movieRating.appendChild(ratingValue);
+      const title = document.createElement('h3');
+      title.classList.add('weekly-info__title');
+      title.innerText = `${shortenedTitle}`;
 
-    const additionalInfo = document.createElement('div');
-    additionalInfo.classList.add('catalog-list__additional-info');
-    additionalInfo.appendChild(releaseDateAndGenre);
-    additionalInfo.appendChild(movieRating);
+      const releaseDateAndGenre = document.createElement('span');
+      releaseDateAndGenre.classList.add('weekly-info__genres__data');
+      releaseDateAndGenre.innerText = `${genres} | ${releaseYear}`;
 
-    const poster = document.createElement('img');
-    poster.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-    poster.alt = `${movie.title} movie poster`;
-    poster.classList.add('weekly-img');
+      const movieRating = document.createElement('div');
+      movieRating.classList.add('weekly-rating');
+      const ratingValueEl = document.createElement('span');
+      ratingValueEl.innerText = `${ratingValue}`;
+      movieRating.appendChild(ratingValueEl);
 
-    movieDetails.appendChild(title);
-    movieDetails.appendChild(additionalInfo);
+      const additionalInfo = document.createElement('div');
+      additionalInfo.classList.add('catalog-list__additional-info');
+      additionalInfo.appendChild(releaseDateAndGenre);
+      additionalInfo.appendChild(movieRating);
 
-    wrapper.appendChild(movieDetails);
-    li.appendChild(wrapper);
-    li.appendChild(poster);
+      const poster = document.createElement('img');
+      poster.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+      poster.alt = `${movie.title} movie poster`;
+      poster.classList.add('weekly-img');
+      poster.setAttribute('width', '500');
 
-    moviesContainer.appendChild(li);
-  });
+      movieDetails.appendChild(title);
+      movieDetails.appendChild(additionalInfo);
+
+      wrapper.appendChild(movieDetails);
+      li.appendChild(wrapper);
+      li.appendChild(poster);
+
+      return li;
+    })
+  );
+
+  moviesContainer.append(...movieElements);
 }
 
-async function getGenresById(genreIds) {
-  const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
-  const BASE_URL = `https://api.themoviedb.org/3/genre/movie/list`;
-
-  const response = await fetch(`${BASE_URL}?api_key=${API_KEY}&language=en-US`);
-  const data = await response.json();
-
-  const genreNames = genreIds.map(genreId => {
-    const genre = data.genres.find(genre => genre.id === genreId);
-    return genre.name;
-  });
-
-  return genreNames.join(', ');
-}
-
-async function getFetchedMovies() {
-  let count;
-  if (window.innerWidth < TABLET_WIDTH_THRESHOLD) {
-    count = 1;
-  } else {
-    count = 3;
-  }
-  const movies = await fetchTrendsMovies();
-  renderMovies(movies, count);
+function getFetchedMovies() {
+  const count = window.innerWidth < TABLET_WIDTH_THRESHOLD ? 1 : 3;
+  fetchTrendsMovies().then(movies => renderMovies(movies, count));
 }
 
 getFetchedMovies();
