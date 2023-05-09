@@ -16,7 +16,7 @@ function fetchMovieOfTheDay() {
 const heroContainer = document.body.querySelector('.hero-container');
 const heroEl = document.body.querySelector('.hero');
 const heroFilm = document.body.querySelector('.hero_with-film');
-const heroZalupaRock = document.body.querySelector('.hero-film_background');
+const heroBckgr = document.body.querySelector('.hero-film_background');
 
 function makeMovieOfTheDay(data) {
   try {
@@ -36,7 +36,7 @@ function makeMovieOfTheDay(data) {
     }
   } catch (error) {
     console.log(error);
-    heroEl.classList.remove('hero_with-film');
+    heroBckgr.classList.remove('hero-film_background');
     heroEl.classList.add('hero-default');
   }
 }
@@ -62,10 +62,10 @@ function setHeroBackground(film) {
 
   // змінюємо вигляд бекграунда в залежності від ширини екрана
   if (windowWidth <= 767) {
-    heroZalupaRock.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
+    heroBckgr.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
   } else if (windowWidth <= 1279) {
-    heroZalupaRock.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
+    heroBckgr.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
   } else if (windowWidth >= 1280) {
-    heroZalupaRock.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
+    heroBckgr.style.backgroundImage = `url('${IMG_URL}${film.backdrop_path}')`;
   }
 }
