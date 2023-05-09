@@ -20,10 +20,10 @@ async function fetchTrendsMovies() {
 }
 
 async function renderMovies(movies, count) {
-    container.innerHTML = '';
-    const moviesContainer = document.createElement('ul');
-    moviesContainer.id = 'movies-container';
-    moviesContainer.classList.add('weekly-list', 'd-flex', 'flex-wrap');
+    const container = document.querySelector('#movies-container'); 
+    container.innerHTML = ''; 
+    const moviesContainer = document.createElement('ul'); 
+    moviesContainer.classList.add('weekly-list'); 
     container.appendChild(moviesContainer);
 
     movies.slice(0, count).forEach(async (movie) => {
@@ -31,8 +31,12 @@ async function renderMovies(movies, count) {
         const li = document.createElement('li');
         li.classList.add('weekly-item');
 
+
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('weekly-wrapper');
+
         const movieDetails = document.createElement('div');
-        movieDetails.classList.add('weekly-wrapper');
+        movieDetails.classList.add('weekly-info');
 
         const shortenedTitle = movie.title.slice(0, movie.title.indexOf(':'));
         const title = document.createElement('h3');
@@ -49,29 +53,25 @@ async function renderMovies(movies, count) {
         ratingValue.innerText = `${movie.vote_average.toFixed(1)}`;
         movieRating.appendChild(ratingValue);
 
+        const additionalInfo = document.createElement('div');
+        additionalInfo.classList.add('catalog-list__additional-info');
+        additionalInfo.appendChild(releaseDateAndGenre);
+        additionalInfo.appendChild(movieRating);
+
         const poster = document.createElement('img');
         poster.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
         poster.alt = `${movie.title} movie poster`;
         poster.classList.add('weekly-img');
 
         movieDetails.appendChild(title);
-        movieDetails.appendChild(releaseDateAndGenre);
+        movieDetails.appendChild(additionalInfo);
 
-        li.appendChild(movieDetails);
-        li.appendChild(movieRating);
+        wrapper.appendChild(movieDetails);
+        li.appendChild(wrapper);
         li.appendChild(poster);
 
         moviesContainer.appendChild(li);
     });
-
-    if (window.innerWidth < TABLET_WIDTH_THRESHOLD) {
-        moviesContainer.style.gap = '0';
-    }
-}
-
-
-
-
 
 
 
