@@ -4,8 +4,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  min-height: 380px;
-
+  @media screen and (max-width: $pre-tablet) {
+    // background-position: 85px top, calc(384px / 2) 0;
+    min-height: 500px;
+  }
   // * tablet screen
   @media screen and (min-width: $tablet) {
     // background-position: 85px top, calc(384px / 2) 0;
@@ -23,9 +25,6 @@
     height: 660px;
     padding-top: 118px;
   }
-}
-
-.example-hero {
 }
 
 // TODO: styles for default markup
@@ -224,7 +223,7 @@
     width: 100%;
     height: 98%;
     top: 1;
-    left: 230px;
+    left: 210px;
     background-repeat: no-repeat;
   }
 
@@ -261,6 +260,44 @@
     left: 50px;
     background-repeat: no-repeat;
   }
+  @media screen and (min-width: $desktop) {
+    background-image: url('../images/hero/black-bg_lg.png');
+    z-index: 1;
+    background-size: 100% 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50px;
+    background-repeat: no-repeat;
+  }
+}
+
+.light-theme .hero-film_background-2 {
+  @media screen and (min-width: $tablet) {
+    background-image: url('../images/hero/white-bg-md.png');
+    z-index: 1;
+
+    background-size: 100% 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50px;
+    background-repeat: no-repeat;
+  }
+  @media screen and (min-width: $desktop) {
+    background-image: url('../images/hero/white-bg-lg.png');
+    z-index: 1;
+
+    background-size: 100% 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50px;
+    background-repeat: no-repeat;
+  }
 }
 
 .hero-film_box {
@@ -276,4 +313,25 @@
 .hero-background {
   width: auto;
   background-color: #0e0e0e;
+}
+
+.light-theme .hero-background {
+  width: auto;
+  background-color: #f8f8f8;
+}
+
+.hero-film_btn {
+  position: absolute;
+  z-index: 9;
+  left: 20px;
+  @media screen and (min-width: $tablet) {
+    left: 30px;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+
+.hero-btn {
+  color: black;
 }
