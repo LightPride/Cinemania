@@ -128,8 +128,14 @@
       line-height: 1.18;
     }
   }
-  &__bg {
-    background-color: $background;
-    background-size: cover;
-  }
+}
+
+.library__bg {
+  background-color: $background;
+  background-size: cover;
+}
+
+.light-theme .library__bg {
+  background-color: $white;
+  background-size: cover;
 }

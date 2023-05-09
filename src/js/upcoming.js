@@ -102,7 +102,7 @@ async function renderMarkup({
         <p class="upcoming__about-title">ABOUT</p>
         <p class="upcoming__about">${overview}</p>
 
-      
+        <button type="button" class="linear_btn" id="upcoming_btn">Remind me</button>
       </div>
     </div>
   `;
