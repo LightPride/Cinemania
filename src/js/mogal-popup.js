@@ -1,7 +1,9 @@
-const refs = {  
+// === MODAL POP UP ===
+const refs = {
   overlayPopUp: document.getElementById('overlayPopUp'),  
   closeModalPopUp: document.getElementById('closeModalPopUp'),
-  openModalPopUp: document.getElementById('openModalPopUp'),
+  openModalPopUp: document.querySelector('.catalog__gallery'),
+  // openModalPopUp: document.getElementById('openModalPopUp'),
   modalPopUp: document.getElementById('modalPopUp'),
   btnPopUp: document.getElementById('mylibrary'),
   closeIconPopUp: document.querySelector('.pop-up-modal__close-icon'),
@@ -20,16 +22,15 @@ const classes = {
   openModal: 'open-modal',
   visual: 'visual',
 };
-// ВИКЛИК МОДАЛКИ ТИМЧАСОВОЮ КНОПКОЮ (ПОТІМ ПРИБРАТИ)
+// ===== ВИКЛИК МОДАЛКИ =====
 refs.openModalPopUp.addEventListener('click', handlePopUpModal);
-
 refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
 refs.overlayPopUp.addEventListener('click', handlePopUpModal);
 document.addEventListener('keydown', handlePopUpModalClose)
 
 function handlePopUpModalClose({code}) {  
   if (code === 'Escape' && modalPopUp.classList.contains(classes.visual)) {    
-    handlePopUpModal();
+    handlePopUpModal();    
   }
 }
 
@@ -39,23 +40,25 @@ function handlePopUpModal() {
   document.body.classList.toggle(classes.openModal);
   overlayPopUp.classList.toggle(classes.visual);
   modalPopUp.classList.toggle(classes.visual);  
-  console.log(modalPopUp);  
+  console.log(modalPopUp);
+  // localStorage.removeItem('film-id', MYLIBRARY_ID);
+  // localStorage.removeItem('mylbery-id', MYLIBRARY_ID);  
 };
 
 // === Тимчасовий пробний запис в localStorage ===
 // localStorage.setItem('film-id', 502356);
-// localStorage.removeItem('film-id', 502356);
+// localStorage.removeItem('film-id');
 // POPUP MOVIES
 
 const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
 const POPUP_URL = `https://api.themoviedb.org/3/movie/`;
-const POPUP_ID = localStorage.getItem('film-id');
+// const POPUP_ID = localStorage.getItem('film-id');
 let MYLIBRARY_ID;
 console.log(POPUP_ID);
 // 502356 840326 1008005
 
 function fetchPopUpMovies() {
-  return fetch(`${POPUP_URL}${POPUP_ID}?api_key=${API_KEY}`)
+  return fetch(`${POPUP_URL}${localStorage.getItem('film-id')}?api_key=${API_KEY}`)
   .then(data => {    
     return data.json();      
   })
@@ -85,36 +88,37 @@ refs.btnPopUp.addEventListener('click', pushMyLibrary);
 function pushMyLibrary() {
   if (!refs.btnPopUp.classList.contains('add_mylibrary')) {
     refs.btnPopUp.classList.add('add_mylibrary');     
-    localStorage.setItem('mylbery-id', MYLIBRARY_ID);  
-    console.log(localStorage.mylberyId);
+    localStorage.setItem('mylbery-id', MYLIBRARY_ID);
+    
   } else {
     refs.btnPopUp.classList.remove('add_mylibrary');
+    refs.btnPopUp.classList.add('btn');
     localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
   }
 }
 
 // ===== Перемикач теми DARK/LIGHT =====
-const toogle = document.getElementById('toggle');
-toogle.addEventListener('click', toogleLight);
+const toggleButton = document.querySelector('.toggleButton');
+toggleButton.addEventListener('click', toogleLight);
 
 function toogleLight() {
-document.body.classList.toggle('light_color');
+document.body.classList.toggle('light-theme');
 toogleLightPopUp();
 }
 
 function toogleLightPopUp() {   
-  if (document.body.classList.contains('light_color')) {
-  refs.modalPopUp.classList.add('light_shadow', 'light_color');  
-  refs.btnPopUp.classList.add('light_color');  
-  refs.blokPopUp.classList.add('light_color');  
-  refs.closeIconPopUp.classList.add('light_fill');   
-  refs.aboutTxtPopUp.classList.add('light_color');  
- } else {
-  console.log(refs.modalPopUp.classList.contains('light_shadow'));  
-  refs.modalPopUp.classList.remove('light_shadow', 'light_color');  
-  refs.btnPopUp.classList.remove('light_color');  
-  refs.blokPopUp.classList.remove('light_color');  
-  refs.closeIconPopUp.classList.remove('light_fill');   
-  refs.aboutTxtPopUp.classList.remove('light_color');  
- }
+//   if (document.body.classList.contains('light-theme')) {
+//     refs.modalPopUp.classList.add('light_shadow', 'light_color');  
+//     refs.btnPopUp.classList.add('light_color');  
+//     refs.blokPopUp.classList.add('light_color');  
+//     refs.closeIconPopUp.classList.add('light_fill');   
+//     refs.aboutTxtPopUp.classList.add('light_color');  
+//  } else {
+//     console.log(refs.modalPopUp.classList.contains('light_shadow'));  
+//     refs.modalPopUp.classList.remove('light_shadow', 'light_color');  
+//     refs.btnPopUp.classList.remove('light_color');  
+//     refs.blokPopUp.classList.remove('light_color');  
+//     refs.closeIconPopUp.classList.remove('light_fill');   
+//     refsmod.aboutTxtPopUp.classList.remove('light_color');  
+//  }
 };
