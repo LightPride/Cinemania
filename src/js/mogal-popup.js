@@ -1,8 +1,17 @@
 // === MODAL POP UP ===
+if (!localStorage.getItem('myLibraryIds')) {
+  const emptyArray = {
+    idsArray: [],
+  };
+  localStorage.setItem('myLibraryIds', JSON.stringify(emptyArray));
+}
+
+// localStorage.removeItem('myLibraryIds');
+
 const refs = {
   overlayPopUp: document.getElementById('overlayPopUp'),
   closeModalPopUp: document.getElementById('closeModalPopUp'),
-  // openModalPopUp: document.querySelector('.catalog__gallery'),
+  openModalPopUp: document.querySelector('.catalog__gallery'),
   // openModalPopUp: document.getElementById('openModalPopUp'),
   modalPopUp: document.getElementById('modalPopUp'),
   btnPopUp: document.getElementById('mylibrary'),
@@ -23,27 +32,26 @@ const classes = {
   visual: 'visual',
 };
 // ===== ВИКЛИК МОДАЛКИ =====
-// refs.openModalPopUp.addEventListener('click', handlePopUpModal);
+refs.openModalPopUp.addEventListener('click', handlePopUpModal);
 refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
 refs.overlayPopUp.addEventListener('click', handlePopUpModal);
 document.addEventListener('keydown', handlePopUpModalClose);
 
-function handlePopUpModalClose({code}) {  
+function handlePopUpModalClose({ code }) {
   if (code === 'Escape' && modalPopUp.classList.contains(classes.visual)) {
-    toogleLight();    
-    handlePopUpModal();    
-
+    toogleLight();
+    handlePopUpModal();
   }
 }
 
 function handlePopUpModal() {
   toogleLight();
-  getPopUpMovies();  
+  getPopUpMovies();
   document.body.classList.toggle(classes.openModal);
   overlayPopUp.classList.toggle(classes.visual);
 
-  modalPopUp.classList.toggle(classes.visual);  
-  
+  modalPopUp.classList.toggle(classes.visual);
+
   // localStorage.removeItem('film-id', MYLIBRARY_ID);
   // localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
 }
@@ -80,17 +88,16 @@ async function getPopUpMovies() {
       genres,
     } = await fetchPopUpMovies();
     MYLIBRARY_ID = id;
-    console.log(MYLIBRARY_ID);
+    // console.log(MYLIBRARY_ID);
 
-    refs.image.src = `https://image.tmdb.org/t/p/w500/${poster_path}`;      
-    refs.titles.textContent = title;            
-    refs.vote.textContent = vote_average;         
-    refs.votes.textContent = vote_count;      
-    refs.popular.textContent = popularity;    
-    console.log(genres);       
-    refs.genre.textContent = genres.map((genres) => genres.name).join(" ");   
-    refs.aboutTxtPopUp.textContent = overview;        
-    
+    refs.image.src = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+    refs.titles.textContent = title;
+    refs.vote.textContent = vote_average;
+    refs.votes.textContent = vote_count;
+    refs.popular.textContent = popularity;
+    // console.log(genres);
+    refs.genre.textContent = genres.map(genres => genres.name).join(' ');
+    refs.aboutTxtPopUp.textContent = overview;
   } catch (error) {
     console.log(error);
   }
@@ -100,34 +107,47 @@ async function getPopUpMovies() {
 refs.btnPopUp.addEventListener('click', pushMyLibrary);
 
 function pushMyLibrary() {
-  if (!refs.btnPopUp.classList.contains('add_mylibrary')) {
+  // if (!refs.btnPopUp.classList.contains('add_mylibrary')) {
+  //   refs.btnPopUp.classList.add('add_mylibrary');
+  //   localStorage.setItem('mylbery-id', MYLIBRARY_ID);
+  // } else {
+  //   refs.btnPopUp.classList.remove('add_mylibrary');
+  //   refs.btnPopUp.classList.add('btn');
+  //   localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
+  // }
+  const savedSettings = localStorage.getItem('myLibraryIds');
+  const parsedSettings = JSON.parse(savedSettings);
 
-    refs.btnPopUp.classList.add('add_mylibrary');     
-    localStorage.setItem('mylbery-id', MYLIBRARY_ID);    
-    
-  } else {
-    refs.btnPopUp.classList.remove('add_mylibrary');
-    refs.btnPopUp.classList.add('btn');
-    localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
+  if (parsedSettings.idsArray.includes(MYLIBRARY_ID)) {
+    const idIndex = parsedSettings.idsArray.indexOf(MYLIBRARY_ID);
+
+    parsedSettings.idsArray.splice(idIndex, 1);
+
+    localStorage.setItem('myLibraryIds', `${JSON.stringify(parsedSettings)}`);
+
+    return;
   }
+
+  parsedSettings.idsArray.push(MYLIBRARY_ID);
+
+  localStorage.setItem('myLibraryIds', `${JSON.stringify(parsedSettings)}`);
 }
 
 // ===== Перемикач теми DARK/LIGHT =====
-function toogleLight() {   
+function toogleLight() {
   if (document.body.classList.contains('light-theme')) {
-    console.log("LIGHT");
-    refs.modalPopUp.classList.add('light_shadow', 'light_color');  
-    refs.btnPopUp.classList.add('light_color');  
-    refs.blokPopUp.classList.add('light_color');  
-    refs.closeIconPopUp.classList.add('light_fill');   
-    refs.aboutTxtPopUp.classList.add('light_color');  
- } else {
-    console.log("DARK");  
-    refs.modalPopUp.classList.remove('light_shadow', 'light_color');  
-    refs.btnPopUp.classList.remove('light_color');  
-    refs.blokPopUp.classList.remove('light_color');  
-    refs.closeIconPopUp.classList.remove('light_fill');   
-    refs.aboutTxtPopUp.classList.remove('light_color');  
- }
-};
-
+    // console.log('LIGHT');
+    refs.modalPopUp.classList.add('light_shadow', 'light_color');
+    refs.btnPopUp.classList.add('light_color');
+    refs.blokPopUp.classList.add('light_color');
+    refs.closeIconPopUp.classList.add('light_fill');
+    refs.aboutTxtPopUp.classList.add('light_color');
+  } else {
+    // console.log('DARK');
+    refs.modalPopUp.classList.remove('light_shadow', 'light_color');
+    refs.btnPopUp.classList.remove('light_color');
+    refs.blokPopUp.classList.remove('light_color');
+    refs.closeIconPopUp.classList.remove('light_fill');
+    refs.aboutTxtPopUp.classList.remove('light_color');
+  }
+}
