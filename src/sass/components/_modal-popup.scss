@@ -182,23 +182,34 @@
     }
   }
 
-  &__about-txt {
+  &__about {
+    display: block;
+    max-height: 180px;
+    margin-bottom: 16px;
+
+    @media screen and (min-width: $tablet) {
+      max-height: 170px;
+      margin-top: 4px;    
+      margin-bottom: 24px;      
+    }
+
+    @media screen and (min-width: $desktop) {
+      max-height: 220px;
+      margin-top: 4px;    
+      margin-bottom: 24px;
+      scroll-snap-type: auto;         
+    }
+  }
+
+  &__about-txt {    
     font-weight: 400;
     font-size: 12px;
     line-height: 1.66;
     color: $secondary-text;
     // color: $background;
-    margin-bottom: 16px;
-  
-    @media screen and (min-width: $tablet) {        
-      margin-top: 4px;    
-      margin-bottom: 24px;
-    }
-  
-    @media screen and (min-width: $desktop) {
-      font-size: 14px;
-      margin-top: 4px;    
-      margin-bottom: 24px;    
+      
+    @media screen and (min-width: $desktop) {      
+      font-size: 14px;          
     }
   }  
 }
