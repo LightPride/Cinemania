@@ -43,12 +43,13 @@ function handlePopUpModal() {
 };
 
 // === Тимчасовий пробний запис в localStorage ===
-// localStorage.setItem('filmId', 502356);
-// localStorage.removeItem('filmId', 502356);
+// localStorage.setItem('film-id', 502356);
+// localStorage.removeItem('film-id', 502356);
 // POPUP MOVIES
+
 const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
 const POPUP_URL = `https://api.themoviedb.org/3/movie/`;
-const POPUP_ID = localStorage.filmId;
+const POPUP_ID = localStorage.getItem('film-id');
 let MYLIBRARY_ID;
 console.log(POPUP_ID);
 // 502356 840326 1008005
@@ -84,11 +85,11 @@ refs.btnPopUp.addEventListener('click', pushMyLibrary);
 function pushMyLibrary() {
   if (!refs.btnPopUp.classList.contains('add_mylibrary')) {
     refs.btnPopUp.classList.add('add_mylibrary');     
-    localStorage.setItem('mylberyId', MYLIBRARY_ID);  
+    localStorage.setItem('mylbery-id', MYLIBRARY_ID);  
     console.log(localStorage.mylberyId);
   } else {
     refs.btnPopUp.classList.remove('add_mylibrary');
-    localStorage.removeItem('mylberyId', MYLIBRARY_ID);
+    localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
   }
 }
 
