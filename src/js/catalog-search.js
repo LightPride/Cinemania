@@ -5,10 +5,14 @@ const refs = {
 
 const { catalogForm, catalogGallery } = refs;
 
-catalogForm.addEventListener('submit', onCatalogFormSubmit);
+let page = 1;
+
+catalogForm.addEventListener('submit', onSubmit);
 catalogGallery.addEventListener('click', onCatalogGalleryClick);
 
-function onCatalogFormSubmit(e) {
+onCatalogLoad();
+
+function onSubmit(e) {
   e.preventDefault();
   inputValue = '';
   page = 1;
@@ -18,9 +22,48 @@ function onCatalogFormSubmit(e) {
   inputValue = catalogSearch.value;
 
   if (inputValue === '') {
+    onCatalogLoad();
     return;
   }
 
+  onCatalogFormSubmit();
+}
+
+function onCatalogLoad() {
+  fetchMovieGenres().then(genres => {
+    fetchCatalogTrendMovies(page).then(async data => {
+      const movies = data.results.slice(0, 10);
+
+      const cardsData = movies.map(movie => {
+        const title = movie.title;
+        const posterPath = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        const releaseYear = movie.release_date.substring(0, 4);
+        const movieId = movie.id;
+        const rating = movie.vote_average;
+        const movieGenres = genres.genres
+          .filter(genre => {
+            if (movie.genre_ids.includes(genre.id)) {
+              return genre;
+            }
+          })
+          .map(genre => genre.name);
+
+        return {
+          title,
+          posterPath,
+          movieGenres,
+          releaseYear,
+          rating,
+          movieId,
+        };
+      });
+
+      catalogGallery.innerHTML = await createGallery(cardsData);
+    });
+  });
+}
+
+function onCatalogFormSubmit() {
   fetchMovieGenres().then(genres => {
     fetchCatalogSearchMovies(inputValue, page).then(async data => {
       const movies = data.results.slice(0, 10);
@@ -51,6 +94,20 @@ function onCatalogFormSubmit(e) {
 
       catalogGallery.innerHTML = await createGallery(cardsData);
     });
+  });
+}
+
+function fetchCatalogTrendMovies(page) {
+  const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
+
+  return fetch(
+    `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&language=en-US&page=${page}`
+  ).then(movieData => {
+    if (!movieData.ok) {
+      throw new Error(movieData.status);
+    }
+
+    return movieData.json();
   });
 }
 
