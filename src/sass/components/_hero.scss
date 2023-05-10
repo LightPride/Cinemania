@@ -160,7 +160,7 @@
   color: $white;
 
   @media screen and (min-width: $tablet) {
-    max-width: 265px;
+    max-width: 240px;
 
     font-size: 44px;
     line-height: calc(52 / 44);
@@ -193,7 +193,7 @@
 
   @media screen and (min-width: $tablet) {
     margin-bottom: 28px;
-    max-width: 350px;
+    max-width: 295px;
   }
 
   @media screen and (min-width: $desktop) {
@@ -259,7 +259,7 @@
     width: 100%;
     height: 100%;
     top: 0;
-    left: 50px;
+    left: 0;
     background-repeat: no-repeat;
   }
   @media screen and (min-width: $desktop) {
@@ -271,7 +271,7 @@
     width: 100%;
     height: 100%;
     top: 0;
-    left: 50px;
+    left: 0px;
     background-repeat: no-repeat;
   }
 }
@@ -288,7 +288,7 @@
     width: 100%;
     height: 100%;
     top: 0;
-    left: 50px;
+    left: 0;
     background-repeat: no-repeat;
   }
   @media screen and (min-width: $desktop) {
@@ -301,7 +301,7 @@
     width: 100%;
     height: 100%;
     top: 0;
-    left: 50px;
+    left: 0;
     background-repeat: no-repeat;
   }
 }

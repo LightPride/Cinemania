@@ -32,18 +32,6 @@ const classes = {
   visual: 'visual',
 };
 // ===== ВИКЛИК МОДАЛКИ =====
-refs.openModalPopUp.addEventListener('click', handlePopUpModal);
-refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
-refs.overlayPopUp.addEventListener('click', handlePopUpModal);
-document.addEventListener('keydown', handlePopUpModalClose);
-refs.btnPopUp.addEventListener('click', () => {
-  if (refs.btnPopUp.textContent === 'Add to my library') {
-    refs.btnPopUp.textContent = 'Remove from my library';
-  } else {
-    refs.btnPopUp.textContent = 'Add to my library';
-  }
-});
-
 if (!refs.openModalPopUp) {
 } else {
   refs.openModalPopUp.addEventListener('click', handlePopUpModal);
@@ -53,6 +41,14 @@ refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
 refs.overlayPopUp.addEventListener('click', handlePopUpModal);
 document.addEventListener('keydown', handlePopUpModalClose);
 
+refs.btnPopUp.addEventListener('click', () => {
+  if (refs.btnPopUp.textContent === 'Add to my library') {
+    refs.btnPopUp.textContent = 'Remove from my library';
+  } else {
+    refs.btnPopUp.textContent = 'Add to my library';
+  }
+});
+
 function handlePopUpModalClose({ code }) {
   if (code === 'Escape' && modalPopUp.classList.contains(classes.visual)) {
     toogleLight();
@@ -61,9 +57,6 @@ function handlePopUpModalClose({ code }) {
 }
 
 function handlePopUpModal() {
-
-  
-
   setTimeout(() => {
     toogleLight();
     getPopUpMovies();
@@ -72,7 +65,6 @@ function handlePopUpModal() {
     document.body.classList.toggle('modal-open');
     modalPopUp.classList.toggle(classes.visual);
   }, 0);
-
 
   // localStorage.removeItem('film-id', MYLIBRARY_ID);
   // localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
