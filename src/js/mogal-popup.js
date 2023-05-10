@@ -32,6 +32,16 @@ const classes = {
   visual: 'visual',
 };
 // ===== ВИКЛИК МОДАЛКИ =====
+refs.btnPopUp.addEventListener('click', () => {
+  const savedSettings = localStorage.getItem('myLibraryIds');
+  const parsedSettings = JSON.parse(savedSettings);
+
+  if (parsedSettings.idsArray.includes(MYLIBRARY_ID)) {
+    refs.btnPopUp.textContent = 'Remove from my library';
+  } else {
+    refs.btnPopUp.textContent = 'Add to my library';
+  }
+});
 refs.openModalPopUp.addEventListener('click', handlePopUpModal);
 refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
 refs.overlayPopUp.addEventListener('click', handlePopUpModal);
@@ -98,6 +108,15 @@ async function getPopUpMovies() {
     // console.log(genres);
     refs.genre.textContent = genres.map(genres => genres.name).join(' ');
     refs.aboutTxtPopUp.textContent = overview;
+
+    const savedSettings = localStorage.getItem('myLibraryIds');
+    const parsedSettings = JSON.parse(savedSettings);
+
+    if (parsedSettings.idsArray.includes(MYLIBRARY_ID)) {
+      refs.btnPopUp.textContent = 'Remove from my library';
+    } else {
+      refs.btnPopUp.textContent = 'Add to my library';
+    }
   } catch (error) {
     console.log(error);
   }
