@@ -53,7 +53,6 @@ refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
 refs.overlayPopUp.addEventListener('click', handlePopUpModal);
 document.addEventListener('keydown', handlePopUpModalClose);
 
-
 function handlePopUpModalClose({ code }) {
   if (code === 'Escape' && modalPopUp.classList.contains(classes.visual)) {
     toogleLight();
@@ -66,7 +65,7 @@ function handlePopUpModal() {
   getPopUpMovies();
   document.body.classList.toggle(classes.openModal);
   overlayPopUp.classList.toggle(classes.visual);
-
+  document.body.classList.toggle('modal-open');
   modalPopUp.classList.toggle(classes.visual);
 
   // localStorage.removeItem('film-id', MYLIBRARY_ID);
