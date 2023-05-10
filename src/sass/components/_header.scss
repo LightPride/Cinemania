@@ -1,5 +1,10 @@
 .header {
-  background-color: inherit;
+  background-color: $background;
+  transition: 300ms;
+}
+
+.light-theme .header {
+  background-color: $white;
 }
 
 .light-theme span.logo-text {
