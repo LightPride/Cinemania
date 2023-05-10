@@ -5,8 +5,6 @@ const refs = {
   catalogGallery: document.querySelector('.catalog__gallery'),
 };
 
-
-
 const savedSettings = localStorage.getItem('myLibraryIds');
 const parsedSettings = JSON.parse(savedSettings);
 const filmsIds = parsedSettings.idsArray;
@@ -15,10 +13,10 @@ const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
 const POPUP_URL = `https://api.themoviedb.org/3/movie/`;
 
 function renderLibrary(array) {
-  refs.catalogGallery.innerHTML = "";
+  refs.catalogGallery.innerHTML = '';
   array.map(id => {
     fetchPopUpMovies(id).then(async data => {
-      if(!createGallery(data)) {
+      if (!createGallery(data)) {
         return;
       }
       refs.catalogGallery.insertAdjacentHTML('beforeend', createGallery(data));
@@ -34,20 +32,30 @@ function fetchPopUpMovies(id) {
 
 renderLibrary(filmsIds);
 
-function createGallery({ title, poster_path, release_date, vote_average, genres }) {
-  if(!genres[0]) {
+function createGallery({
+  title,
+  poster_path,
+  release_date,
+  vote_average,
+  genres,
+  id,
+}) {
+  if (!genres[0]) {
     return;
   }
   const genre = genres[0].name;
   // console.log(genre);
   const htmlPart = `
-        <li class="movie__card">
+        <li class="movie__card" data-id="${id}">
         <div class="movie__card-poster" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0), rgba(0,0,0,1)),
   url(https://image.tmdb.org/t/p/w500/${poster_path});"></div>
 
         <div class="movie__card-info">
           <h3>${title}</h3>
-          <p><span>${genre}</span> | <span>${release_date.substring(0, 4)}</span></p>
+          <p><span>${genre}</span> | <span>${release_date.substring(
+    0,
+    4
+  )}</span></p>
         </div>
 
         <div class="movie__card-rating">${vote_average}</div>
