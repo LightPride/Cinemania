@@ -42,7 +42,11 @@ refs.btnPopUp.addEventListener('click', () => {
     refs.btnPopUp.textContent = 'Add to my library';
   }
 });
-refs.openModalPopUp.addEventListener('click', handlePopUpModal);
+if (!refs.openModalPopUp) {
+} else {
+  refs.openModalPopUp.addEventListener('click', handlePopUpModal);
+}
+// refs.openModalPopUp.addEventListener('click', handlePopUpModal);
 refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
 refs.overlayPopUp.addEventListener('click', handlePopUpModal);
 document.addEventListener('keydown', handlePopUpModalClose);

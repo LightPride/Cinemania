@@ -1,5 +1,18 @@
+.light-theme {
+  transition: 300ms;
+}
+
 .light-theme span.menu-text {
   color: $grey-white-theme;
+}
+
+.light-theme .hero-title {
+  color: $background;
+}
+
+.light-theme .big-text,
+.small-text {
+  color: $background;
 }
 
 .light-theme div#mobile-menu {
@@ -104,4 +117,9 @@
 
 .light-theme .pop-gen-list-value:last-child {
   color: $secondary-black;
+}
+
+.light-theme .catalog__form-input {
+  color: $grey-white-theme;
+  border-color: $grey-white-theme;
 }
