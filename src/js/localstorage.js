@@ -3,6 +3,7 @@ const refs = {
   addToLibraryBtn: document.getElementById('mylibrary'),
   libraryList: document.getElementById('library_list'),
   catalogGallery: document.querySelector('.catalog__gallery'),
+  anyMovis: document.querySelector('.anyMovis'),
 };
 
 const savedSettings = localStorage.getItem('myLibraryIds');
@@ -19,6 +20,7 @@ function renderLibrary(array) {
       if (!createGallery(data)) {
         return;
       }
+      refs.anyMovis.innerHTML = '';
       refs.catalogGallery.insertAdjacentHTML('beforeend', createGallery(data));
     });
   });
@@ -39,6 +41,8 @@ function createGallery({
   vote_average,
   genres,
   id,
+
+
 }) {
   if (!genres[0]) {
     return;

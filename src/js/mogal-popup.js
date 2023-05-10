@@ -44,6 +44,16 @@ refs.btnPopUp.addEventListener('click', () => {
   }
 });
 
+if (!refs.openModalPopUp) {
+} else {
+  refs.openModalPopUp.addEventListener('click', handlePopUpModal);
+}
+// refs.openModalPopUp.addEventListener('click', handlePopUpModal);
+refs.closeModalPopUp.addEventListener('click', handlePopUpModal);
+refs.overlayPopUp.addEventListener('click', handlePopUpModal);
+document.addEventListener('keydown', handlePopUpModalClose);
+
+
 function handlePopUpModalClose({ code }) {
   if (code === 'Escape' && modalPopUp.classList.contains(classes.visual)) {
     toogleLight();
