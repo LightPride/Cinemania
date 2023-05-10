@@ -28,6 +28,26 @@ async function getGenresById(genreIds) {
   return genreIds.map(genreId => genres.find(genre => genre.id === genreId)?.name).join(', ');
 }
 
+// зірочки
+
+function createStarRating (rating) {
+  const starsContainer = document.createElement('div')
+  starsContainer.classList.add('stars-container');
+  const grayStars = document.createElement('div');
+  grayStars.classList.add('st-gray');
+  grayStars.classList.add('flex');
+  grayStars.innerHTML = '⭐⭐⭐⭐⭐'
+  const fullStars = document.createElement('div');
+  fullStars.innerHTML = '⭐⭐⭐⭐⭐'
+  fullStars.classList.add('st');
+  fullStars.classList.add('flex');
+  starsContainer.append(grayStars, fullStars);
+  document.body.appendChild(starsContainer)
+  const height = fullStars.offsetHeight
+  fullStars.style.width = `${rating / 2 * height}px`
+  return starsContainer;
+}
+
 async function renderMovies(movies, count) {
   container.innerHTML = '';
   const moviesContainer = document.createElement('ul');
@@ -69,7 +89,8 @@ async function renderMovies(movies, count) {
       const additionalInfo = document.createElement('div');
       additionalInfo.classList.add('catalog-list__additional-info');
       additionalInfo.appendChild(releaseDateAndGenre);
-      additionalInfo.appendChild(movieRating);
+      additionalInfo.appendChild(createStarRating(ratingValue));
+      additionalInfo.title = ratingValue
 
       const poster = document.createElement('img');
       poster.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
