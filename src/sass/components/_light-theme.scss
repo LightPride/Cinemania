@@ -48,9 +48,18 @@
 
 .light-theme span.vote__styling {
   color: $secondary-black;
+  background-color: #f8f8f8;
 }
 
 .light-theme p.upcoming__about {
+  color: $secondary-black;
+}
+
+.light-theme p.upcoming__popularity {
+  color: $secondary-black;
+}
+
+.light-theme p.upcoming__genre {
   color: $secondary-black;
 }
 
@@ -68,4 +77,27 @@
 .light-theme .linear_btn:hover,
 .linear_.btn:focus {
   color: $background;
+}
+
+.light-theme .modal-content {
+  box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
+  border-radius: 16px;
+  background: $white;
+  margin: 15% auto;
+  padding: 20px;
+  width: 60%;
+}
+
+.light-theme .modal-list a {
+  color: $background;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.light-theme .modal-list a:hover {
+  color: $grey;
+}
+
+.light-theme .team-position {
+  color: $grey-white-theme;
 }
