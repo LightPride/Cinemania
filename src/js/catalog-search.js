@@ -154,7 +154,9 @@ function createGallery(movies) {
           <p data-id="${movieId}"><span data-id="${movieId}">${genres}</span> | <span data-id="${movieId}">${releaseYear}</span></p>
         </div>
 
-        <div class="movie__card-rating" data-id="${movieId}">${rating}</div>
+        <div class="movie__card-rating" data-id="${movieId}">${createStarRating(
+        rating
+      )}</div>
       </li> 
         `;
 
@@ -174,3 +176,34 @@ function onCatalogGalleryClick(e) {
 
   localStorage.setItem('film-id', `${targetCard.dataset.id}`);
 }
+
+function createStarRating(rating) {
+  const starsContainer = document.createElement('div');
+  starsContainer.classList.add('stars-container');
+  const grayStars = document.createElement('div');
+  grayStars.classList.add('st-gray');
+  grayStars.classList.add('flex');
+  grayStars.innerHTML = '⭐⭐⭐⭐⭐';
+  const fullStars = document.createElement('div');
+  fullStars.innerHTML = '⭐⭐⭐⭐⭐';
+  fullStars.classList.add('st');
+  fullStars.classList.add('flex');
+  starsContainer.append(grayStars, fullStars);
+  document.body.appendChild(starsContainer);
+  const height = fullStars.offsetHeight;
+  fullStars.style.width = `${(rating / 2) * height}px`;
+
+  const innerStarsContainer = starsContainer.outerHTML;
+  return innerStarsContainer;
+}
+
+// function createStarRatingInner(rating) {
+//   console.log(rating);
+//   const height = 14;
+//   const grayStars = `<div class='st-gray flex'>⭐⭐⭐⭐⭐</div>`;
+//   const fullStars = `<div class='st flex' style='width: ${
+//     (rating / 2) * height
+//   }px'>⭐⭐⭐⭐⭐</div>`;
+//   const starsContainer = `<div class='stars-container'>${grayStars}${fullStars}</div>`;
+//   return starsContainer;
+// }
