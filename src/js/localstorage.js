@@ -5,6 +5,8 @@ const refs = {
   catalogGallery: document.querySelector('.catalog__gallery'),
 };
 
+refs.catalogGallery.addEventListener('click', onCatalogGalleryClick);
+
 const savedSettings = localStorage.getItem('myLibraryIds');
 const parsedSettings = JSON.parse(savedSettings);
 const filmsIds = parsedSettings.idsArray;
@@ -48,21 +50,31 @@ function createGallery({
   const htmlPart = `
         <li class="movie__card" data-id="${id}">
         <div class="movie__card-poster" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0), rgba(0,0,0,1)),
-  url(https://image.tmdb.org/t/p/w500/${poster_path});"></div>
+  url(https://image.tmdb.org/t/p/w500/${poster_path});" data-id="${id}"></div>
 
-        <div class="movie__card-info">
-          <h3>${title}</h3>
-          <p><span>${genre}</span> | <span>${release_date.substring(
+        <div class="movie__card-info" data-id="${id}">
+          <h3 data-id="${id}">${title}</h3>
+          <p data-id="${id}"><span data-id="${id}">${genre}</span> | <span data-id="${id}">${release_date.substring(
     0,
     4
   )}</span></p>
         </div>
 
-        <div class="movie__card-rating">${vote_average}</div>
+        <div class="movie__card-rating" data-id="${id}">${vote_average}</div>
       </li> 
         `;
 
   return htmlPart;
+}
+
+function onCatalogGalleryClick(e) {
+  if (e.target.nodeName === 'UL') {
+    return;
+  }
+
+  const targetCard = e.target;
+
+  localStorage.setItem('film-id', `${targetCard.dataset.id}`);
 }
 
 // function onAddToLibraryBtnClick (e) {
