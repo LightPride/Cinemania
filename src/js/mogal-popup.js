@@ -12,7 +12,7 @@ const refs = {
   overlayPopUp: document.getElementById('overlayPopUp'),
   closeModalPopUp: document.getElementById('closeModalPopUp'),
   openModalPopUp: document.querySelector('.catalog__gallery'),
-  openModalPopUp: document.getElementById('movies-container'),
+
   modalPopUp: document.getElementById('modalPopUp'),
   btnPopUp: document.getElementById('mylibrary'),
   closeIconPopUp: document.querySelector('.pop-up-modal__close-icon'),
