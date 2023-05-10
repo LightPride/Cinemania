@@ -1,2 +1,0 @@
-!function(){var e=document.getElementById("goit-students-link"),t=document.getElementById("footer__modal");e.addEventListener("click",(function(e){e.preventDefault(),t.style.display="block"})),t.addEventListener("click",(function(e){e.target===t&&(t.style.display="none")})),document.addEventListener("keydown",(function(e){"Escape"===e.key&&(t.style.display="none")}))}();
-//# sourceMappingURL=library.3370bfe4.js.map
