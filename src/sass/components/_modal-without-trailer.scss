@@ -62,6 +62,10 @@
   fill: $secondary-text;
 }
 
+.modal__close-svg:hover,
+.modal__close-svg:focus {
+  fill: $orange;
+}
 .light-theme .modal__close-svg {
   fill: $secondary-black;
 }
