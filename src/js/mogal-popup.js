@@ -11,8 +11,10 @@ if (!localStorage.getItem('myLibraryIds')) {
 const refs = {
   overlayPopUp: document.getElementById('overlayPopUp'),
   closeModalPopUp: document.getElementById('closeModalPopUp'),
+  // Підключення модалки до CATALOG GALLERY
   openModalPopUp: document.querySelector('.catalog__gallery'),
-  // openModalPopUp: document.getElementById('openModalPopUp'),
+  // Підключення модалки до WEEKLY TRENDS
+  openModalPopUp: document.querySelector('#movies-container'),
   modalPopUp: document.getElementById('modalPopUp'),
   btnPopUp: document.getElementById('mylibrary'),
   closeIconPopUp: document.querySelector('.pop-up-modal__close-icon'),
@@ -51,9 +53,6 @@ function handlePopUpModal() {
   overlayPopUp.classList.toggle(classes.visual);
 
   modalPopUp.classList.toggle(classes.visual);
-
-  // localStorage.removeItem('film-id', MYLIBRARY_ID);
-  // localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
 }
 
 // === Тимчасовий пробний запис в localStorage ===
@@ -106,15 +105,7 @@ async function getPopUpMovies() {
 // === set/remome в localStorage 'mylberyId' ====
 refs.btnPopUp.addEventListener('click', pushMyLibrary);
 
-function pushMyLibrary() {
-  // if (!refs.btnPopUp.classList.contains('add_mylibrary')) {
-  //   refs.btnPopUp.classList.add('add_mylibrary');
-  //   localStorage.setItem('mylbery-id', MYLIBRARY_ID);
-  // } else {
-  //   refs.btnPopUp.classList.remove('add_mylibrary');
-  //   refs.btnPopUp.classList.add('btn');
-  //   localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
-  // }
+function pushMyLibrary() {  
   const savedSettings = localStorage.getItem('myLibraryIds');
   const parsedSettings = JSON.parse(savedSettings);
 

@@ -48,6 +48,9 @@ async function renderMovies(movies, count) {
 
       const wrapper = document.createElement('div');
       wrapper.classList.add('weekly-wrapper');
+      // Додавання ID для модалки POP UP
+      console.log(movie.id);
+      wrapper.dataset.id = `${movie.id}`;
 
       const movieDetails = document.createElement('div');
       movieDetails.classList.add('weekly-info');
@@ -99,3 +102,12 @@ function getFetchedMovies() {
 getFetchedMovies();
 
 window.addEventListener('resize', getFetchedMovies);
+
+// ===== ВИКЛИК МОДАЛКИ =====
+container.addEventListener('click', onWeeklyTrendsClick);
+
+function onWeeklyTrendsClick(e) {  
+  const targetCard = e.target;
+  localStorage.setItem('film-id', `${targetCard.dataset.id}`);
+  console.log(targetCard.dataset.id);
+}
