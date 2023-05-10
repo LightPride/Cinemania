@@ -133,9 +133,11 @@
 .library__bg {
   background-color: $background;
   background-size: cover;
+  transition: 300ms;
 }
 
 .light-theme .library__bg {
   background-color: $white;
   background-size: cover;
+  transition: 300ms;
 }

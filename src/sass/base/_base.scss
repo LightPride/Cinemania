@@ -3,7 +3,7 @@ body {
 
   color: $white;
   background-color: $background;
-  transition: 300ms;
+
   position: relative;
   // background-image: linear-gradient(90deg, rgba(17,17,17,100%),rgba(0,0,0, 100%),rgba(0,0,0, 100%),rgba(0,0,0, 100%),rgba(0,0,0, 100%),rgba(0,0,0, 100%),rgba(17, 17, 17, 100%));
 }
@@ -33,6 +33,10 @@ body.modal-open {
   overflow: hidden;
 }
 
+main {
+  transition: 300ms;
+}
+
 .list-none {
   list-style-type: none;
 }
@@ -44,7 +48,8 @@ body.modal-open {
 .container {
   margin: 0 auto;
   padding: 0 20px;
-
+  transition: 300ms;
+  background-color: $background;
   @media screen and (max-width: $pre-tablet) {
     max-width: 320px;
   }
@@ -60,12 +65,33 @@ body.modal-open {
   }
 }
 
-.section {
-  padding: 40px 0;
+.light-theme .container {
+  background-color: $white;
+  transition: 300ms;
+}
 
+main {
+  background-color: $background;
+  transition: 300ms;
+}
+
+.light-theme main {
+  transition: 300ms;
+  background-color: $white;
+}
+
+.section {
+  background-color: $background;
+  padding: 40px 0;
+  transition: 300ms;
   @media screen and (min-width: $tablet) {
     padding: 60px 0;
   }
+}
+
+.light-theme .section {
+  transition: 300ms;
+  background-color: $white;
 }
 
 .flex {

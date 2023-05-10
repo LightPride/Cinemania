@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  transition: 300ms;
   @media screen and (max-width: $pre-tablet) {
     // background-position: 85px top, calc(384px / 2) 0;
     min-height: 500px;
@@ -205,6 +206,7 @@
 }
 
 .hero-film_background {
+  transition: 300ms;
   @media screen and (max-width: $pre-tablet) {
     z-index: 0;
     background-size: cover;
