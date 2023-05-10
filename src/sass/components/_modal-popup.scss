@@ -46,10 +46,9 @@
   transition-delay: 250ms;
   visibility: hidden;
   opacity: 0;
-  pointer-events: none;
 
+  pointer-events: none;
   box-sizing: border-box;
-  width: 280px;
   max-height: 90%;
   text-align: left;
   padding: 52px 16px;
@@ -119,13 +118,13 @@
 
     @media screen and (min-width: $tablet) {
       width: 616px;
-      height: 400px;
+
       display: flex;
     }
 
     @media screen and (min-width: $desktop) {
       width: 726px;
-      height: 478px;
+
       display: flex;
     }
   }
@@ -221,6 +220,10 @@
       font-size: 14px;
     }
   }
+}
+
+.popup-btn {
+  margin-bottom: 30px;
 }
 
 .item-votes {
