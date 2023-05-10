@@ -7,6 +7,7 @@ const { catalogForm, catalogGallery } = refs;
 
 let page = 1;
 let inputValue = '';
+
 catalogForm.addEventListener('submit', onSubmit);
 catalogGallery.addEventListener('click', onCatalogGalleryClick);
 
@@ -14,7 +15,6 @@ onCatalogLoad();
 
 function onSubmit(e) {
   e.preventDefault();
-
   page = 1;
 
   const { catalogSearch } = e.currentTarget;
