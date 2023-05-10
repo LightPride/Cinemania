@@ -291,3 +291,34 @@
     }
   }
 }
+
+// зірочки
+
+.stars-container {
+  width: 90px;
+  position: relative;
+  font-size: 12px;
+}
+
+.st-gray {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  font-size: 12px;
+  left: 0;
+  filter: grayscale(100%);
+}
+
+.st {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
