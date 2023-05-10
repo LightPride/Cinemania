@@ -3,7 +3,7 @@ body {
 
   color: $white;
   background-color: $background;
-
+  transition: 300ms;
   position: relative;
   // background-image: linear-gradient(90deg, rgba(17,17,17,100%),rgba(0,0,0, 100%),rgba(0,0,0, 100%),rgba(0,0,0, 100%),rgba(0,0,0, 100%),rgba(0,0,0, 100%),rgba(17, 17, 17, 100%));
 }
@@ -80,20 +80,26 @@ body.modal-open {
   font-size: 12px;
   line-height: 1.16;
   padding: 12px 24px;
-  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  background-image: linear-gradient(
+    to right,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
   border-radius: 74px;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 0.1px solid transparent;
   transition: border 750ms linear(0.4, 0, 0.2, 1);
   margin-bottom: 20px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: $background;
+  display: block;
 }
 
 .linear_btn:hover,
 .linear_.btn:focus {
-  // border-width: 1px;
-  // border-style:  solid;
-  // border-radius: 74px;
-  // border-image: linear-gradient(45deg, #FFC226, #F84119) 1;
   color: $white;
   background: transparent;
   border-top: 1px solid #ffc226;

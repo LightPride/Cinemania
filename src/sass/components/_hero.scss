@@ -234,6 +234,7 @@
 
 .hero-film_background-2 {
   @media screen and (max-width: $pre-tablet) {
+    transition: 300ms;
     background-image: linear-gradient(
       87.8deg,
       #0e0e0e 15.61%,
@@ -251,6 +252,7 @@
   }
   @media screen and (min-width: $tablet) {
     background-image: url('../images/hero/black-bg_md.png');
+    transition: 300ms;
     z-index: 1;
     background-size: 100% 100%;
     position: absolute;
@@ -262,6 +264,7 @@
   }
   @media screen and (min-width: $desktop) {
     background-image: url('../images/hero/black-bg_lg.png');
+    transition: 300ms;
     z-index: 1;
     background-size: 100% 100%;
     position: absolute;
@@ -274,8 +277,10 @@
 }
 
 .light-theme .hero-film_background-2 {
+  transition: 300ms;
   @media screen and (min-width: $tablet) {
     background-image: url('../images/hero/white-bg-md.png');
+    transition: 300ms;
     z-index: 1;
 
     background-size: 100% 100%;
@@ -288,6 +293,7 @@
   }
   @media screen and (min-width: $desktop) {
     background-image: url('../images/hero/white-bg-lg.png');
+    transition: 300ms;
     z-index: 1;
 
     background-size: 100% 100%;
@@ -313,11 +319,13 @@
 .hero-background {
   width: auto;
   background-color: #0e0e0e;
+  transition: 300ms;
 }
 
 .light-theme .hero-background {
   width: auto;
   background-color: #f8f8f8;
+  transition: 300ms;
 }
 
 .hero-film_btn {
@@ -334,4 +342,5 @@
 
 .hero-btn {
   color: black;
+  display: inline;
 }
