@@ -62,12 +62,14 @@ function handlePopUpModalClose({ code }) {
 }
 
 function handlePopUpModal() {
-  toogleLight();
-  getPopUpMovies();
-  document.body.classList.toggle(classes.openModal);
-  overlayPopUp.classList.toggle(classes.visual);
+  setTimeout(() => {
+    toogleLight();
+    getPopUpMovies();
+    document.body.classList.toggle(classes.openModal);
+    overlayPopUp.classList.toggle(classes.visual);
 
-  modalPopUp.classList.toggle(classes.visual);
+    modalPopUp.classList.toggle(classes.visual);
+  }, 0);
 
   // localStorage.removeItem('film-id', MYLIBRARY_ID);
   // localStorage.removeItem('mylbery-id', MYLIBRARY_ID);
