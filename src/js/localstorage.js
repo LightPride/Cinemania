@@ -40,6 +40,9 @@ function createGallery({
   release_date,
   vote_average,
   genres,
+  id,
+
+
 }) {
   if (!genres[0]) {
     return;
@@ -47,7 +50,7 @@ function createGallery({
   const genre = genres[0].name;
   // console.log(genre);
   const htmlPart = `
-        <li class="movie__card">
+        <li class="movie__card" data-id="${id}">
         <div class="movie__card-poster" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0), rgba(0,0,0,1)),
   url(https://image.tmdb.org/t/p/w500/${poster_path});"></div>
 
