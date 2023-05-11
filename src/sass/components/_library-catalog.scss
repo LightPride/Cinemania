@@ -1,12 +1,12 @@
-.anyMovis{
-    padding: 44px 0 42px 0 ;
-    @media screen and (min-width:$tablet){
-      padding: 80px 0 60px 0 ; 
-    }
-    @media screen and (min-width:$desktop){
-      padding: 160px 0 108px 0 ; 
-    }
-  &__title{
+.anyMovis {
+  padding: 44px 0 42px 0;
+  @media screen and (min-width: $tablet) {
+    padding: 80px 0 60px 0;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 160px 0 108px 0;
+  }
+  &__title {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -14,40 +14,27 @@
     line-height: 1.4;
     color: $white;
     text-align: center;
-    @media screen and (min-width:$tablet){
+    @media screen and (min-width: $tablet) {
       font-size: 24px;
       line-height: 1.33;
     }
-    @media screen and (min-width:$desktop){
+    @media screen and (min-width: $desktop) {
       font-size: 32px;
       line-height: 1.12;
     }
   }
-  &__btn{
+  &__btn {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
     text-decoration: none;
     text-align: center;
-    @media screen and (min-width:$tablet){
-      margin-top: 24px; 
+    @media screen and (min-width: $tablet) {
+      margin-top: 24px;
     }
-    @media screen and (min-width:$desktop){
+    @media screen and (min-width: $desktop) {
       margin-top: 28px;
     }
   }
-  &__btn-width{
-    width: 121px;
-    height: 38px;
-    @media screen and (min-width:$tablet){
-      width: 133px;
-      height: 40px;
-    }
-    @media screen and (min-width:$desktop){
-      width: 158px;
-      height: 52px;
-    }
-  }
-
-  }
+}
