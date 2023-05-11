@@ -65,6 +65,30 @@ main {
   }
 }
 
+.container-header {
+  margin: 0 auto;
+  padding: 0 20px;
+  transition: 300ms;
+  background-color: #000000;
+  @media screen and (max-width: $pre-tablet) {
+    max-width: 320px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 1280px;
+    padding: 0 32px;
+  }
+}
+
+.light-theme .container-header {
+  background-color: $white;
+}
+
 .light-theme .container {
   background-color: $white;
   transition: 300ms;
