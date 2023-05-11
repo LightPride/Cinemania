@@ -4,6 +4,7 @@ const insertionBlock = document.querySelector('.upcoming__insert');
 
 const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
 const BASE_URL = `https://api.themoviedb.org/3/movie/upcoming`;
+let MOVIE_ID = 0;
 
 function fetchUpcomingMovies() {
   // https://developers.themoviedb.org/3/movies/get-upcoming
@@ -86,9 +87,10 @@ async function renderMarkup({
   vote_count,
   release_date,
   genre_ids,
+  id,
 }) {
   const genreNames = await getGenresById(genre_ids);
-
+  MOVIE_ID = id;
   return `
     <div class="desktop-positioning">
       <div class="desktop-left">
