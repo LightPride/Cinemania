@@ -4,6 +4,7 @@ const insertionBlock = document.querySelector('.upcoming__insert');
 
 const API_KEY = 'ec3ca0e4403710b7fc1497b1dbf32c54';
 const BASE_URL = `https://api.themoviedb.org/3/movie/upcoming`;
+let MOVIE_ID = 0;
 
 function fetchUpcomingMovies() {
   // https://developers.themoviedb.org/3/movies/get-upcoming
@@ -30,6 +31,44 @@ async function getFetchedMovies() {
       const genreNames = await getGenresById(randomMovie.genre_ids);
       const createdMarkup = await renderMarkup({ ...randomMovie, genreNames });
       insertionBlock.insertAdjacentHTML('afterbegin', createdMarkup);
+      const upcomingBtn = document.getElementById('upcoming_btn');
+      let savedSettings = localStorage.getItem('myLibraryIds');
+      let parsedSettings = JSON.parse(savedSettings);
+
+      if (parsedSettings.idsArray.includes(MOVIE_ID)) {
+        upcomingBtn.textContent = 'Remove from my library';
+      } else {
+        upcomingBtn.textContent = 'Remind me';
+      }
+
+      upcomingBtn.addEventListener('click', () => {
+        savedSettings = localStorage.getItem('myLibraryIds');
+        parsedSettings = JSON.parse(savedSettings);
+
+        if (parsedSettings.idsArray.includes(MOVIE_ID)) {
+          const idIndex = parsedSettings.idsArray.indexOf(MOVIE_ID);
+
+          parsedSettings.idsArray.splice(idIndex, 1);
+
+          localStorage.setItem(
+            'myLibraryIds',
+            `${JSON.stringify(parsedSettings)}`
+          );
+
+          return;
+        }
+        if (upcomingBtn.textContent === 'Remind me') {
+          upcomingBtn.textContent = 'Remove from my library';
+        } else {
+          upcomingBtn.textContent = 'Remind me';
+        }
+        parsedSettings.idsArray.push(MOVIE_ID);
+
+        localStorage.setItem(
+          'myLibraryIds',
+          `${JSON.stringify(parsedSettings)}`
+        );
+      });
     }
   } catch (error) {
     console.log(error);
@@ -48,8 +87,11 @@ async function renderMarkup({
   vote_count,
   release_date,
   genre_ids,
+  id,
 }) {
   const genreNames = await getGenresById(genre_ids);
+
+  MOVIE_ID = id;
 
   return `
     <div class="desktop-positioning">
