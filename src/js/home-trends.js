@@ -3,7 +3,7 @@ const BASE_URL = 'https://api.themoviedb.org/3/trending/movie/week';
 const TABLET_WIDTH_THRESHOLD = 768;
 const colWidthClass = 'col-md-4';
 
-const container = document.querySelector('#movies-container');
+const container = document.querySelector('.catalog__gallery');
 
 async function fetchTrendsMovies() {
   try {
