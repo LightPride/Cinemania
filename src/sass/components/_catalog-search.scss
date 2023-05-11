@@ -241,3 +241,58 @@
     height: 18px;
   }
 }
+
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+// .tui-first-child {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 2px solid #ffaa00;
+//   border-radius: 100%;
+//   width: 40px;
+//   height: 40px;
+//   color: $white;
+//   padding: 0;
+// }
+
+// .tui-last-child {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 2px solid #ffaa00;
+//   border-radius: 100%;
+//   width: 40px;
+//   height: 40px;
+//   color: $white;
+//   padding: 0;
+// }
+
+// .tui-page-btn {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 2px solid #ffaa00;
+//   border-radius: 100%;
+//   width: 40px;
+//   height: 40px;
+//   color: $white;
+//   padding: 0;
+// }
+
+// .tui-page-btn .tui-is-selected {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 2px solid #ffaa00;
+//   border-radius: 100%;
+//   width: 40px;
+//   height: 40px;
+//   color: $white;
+//   padding: 0;
+// }

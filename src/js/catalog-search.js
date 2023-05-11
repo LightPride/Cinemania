@@ -1,3 +1,40 @@
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
+let totalEl = 0;
+let page = 1;
+
+const options = {
+  totalItems: totalEl,
+  itemsPerPage: 10,
+  visiblePages: 3,
+  page: page,
+  centerAlign: false,
+  firstItemClassName: 'tui-first-child',
+  lastItemClassName: 'tui-last-child',
+  template: {
+    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+    currentPage:
+      '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+    moveButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</a>',
+    disabledMoveButton:
+      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</span>',
+    moreButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+      '<span class="tui-ico-ellip">...</span>' +
+      '</a>',
+  },
+};
+
+const pagination = new Pagination('pagination', options);
+
+// import { pagination } from './pagination';
+
 const refs = {
   catalogForm: document.querySelector('#search-form'),
   catalogGallery: document.querySelector('.catalog__gallery'),
@@ -5,13 +42,24 @@ const refs = {
 
 const { catalogForm, catalogGallery } = refs;
 
-let page = 1;
+// let page = 1;
 let inputValue = '';
+// let totalEl = 0;
 
 catalogForm.addEventListener('submit', onSubmit);
 catalogGallery.addEventListener('click', onCatalogGalleryClick);
 
+//? FUNCTIONS FUNCTIONS FUNCTIONS
+
 onCatalogLoad();
+
+pagination.on('afterMove', event => {
+  const currentPage = event.page;
+  page = currentPage;
+
+  onCatalogFormSubmit();
+  // console.log(currentPage);
+});
 
 function onSubmit(e) {
   e.preventDefault();
@@ -27,12 +75,18 @@ function onSubmit(e) {
   }
 
   onCatalogFormSubmit();
+
+  setTimeout(() => {
+    pagination.reset(totalEl);
+  }, 500);
 }
 
 function onCatalogLoad() {
   fetchMovieGenres().then(genres => {
     fetchCatalogTrendMovies(page).then(async data => {
-      const movies = data.results.slice(0, 10);
+      // const movies = data.results.slice(0, 10);
+      const movies = data.results;
+      totalEl = data.total_results;
 
       const cardsData = movies.map(movie => {
         const title = movie.title;
@@ -59,6 +113,8 @@ function onCatalogLoad() {
       });
 
       catalogGallery.innerHTML = await createGallery(cardsData);
+
+      // pagination.reset(totalEl);
     });
   });
 }
@@ -66,7 +122,9 @@ function onCatalogLoad() {
 function onCatalogFormSubmit() {
   fetchMovieGenres().then(genres => {
     fetchCatalogSearchMovies(inputValue, page).then(async data => {
-      const movies = data.results.slice(0, 10);
+      // const movies = data.results.slice(0, 10);
+      const movies = data.results;
+      totalEl = data.total_results;
 
       const cardsData = movies.map(movie => {
         const title = movie.title;
@@ -93,6 +151,8 @@ function onCatalogFormSubmit() {
       });
 
       catalogGallery.innerHTML = await createGallery(cardsData);
+
+      // pagination.reset(totalEl);
     });
   });
 }
@@ -143,6 +203,10 @@ function createGallery(movies) {
   const generatedHtml = movies
     .map(({ title, posterPath, movieGenres, releaseYear, rating, movieId }) => {
       const genres = movieGenres[0];
+
+      if (posterPath === 'https://image.tmdb.org/t/p/w500null') {
+        return;
+      }
 
       const htmlPart = `
         <li class="movie__card" data-id="${movieId}">
@@ -196,14 +260,3 @@ function createStarRating(rating) {
   const innerStarsContainer = starsContainer.outerHTML;
   return innerStarsContainer;
 }
-
-// function createStarRatingInner(rating) {
-//   console.log(rating);
-//   const height = 14;
-//   const grayStars = `<div class='st-gray flex'>⭐⭐⭐⭐⭐</div>`;
-//   const fullStars = `<div class='st flex' style='width: ${
-//     (rating / 2) * height
-//   }px'>⭐⭐⭐⭐⭐</div>`;
-//   const starsContainer = `<div class='stars-container'>${grayStars}${fullStars}</div>`;
-//   return starsContainer;
-// }
