@@ -59,6 +59,11 @@ function handlePopUpModalClose({ code }) {
 function handlePopUpModal(e) {
   if (e.target.nodeName === 'UL') {
     return;
+  } else if (
+    e.target.className === 'anyMovis' ||
+    e.target.className === 'anyMovis__title'
+  ) {
+    return;
   }
 
   setTimeout(() => {
