@@ -4,6 +4,7 @@ const refs = {
   libraryList: document.getElementById('library_list'),
   catalogGallery: document.querySelector('.catalog__gallery'),
   anyMovis: document.querySelector('.anyMovis'),
+  pashalka: document.querySelector('.pas-halka'),
 };
 
 refs.catalogGallery.addEventListener('click', onCatalogGalleryClick);
@@ -93,58 +94,10 @@ function createStarRating(rating) {
   fullStars.classList.add('st');
   fullStars.classList.add('flex');
   starsContainer.append(grayStars, fullStars);
-  document.body.appendChild(starsContainer);
+  refs.pashalka.appendChild(starsContainer);
   const height = fullStars.offsetHeight;
   fullStars.style.width = `${(rating / 2) * height}px`;
 
   const innerStarsContainer = starsContainer.outerHTML;
   return innerStarsContainer;
 }
-
-// function onAddToLibraryBtnClick (e) {
-//     console.log('click on add to library btn');
-//     let array = [];
-
-//     fetchFilmById().then(data => {
-//         const movies = {
-//           title: data.title,
-//           posterPath: data.poster_path,
-//           genres: data.genres,
-//           releaseYear: data.release_date,
-//           id: data.id,
-//           voteAverage: data.vote_average,
-//         }
-
-//         console.log(movies); // Вывести объект фильма в консоль
-
-//       //   for(const movie in movies) {
-//       //     console.log(
-//       //       `
-//       //       <li class="movie__card" data-id="${movie.id}">
-//       //       <div class="movie__card-poster" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0), rgba(0,0,0,1)),
-//       // url(${movie.poster_path});" data-id="${movie.id}"></div>
-
-//       //       <div class="movie__card-info" data-id="${movie.id}">
-//       //         <h3 data-id="${movie.id}">${movie.title}</h3>
-//       //         <p data-id="${movie.id}"><span data-id="${movie.id}">${movie.genres}</span> | <span data-id="${movie.id}">${movie.release_date}</span></p>
-//       //       </div>
-
-//       //       <div class="movie__card-rating" data-id="${movie.id}">${movie.vote_average}</div>
-//       //     </li>
-
-//       //       `
-//       //     )
-//       //   }
-
-//       });
-
-// }
-
-// function fetchFilmById() {
-//     return fetch(`${POPUP_URL}${localStorage.getItem('mylbery-id')}?api_key=${API_KEY}`)
-//     .then(data => {
-//       return data.json()
-//     })
-//   }
-
-// fetchFilmById().then(console.log)

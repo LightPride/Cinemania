@@ -51,8 +51,10 @@ let videoCheck = true;
 
 function makeMarkup(film) {
   videoCheck = film.video;
-  heroContainer.innerHTML = `<div class="hero-film_box"><h2 class="hero-film_title">${film.title}</h2>
-    <p class="hero-film_rating">${film.vote_average}</p>
+  heroContainer.innerHTML = `<div class="hero-film_box"><h2 class="hero-film_title">${
+    film.title
+  }</h2>
+    <p class="hero-film_rating">Rating: ${film.vote_average.toFixed(1)}⭐</p>
     <p class="hero-film_descr">${film.overview}</p>
     </div>`;
 

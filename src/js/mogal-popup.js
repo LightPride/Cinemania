@@ -56,7 +56,11 @@ function handlePopUpModalClose({ code }) {
   }
 }
 
-function handlePopUpModal() {
+function handlePopUpModal(e) {
+  if (e.target.nodeName === 'UL') {
+    return;
+  }
+
   setTimeout(() => {
     toogleLight();
     getPopUpMovies();

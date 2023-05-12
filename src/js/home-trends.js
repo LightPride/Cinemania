@@ -4,6 +4,7 @@ const TABLET_WIDTH_THRESHOLD = 768;
 const colWidthClass = 'col-md-4';
 
 const container = document.querySelector('.catalog__gallery');
+const pashalka = document.querySelector('.pas-halka');
 
 async function fetchTrendsMovies() {
   try {
@@ -44,7 +45,7 @@ function createStarRating(rating) {
   fullStars.classList.add('st');
   fullStars.classList.add('flex');
   starsContainer.append(grayStars, fullStars);
-  document.body.appendChild(starsContainer);
+  pashalka.appendChild(starsContainer);
   const height = fullStars.offsetHeight;
   fullStars.style.width = `${(rating / 2) * height}px`;
   return starsContainer;
@@ -133,7 +134,7 @@ window.addEventListener('resize', getFetchedMovies);
 // ===== ВИКЛИК МОДАЛКИ =====
 container.addEventListener('click', onWeeklyTrendsClick);
 
-function onWeeklyTrendsClick(e) {  
+function onWeeklyTrendsClick(e) {
   const targetCard = e.target;
   localStorage.setItem('film-id', `${targetCard.dataset.id}`);
   console.log(targetCard.dataset.id);

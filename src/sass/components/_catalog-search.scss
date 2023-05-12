@@ -177,6 +177,7 @@
 .movie__card-poster {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 
   position: absolute;
   z-index: 0;
@@ -242,12 +243,12 @@
   }
 }
 
-.tui-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
+// .tui-pagination {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 10px;
+// }
 
 // .tui-first-child {
 //   display: flex;
@@ -296,3 +297,9 @@
 //   color: $white;
 //   padding: 0;
 // }
+
+.pas-halka {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
