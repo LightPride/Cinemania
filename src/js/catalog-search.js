@@ -6,7 +6,7 @@ let page = 1;
 
 const options = {
   totalItems: totalEl,
-  itemsPerPage: 10,
+  itemsPerPage: 20,
   visiblePages: 3,
   page: page,
   centerAlign: false,
@@ -38,6 +38,7 @@ const pagination = new Pagination('pagination', options);
 const refs = {
   catalogForm: document.querySelector('#search-form'),
   catalogGallery: document.querySelector('.catalog__gallery'),
+  pashalka: document.querySelector('.pas-halka'),
 };
 
 const { catalogForm, catalogGallery } = refs;
@@ -53,12 +54,15 @@ catalogGallery.addEventListener('click', onCatalogGalleryClick);
 
 onCatalogLoad();
 
+setTimeout(() => {
+  pagination.reset(totalEl);
+}, 500);
+
 pagination.on('afterMove', event => {
   const currentPage = event.page;
   page = currentPage;
 
-  onCatalogFormSubmit();
-  // console.log(currentPage);
+  onCatalogLoad();
 });
 
 function onSubmit(e) {
@@ -71,10 +75,29 @@ function onSubmit(e) {
 
   if (inputValue === '') {
     onCatalogLoad();
+
+    pagination.off('afterMove');
+
+    pagination.on('afterMove', event => {
+      const currentPage = event.page;
+      page = currentPage;
+
+      onCatalogLoad();
+    });
+
     return;
   }
 
   onCatalogFormSubmit();
+
+  pagination.off('afterMove');
+
+  pagination.on('afterMove', event => {
+    const currentPage = event.page;
+    page = currentPage;
+
+    onCatalogFormSubmit();
+  });
 
   setTimeout(() => {
     pagination.reset(totalEl);
@@ -84,8 +107,8 @@ function onSubmit(e) {
 function onCatalogLoad() {
   fetchMovieGenres().then(genres => {
     fetchCatalogTrendMovies(page).then(async data => {
-      // const movies = data.results.slice(0, 10);
-      const movies = data.results;
+      const movies = data.results.slice(0, 10);
+      // const movies = data.results;
       totalEl = data.total_results;
 
       const cardsData = movies.map(movie => {
@@ -122,9 +145,15 @@ function onCatalogLoad() {
 function onCatalogFormSubmit() {
   fetchMovieGenres().then(genres => {
     fetchCatalogSearchMovies(inputValue, page).then(async data => {
-      // const movies = data.results.slice(0, 10);
-      const movies = data.results;
+      const movies = data.results.slice(0, 10);
+      // const movies = data.results;
       totalEl = data.total_results;
+
+      if (movies.length === 0) {
+        catalogGallery.innerHTML = `<div style='margin: 0 auto 0 auto' class="anyMovis" id="library_list"><h2 class="anyMovis__title">OOPS... <br />We are very sorry! <br />You don't have any movies at your library.</h2></div>`;
+
+        return;
+      }
 
       const cardsData = movies.map(movie => {
         const title = movie.title;
@@ -205,7 +234,8 @@ function createGallery(movies) {
       const genres = movieGenres[0];
 
       if (posterPath === 'https://image.tmdb.org/t/p/w500null') {
-        return;
+        posterPath =
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png';
       }
 
       const htmlPart = `
@@ -253,7 +283,7 @@ function createStarRating(rating) {
   fullStars.classList.add('st');
   fullStars.classList.add('flex');
   starsContainer.append(grayStars, fullStars);
-  document.body.appendChild(starsContainer);
+  refs.pashalka.appendChild(starsContainer);
   const height = fullStars.offsetHeight;
   fullStars.style.width = `${(rating / 2) * height}px`;
 
